@@ -11,8 +11,10 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		database.ref('/').on('value', () => {
-			console.log('THE DATA CHANGED!');
+		database.ref('/').on('value', (snapshot) => {
+			this.setState({
+				data: snapshot.val()
+			});
 		});
 	}
 
@@ -23,8 +25,8 @@ class App extends Component {
 					<h2>Welcome to React and Firebase</h2>
 				</div>
 				<pre className="App--data">
-					One day, some data from Firebase will go here.
-        </pre>
+					{JSON.stringify(this.state.data, null, 2)}
+				</pre>
 			</div>
 		);
 	}
