@@ -31,9 +31,16 @@ class App extends Component {
 
 	handleSubmit(event) {
 		event.preventDefault();
-		const newData = database.ref()
-			.child('AMAZINGNEWDATA')
-			.set(this.state.newData);
+		// const newData = database.ref()
+		// 	.child('AMAZINGNEWDATA')
+		// 	.set(this.state.newData);
+		//
+		// const newData = database.ref()
+		// 	.child('AMAZINGNEWDATA')
+		// 	.push(this.state.newData);
+		//
+		const newData = database.ref('/AMAZINGNEWDATA/hello/world/this/is/amazing')
+			.push(this.state.newData);
 	}
 
 	render() {
