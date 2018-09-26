@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Restaurant from './Restaurant';
 import map from 'lodash/map';
+import { database } from './firebase';
 import './Restaurants.css';
 
 class Restaurants extends Component {
@@ -8,18 +9,46 @@ class Restaurants extends Component {
 		super(props);
 	}
 
+	handleSelect(key) {
+		const currentUser = this.props.user;
+		console.log(this.props);
+		database.ref('/restaurants')
+			.child(key)
+			.child('votes')
+			.child(currentUser.uid)
+			.set(currentUser.displayName);
+	}
+
+	handleDeselect(key) {
+		const currentUser = this.props.user;
+		database.ref('/restaurants')
+			.child(key)
+			.child('votes')
+			.child(currentUser.uid)
+			.remove();
+	}
+
 	render() {
 		const { restaurants } = this.props;
 		return (
 			<section className="Restaurants">
-				{map(restaurants, (restaurant, key) => <Restaurant key={key} {...restaurant} />)}
+				{
+					map(restaurants, (restaurant, key) => {
+						return <Restaurant
+							key={key}
+							{...restaurant}
+							handleSelect={() => this.handleSelect(key)}
+							handleDeselect={() => this.handleDeselect(key)}
+						/>;
+					})
+				}
 			</section>
 		);
 	}
 }
 
 Restaurants.propTypes = {
-	user: PropTypes,
+	user: PropTypes.object,
 	restaurantsRef: PropTypes.object,
 	restaurants: PropTypes.object
 };
