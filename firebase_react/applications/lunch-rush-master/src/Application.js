@@ -7,19 +7,34 @@ import Restaurants from './Restaurants';
 import './Application.css';
 
 class Application extends Component {
-  constructor(props) {
-    super(props);
-  }
+	constructor(props) {
+		super(props);
+		this.state = {
+			currentUser: null
+		};
+	}
 
-  render() {
-    return (
-      <div className="Application">
-        <header className="Application--header">
-          <h1>Lunch Rush</h1>
-        </header>
-      </div>
-    );
-  }
+	componentDidMount() {
+		auth.onAuthStateChanged((currentUser) => {
+			console.log('AUTH_CHANGE', currentUser);
+			this.setState({ currentUser });
+		})
+	}
+
+	render() {
+		const { currentUser } = this.state;
+		return (
+			<div className="Application">
+				<header className="Application--header">
+					<h1>Lunch Rush</h1>
+				</header>
+				<div>
+					{!currentUser && <SignIn />}
+					{currentUser && <CurrentUser user={currentUser} />}
+				</div>
+			</div>
+		);
+	}
 }
 
 export default Application;
