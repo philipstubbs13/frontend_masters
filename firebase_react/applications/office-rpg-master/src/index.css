@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  padding: 0;
+  font: menu;
+  font-weight: 300;
+}
+
+table {
+  margin: 0;
+  padding: 0;
+  border-spacing: 0;
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  font-weight: 600;
+}
