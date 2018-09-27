@@ -1,0 +1,18 @@
+.ProfileCards {
+  display: flex;
+  margin: 1em 0;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ProfileCard {
+  border: 1px solid #EEE;
+  text-align: center;
+  padding: 1em;
+  margin: 1em;
+}
+
+.ProfileCard img {
+  max-width: 200px;
+  display: block;
+}
