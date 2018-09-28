@@ -1,6 +1,8 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 
+admin.initializeApp(functions.config().firebase);
+
 exports.newMessageAlert = functions.database.ref('/messages/{message}')
 	.onWrite((event) => {
 		const message = event.data.val();
