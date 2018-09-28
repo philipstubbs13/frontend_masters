@@ -8,22 +8,26 @@ import initialState from './initial-state';
 import Application from './containers/ApplicationContainer';
 import './index.css';
 
-const middleware = [ thunk ];
+import { startListeningToAuthChanges } from './actions/auth';
+
+const middleware = [thunk];
 const enhancers = [];
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
-  reducer,
-  initialState,
-  composeEnhancers(
-    applyMiddleware(...middleware),
-    ...enhancers
-  )
+	reducer,
+	initialState,
+	composeEnhancers(
+		applyMiddleware(...middleware),
+		...enhancers
+	)
 );
 
+store.dispatch(startListeningToAuthChanges());
+
 ReactDOM.render(
-  <Provider store={store}>
-    <Application />
-  </Provider>,
-  document.getElementById('root')
+	<Provider store={store}>
+		<Application />
+	</Provider>,
+	document.getElementById('root')
 );
