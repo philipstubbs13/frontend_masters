@@ -1,0 +1,13 @@
+<html>
+	<h1>VIM Commands</h1>
+	<p>^F (CTRl F) Forward screenful</p>
+	<p>^B Backward screenful</p>
+	<p>^f One page forward</p>
+	<p>^b One page backward</p>
+	<p>u Undo</p>
+	<p>^R Redo</p>
+	<p>$ Move cursor to the end of current line</p>
+	<p>0 (zero) Move cursor to the beginning of line</p>
+	<p>w Forward one word</p>
+	<p>b Backward one word</p>
+</html>

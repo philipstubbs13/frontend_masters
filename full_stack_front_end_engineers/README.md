@@ -30,7 +30,9 @@
     * Search: type /Hello
       * Move to next instance from top: press n
       * Search from bottom of document to top: press shift + n
-    * Close Vi without savig: press :q
+    * Close/quit Vi without savig: press :q
     * Save and exit: press :wq
+    * Save file: :w testfoo
+    * Open vi: vi somefilename
     * <https://linuxmoz.com/vi-commands-cheat-sheet>
     * <http://vim.wikia.com/wiki/Copy,_cut_and_paste>
