@@ -2,7 +2,9 @@
 
 * Course: <https://frontendmasters.com/courses/full-stack/>
 * Slides: <https://docs.google.com/presentation/d/1FPpbZ919vt8e1k2EGPd7BKhDlHao79ykvYLfDcMOsMo/edit>
-* How does the internet work?
+
+## How does the internet work
+
 * DNS - Domain Name System
   * The Internet Phonebook
 * ping: Is my site alive and well?
@@ -10,6 +12,9 @@
 * tracert: How am I getting there?
 * ICMP - Internet Control Message Packet
   * Way of communicating to server (commands)
+
+## VIM
+
 * VIM
   * VI Improved
   * Vim isn't an editor designed to hold its users' hands. It is a tool, the use of which must be learned.
@@ -36,3 +41,20 @@
     * Open vi: vi somefilename
     * <https://linuxmoz.com/vi-commands-cheat-sheet>
     * <http://vim.wikia.com/wiki/Copy,_cut_and_paste>
+
+## Servers
+
+* Logging into a server
+  * $ ssh student@45.55.24.145
+  * iamagreatengineer
+* SSH (Secure Socket Shell)
+  * Way of connecting to remote devices
+  * Authentication
+    * username/password
+    * ssh key
+  * Public Key Authentication
+* Creating an SSH Key
+  * $ cd ~/.ssh/
+  * $ ssh-keygen -t rsa
+  * $ less my_key2.pub
+* Don't lose your private key!
