@@ -44,7 +44,7 @@
 
 ## Servers
 
-* Logging into a server
+* Loggin`g into a server
   * $ ssh student@45.55.24.145
   * iamagreatengineer
 * SSH (Secure Socket Shell)
@@ -58,3 +58,30 @@
   * $ ssh-keygen -t rsa
   * $ less my_key2.pub
 * Don't lose your private key!
+
+## VPS and Cloud Computing
+
+* Dedicated server
+* VPS - Virtual Private Server
+* $ cat ~/.ssh/my_key.pub
+* Log into your server
+  * $ ssh -i ~/.ssh/my_key root@$YOUR_SERVER_IP
+* $ top
+  * Equivalent to task manager on Windows.
+  * Tells you what is happening on your system.
+  * $ apt install htop
+* Set up your server
+  * Update software
+    * $ apt-get update
+  * Create a new user
+    * $ adduser $USERNAME
+  * Add user to sudo group
+    * usermod -aG sudo $USERNAME
+  * Switch user
+    * $ su $USERNAME
+  * Make sure user has sudo access
+    * $ sudo cat /var/log/auth.log
+    * $ sudo !!
+      * will replay previous command as sudo.
+  * Log into server as user created
+    * $ ssh $USERNAME@$YOUR_SERVER_IP
