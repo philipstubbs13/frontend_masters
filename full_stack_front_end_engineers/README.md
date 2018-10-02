@@ -85,3 +85,9 @@
       * will replay previous command as sudo.
   * Log into server as user created
     * $ ssh $USERNAME@$YOUR_SERVER_IP
+
+## Logging in with SSH
+
+* Set up your server
+  * $ cat ~/.ssh/my_key.pub | ssh $USERNAME@$SERVER_IP "mkdir -p ~/.ssh && cat >> ~/.ssh/authorized_keys"
+  * ssh -i my_key2 phil@142.93.195.54
