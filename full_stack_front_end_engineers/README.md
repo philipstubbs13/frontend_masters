@@ -97,3 +97,10 @@
 * $ sudo vi /etc/ssh/sshd_config
   * PermitRootLogin no
 * $ sudo service sshd restart
+
+## Getting a Domain Name
+
+* <https://www.namecheap.com>
+* <https://support.dnsimple.com/articles/differences-between-a-cname-alias-url/>
+* <http://keycode.info>
+* <https://github.com/wesbos/keycodes/blob/gh-pages/CNAME>
