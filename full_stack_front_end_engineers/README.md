@@ -144,3 +144,69 @@
   * npm i
 * Start the server
   * node app.js
+* Changing server ports
+  * $ sudo vi /etc/nginx/sites-available/default
+  * location / {
+    proxy_pass http://127.0.0.1:3001/;
+  }
+* Restart ngix
+  * $ sudo service nginx reload
+  * OR
+  * $ sudo service nginx restart
+* Restart node server
+  * $ node app.js
+* swagggy.fun --> 142.93.195.54 --> Nginx/Apache --> Node
+* HTML
+  * Move into app directory
+    * cd /var/www/app
+  * Make a new branch
+    * git checkout -b some_branch_name
+  * Modify the html to your hearts content
+    * vi index.html
+
+## Build and Deploy
+
+* Gulp - a JavaScript task runner
+  * Similar: Grunt, Broccoli, Brunch, Jake
+* Create gulp tasks
+  * Open gulpfile.js in VI. It's in the root directory of the demo project.
+  * Fill in the gulp task clean-css so that any css files in the dist folder are removed.
+  * Add your new task to build task.
+* Installing Gulp
+  * Fixing npm permissions
+    * <https://docs.npmjs.com/getting-started/fixing-npm-permissions>
+  * $ sudo mkdir -p /usr/local/lib/node_modules
+  * $ npm config get prefix
+  * $ sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}
+  * $ npm i -g gulp
+  * $ gulp build
+  * $ ls dist/
+
+## Keep app running
+
+* Forever - a process manager that keeps a process running indefinitely
+* Run Forever
+  * $ pwd
+  * /var/www/app
+  * $ npm i -g forever
+  * forever start app.js
+  * forever stopall
+
+## Log files
+
+* Create a log file for the forever process
+  * $ sudo mkdir /var/log/forever
+* Change owner to current user
+  * $ sudo chown -R $USER /var/log/forever
+* Start forever and log the output
+  * $ forever start app.js >> /var/log/forever/forever.log
+  * cat /var/log/forever/forever.log
+* Tailing a log file
+  * Tail looks at the bottom of the log file. There is also head. Tells you what is going on in real time.
+  * $ sudo tail -f /var/log/auth.log
+
+## Putting it all together
+
+* package.json
+  * "deploy": "gulp build && forever start app.js >> /var/log/forever/forever.log"
+* $ npm run deploy
