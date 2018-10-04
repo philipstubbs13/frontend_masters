@@ -104,3 +104,43 @@
 * <https://support.dnsimple.com/articles/differences-between-a-cname-alias-url/>
 * <http://keycode.info>
 * <https://github.com/wesbos/keycodes/blob/gh-pages/CNAME>
+
+## Nginx (engine x)
+
+* A HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server.
+* Install nginx
+  * $ sudo apt-get install nginx
+* Start nginx
+  * $ sudo service ngix start
+  * Type your server's IP address into a browser.
+* Uninstall nginx
+  * $ sudo apt-get remove nginx
+* Domain name lookup
+  * $ nslookup swaggy.fun
+* Nginx configuration
+  * $ sudo cat /etc/nginx/sites-available/default
+  * $ sudo less /etc/nginx/sites-available/default
+* Install git
+  * $ sudo apt-get install git
+* Install node and npm
+  * $ sudo apt-get install nodejs npm
+  * $ nodejs --version
+* symlink nodejs to node
+  * $ sudo ln -s /usr/bin/nodejs /usr/bin/node
+  * $ node --version
+* Make a web directory (if it doesn't already exist)
+  * $ sudo mkdir -p /var/www
+* Changing permissions
+  * Change ownership of the web directory to the current user
+    * $ sudo chown -R $USER:$USER /var/www
+    * cd /var/www
+* Clone git repo
+  * git clone https://github.com/young/Dev-Ops-for-Frontend.git
+* Rename director to app/
+  * $ mv Dev-Ops-for-Frontend/ app/
+* Move into to app directory
+  * cd app/
+* install npm packages
+  * npm i
+* Start the server
+  * node app.js
