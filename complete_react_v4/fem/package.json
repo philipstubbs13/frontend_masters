@@ -6,12 +6,16 @@
   "scripts": {
     "format": "prettier --write \"src/**/*.{js,jsx,css,json} \"  ",
     "format:check": "prettier --list-different \"src/**/*.{js,jsx,css,json} \"  ",
+    "lint": "eslint \"**/*.{js, jsx}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^5.6.1",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-prettier": "^3.0.0",
     "prettier": "^1.14.3"
   }
 }
