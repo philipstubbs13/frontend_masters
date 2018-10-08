@@ -22629,37 +22629,63 @@ var App =
 function (_React$Component) {
   _inherits(App, _React$Component);
 
-  function App() {
+  function App(props) {
+    var _this;
+
     _classCallCheck(this, App);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(App).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, props));
+    _this.state = {
+      pets: []
+    };
+    return _this;
   }
 
   _createClass(App, [{
     key: "componentDidMount",
-    // constructor (props)
     value: function componentDidMount() {
-      var promise = petfinder.breed.list({
-        animal: "dog"
+      var _this2 = this;
+
+      petfinder.pet.find({
+        output: "full",
+        location: "Seattle, WA"
+      }).then(function (data) {
+        var pets;
+
+        if (data.petfinder.pets && data.petfinder.pets.pet) {
+          if (Array.isArray(data.petfinder.pets.pet)) {
+            pets = data.petfinder.pets.pet;
+          } else {
+            pets = [data.petfinder.pets.pet];
+          }
+        } else {
+          pets = [];
+        }
+
+        _this2.setState({
+          pets: pets
+        });
       });
-      promise.then(console.log, console.error);
     }
   }, {
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", null, _react.default.createElement("h1", null, "Adopt Me"), _react.default.createElement(_Pet.default, {
-        name: "Luna",
-        animal: "dog",
-        breed: "Havanese"
-      }), _react.default.createElement(_Pet.default, {
-        name: "Pepper",
-        animal: "bird",
-        breed: "Cockatiel"
-      }), _react.default.createElement(_Pet.default, {
-        name: "Doink",
-        animal: "cat",
-        breed: "Mixed"
-      }));
+      return _react.default.createElement("div", null, _react.default.createElement("h1", null, "Adopt Me"), _react.default.createElement("div", null, this.state.pets.map(function (pet) {
+        var breed;
+
+        if (Array.isArray(pet.breeds.breed)) {
+          breed = pet.breeds.breed.join(", ");
+        } else {
+          breed = pet.breeds.breed;
+        }
+
+        return _react.default.createElement(_Pet.default, {
+          key: pet.id,
+          animal: pet.animal,
+          name: pet.name,
+          breed: breed
+        });
+      })));
     }
   }]);
 
