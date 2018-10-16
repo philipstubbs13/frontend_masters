@@ -12,7 +12,7 @@ const petfinder = pf({
 class Details extends React.Component {
   state = {
     loading: true,
-    showModal: true
+    showModal: false
   };
 
   toggleModal = () => this.setState({ showModal: !this.state.showModal });
@@ -46,6 +46,11 @@ class Details extends React.Component {
         navigate("/");
       });
   }
+
+  // shouldComponentUpdate() {
+  //   return false;
+  // }
+
   render() {
     if (this.state.loading) {
       return <h1>Loading...</h1>;
