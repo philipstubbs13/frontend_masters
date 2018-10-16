@@ -25697,6 +25697,8 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       if (this.state.loading) {
         return _react.default.createElement("h1", null, "Loading...");
       }
@@ -25709,11 +25711,16 @@ function (_React$Component) {
           description = _this$state.description,
           media = _this$state.media,
           showModal = _this$state.showModal;
+      console.log(this.myH1);
       return _react.default.createElement("div", {
         className: "details"
       }, _react.default.createElement(_Carousel.default, {
         media: media
-      }), _react.default.createElement("div", null, _react.default.createElement("h1", null, name), _react.default.createElement("h2", null, animal, " - ", breed, " - ", location), _react.default.createElement("button", {
+      }), _react.default.createElement("div", null, _react.default.createElement("h1", {
+        ref: function ref(el) {
+          return _this3.myH1 = el;
+        }
+      }, name), _react.default.createElement("h2", null, animal, " - ", breed, " - ", location), _react.default.createElement("button", {
         onClick: this.toggleModal
       }, "Adopt ", name), _react.default.createElement("p", null, description), showModal ? _react.default.createElement(_Modal.default, null, _react.default.createElement("h1", null, "Would you like to adopt ", name, "?"), _react.default.createElement("div", {
         className: "buttons"
