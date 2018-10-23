@@ -3,6 +3,7 @@ import userController from './user.controller'
 
 export const userRouter = express.Router()
 
+// /:id
 userRouter.param('id', userController.findByParam)
 
 userRouter.route('/')
@@ -12,4 +13,4 @@ userRouter.route('/')
 userRouter.route('/:id')
   .get(userController.getOne)
   .put(userController.updateOne)
-  .delete(userController.createOne)
+  .delete(userController.deleteOne)

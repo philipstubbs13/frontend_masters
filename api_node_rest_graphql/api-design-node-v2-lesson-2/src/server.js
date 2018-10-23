@@ -10,18 +10,20 @@ const apiRouter = express.Router()
 
 
 apiRouter.get('/', (req, res) => res.json({api: true}))
-apiRouter.all('*', (req, res) => res.json({apiAll: true}))
+// apiRouter.all('*', (req, res) => res.json({apiAll: true}))
 
-GET => /api
-GET => /api/ajfkda/afjd
+// GET => /api
+// GET => /api/ajfkda/afjd
 
 setupMiddware(app)
-connect()
+// connect()
 // setup basic routing for index route
+
+// mount the restRouter on the /api path
 
 app.use('/signin', signin)
 
-app.use('/api', apiRouter)
+app.use('/api', restRouter)
 
 // catch all
 app.get('/', (req, res) => res.json({ first: true}))
