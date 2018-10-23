@@ -5,9 +5,6 @@ import { createServer } from 'http'
 import app from './server'
 // import schema from './schema'
 
-// This is specifically in the code for hot module reloading and web sockets to work.
-// If not using hot module reloading or web sockets, then you don't need this next line in there.
-// you can just do app.listen
 const server = http.createServer(app)
 let currentApp = app
 
