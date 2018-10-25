@@ -39,4 +39,16 @@
 * Static & Dynamic configuration
 * Support for all HTTP verbs
 * Order based
-* // test
+
+## Controllers and Responding
+
+* Access to incoming Request
+* Reuse controllers
+* Async or Sync (should be async for prod)
+* Composable
+* Can respond with anything.
+* Using express to send back things.
+  * res.send('Hello)
+  * res.json({ ok: true })
+  * res.status(201).json({})
+  * res.sendFile()
