@@ -63,3 +63,18 @@
   * Enhancing request
   * Logging
 * Can me mounted globally
+
+## MongoDB and data persistence
+
+* A No-SQL document store to store our application's data.
+  * Very flexible
+  * Easy to store data
+  * Easy to query data
+  * Schemaless
+* Mongoose
+  * The go-to ODM for MongoDB
+    * Schemas for saving data
+    * Validations
+    * Querying API
+    * Lifecycle hooks
+    * Run time join tables (populations)
