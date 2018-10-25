@@ -33,7 +33,8 @@ export const createOne = (model) => (req, res, next) => {
     .then(doc => res.status(201).json(doc))
     .catch(error => next(error))
 }
-
+ 
+// PUT /song/:id {name: 'newName'}
 export const updateOne = (model) => async (req, res, next) => {
   const docToUpdate = req.docFromId
   const update = req.body
@@ -43,14 +44,16 @@ export const updateOne = (model) => async (req, res, next) => {
     .catch(error => next(error))
 }
 
+// DELETE /song/:id 
 export const deleteOne = (model) => (req, res, next) => {
   return controllers.deleteOne(req.docFromId)
     .then(doc => res.status(201).json(doc))
     .catch(error => next(error))
 }
 
+// GET /song/:id
 export const getOne = (model) => (req, res, next) => {
-  return controllers.getOne(req.docToUpdate)
+  return controllers.getOne(req.docFromId)
     .then(doc => res.status(200).json(doc))
     .catch(error => next(error))
 }

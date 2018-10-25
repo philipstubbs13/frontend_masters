@@ -52,3 +52,14 @@
   * res.json({ ok: true })
   * res.status(201).json({})
   * res.sendFile()
+
+## Middleware
+
+* Functions that can be configured to run before the response is sent back.
+* Has the same API as controllers
+* Use a callback function to pass control to the next function in the middleware stack
+* Great for
+  * Authenticating
+  * Enhancing request
+  * Logging
+* Can me mounted globally
