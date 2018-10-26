@@ -17,7 +17,7 @@ export const Song = mongoose.model('song', songSchema)
 // const dogSchema = {
 //   name: {
 //     type: String,
-//     required: true,
+//     required: [true, 'Dogs must have names homie'],
 //     unique: true
 //   },
 
