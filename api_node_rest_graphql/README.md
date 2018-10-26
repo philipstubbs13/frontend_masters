@@ -78,3 +78,36 @@
     * Querying API
     * Lifecycle hooks
     * Run time join tables (populations)
+
+## CRUD in the Controllers
+
+* Create controllers for each http VERB + route configuration
+* Use information from request and middleware to provide details to DB queries and inserts.
+  * Query params
+  * Route params
+  * Tokens
+  * Cookies
+  * IP's
+* Keep it async
+* Try to minimize touching the DB
+
+## MongoDB Querying
+
+* Model level
+
+const song = await Song.findById(id).exec()
+Song.findOne({name: 'thisname'}).exec()
+
+const song = new Song({})
+Song.create({})
+
+Song.findOneAndUpdate({name: 'thisname'}, {name: 'othername'}, {new: true})
+Song.findByIdAndUpdate({})
+
+* document level
+
+song.name='jafkdlajkfdl'
+const newSong = await song.save()
+song.save()
+song.remove()
+song.populate()
