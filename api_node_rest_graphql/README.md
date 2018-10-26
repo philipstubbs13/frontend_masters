@@ -1,6 +1,8 @@
 # API Design with Node
 
 * Instructor: Scott Moss
+* Code (GitHub): <https://github.com/FrontendMasters/api-design-node-v2/tree/lesson-6-solution>
+* Slides <https://docs.google.com/presentation/d/1IFirA70uc_GmrOS6WQh2Uy_N09yqpNPTWD-zgxA4MXE/edit>
 
 ## What is Node js
 
