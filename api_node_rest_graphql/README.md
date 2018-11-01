@@ -113,3 +113,17 @@ const newSong = await song.save()
 song.save()
 song.remove()
 song.populate()
+
+## Dynamic Configuration
+
+* Create configs based on environment
+  * Dev
+  * Testing
+  * Production
+  * Staging
+* Keep all config in one place
+* Use config values in place of hard coded values in your app.
+  * DB connection urls
+  * Ports
+  * Secrets
+* Setup config values on different platforms using env variables.
