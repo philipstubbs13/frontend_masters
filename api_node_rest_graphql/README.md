@@ -127,3 +127,42 @@ song.populate()
   * Ports
   * Secrets
 * Setup config values on different platforms using env variables.
+
+## GraphQL
+
+* What is GraphQL
+  * GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. GraphQL provides a complete and understandable description of the data in your API, gives clients the power to ask exactly what they need and nothing more, makes it easier to evolve APIs over time, and enables powerful developer tools.
+
+* What is it really?
+  * A query language for your API. Clients describe how they want their data and the shape of it using a query language similar to JSON. Those requests are validated against a Schea you create on your server. Your server then satisfied that shape however it wants using resolvers.
+  * Can be used in tandem with your current API
+  * Only needs one route for all requests.
+  * Doesn't care about how you resolve the data, just has to match the shapes.
+  * Don't need versions ever again
+  * Your best friend
+
+## GraphQL vs REST
+
+* GraphQL
+  * One route
+  * Not based on HTTP verbs
+  * Strict data typing
+  * Interactive docs
+  * Works well with a component architecture
+  * Advanced data resolving
+* Rest
+  * Many routes
+  * Based on HTTP verbs
+  * Cacheable on a network level
+
+* GraphQL schemas
+  * The schemas solve the same problem our Mongoose Schema did, but on the API level compared to the DB level.
+    * Defines Types, Queries, and Mutations
+      * Types are similar to the models (song model, playlist model, user model, etc.)
+      * Query is similar to a GET request in REST.
+      * Mutation is similar to a PUT, DELETE, or POST request in REST.
+    * Needed to check client queries against
+    * Can be written in a few ways
+    * Can be generated dynamically
+    * Is very strict
+    * Composable

@@ -1,0 +1,13 @@
+type Playlist {
+  id: ID!
+  title: String!
+  songs: [Song]!
+  favorite: Boolean!
+}
+
+input UpdatedPlaylist {
+  id: ID!
+  title: String
+  songs: [NewSong]
+  favorite: Boolean
+}

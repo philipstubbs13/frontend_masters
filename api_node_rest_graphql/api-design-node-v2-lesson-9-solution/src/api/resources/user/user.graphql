@@ -1,0 +1,14 @@
+type User {
+  id: ID!
+  username: String!
+  createdAt: String!
+  updatedAt: String!
+}
+
+input UpdatedUser {
+  username: String!
+}
+
+type Query {
+  getMe: User!
+}
