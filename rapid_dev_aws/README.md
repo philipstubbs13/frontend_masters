@@ -93,4 +93,22 @@ Happy coding with awsmobile!
   * To select AWS features to turn on or off. Press SPACE to select or A to toggle all or I to inverse the selection
 * awsmobile push
   * Uploads project details to Mobile Hub from your local machine.
+* awsmobile
+  * See the list of features.
+* awsmobile user-signin enable
+  * Get the default settings.
+  * awsmobile user-signin enable --prompt
+    * To confirm details about the AWS sign-in feature. Leaving off the --prompt subcommand uses the default user-signin settings.
+* awsmobile push
+  * To upload the latest project changes to Mobile Hub from your local machine.
+
+## AWS Console Settings
+
+* awsmobile console
+  * To launch the browser to check if application changes made it to Mobile Hub.
+
+## Adding Amplify withAuthenticator into React
+
+* awsmobile pull
+  * To download the latest project changes to your local machine from Mobile Hub.
 
