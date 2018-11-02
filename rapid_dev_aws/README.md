@@ -86,3 +86,11 @@ Happy coding with awsmobile!
 
 * awsmobile
   * To display the builtin commands of awsmobile.
+
+## Adding Authentication to React
+
+* awsmobile features
+  * To select AWS features to turn on or off. Press SPACE to select or A to toggle all or I to inverse the selection
+* awsmobile push
+  * Uploads project details to Mobile Hub from your local machine.
+
