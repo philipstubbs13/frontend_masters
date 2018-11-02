@@ -112,3 +112,10 @@ Happy coding with awsmobile!
 * awsmobile pull
   * To download the latest project changes to your local machine from Mobile Hub.
 
+## Adding a Database with MobileHub
+
+* awsmobile database enable --prompt
+  * To add database table details
+* awsmobile push
+  * To upload the latest project changes to Mobile Hub from your local machine.
+
