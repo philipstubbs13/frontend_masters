@@ -43,3 +43,46 @@
 * GraphQL as a service
 * Can be built on top of DynamoDB, Elastic Search, or Lambda functions.
 * Can be used with AWS Amplify and Mobile Hub, but it doesn't need to.
+
+## React Application Code
+
+* <https://github.com/stevekinney/grudges>
+
+## AWS Mobile Hub CLI Setup
+
+* which awsmobile
+  * Where is AWS Mobile CLI tools installed on your system
+* awsmobile configure
+  * To connect AWS Mobile CLI tools with your AWS account
+* awsmobile init
+  * Initialize a new aws backend for this application
+
+<pre>
+Success! your project is now initialized with awsmobilejs
+
+   awsmobilejs\.awsmobile
+     is the workspace of awsmobile-cli, please do not modify its contents
+
+   awsmobilejs\#current-backend-info
+     contains information of the backend awsmobile project from the last
+     synchronization with the cloud
+
+   awsmobilejs\backend
+     is where you develop the codebase of the backend awsmobile project
+
+   awsmobile console
+     opens the web console of the backend awsmobile project
+
+   awsmobile run
+     pushes the latest development of the backend awsmobile project to the cloud,
+     and runs the frontend application locally
+
+   awsmobile publish
+     pushes the latest development of the backend awsmobile project to the cloud,
+     and publishes the frontend application to aws S3 for hosting
+
+Happy coding with awsmobile!
+</pre>
+
+* awsmobile
+  * To display the builtin commands of awsmobile.
