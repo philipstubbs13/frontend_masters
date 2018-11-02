@@ -1,0 +1,11 @@
+.NewGrudge {
+  display: flex;
+}
+
+.NewGrudge-input {
+  width: 100%;
+}
+
+.NewGrudge-input:not(:last-child) {
+  margin-right: 5px;
+}
