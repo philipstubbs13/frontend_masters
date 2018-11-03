@@ -3,6 +3,7 @@ import NewGrudge from './NewGrudge';
 import Grudges from './Grudges';
 import './Application.css';
 
+import { API } from 'aws-amplify';
 import { withAuthenticator } from 'aws-amplify-react';
 
 class Application extends Component {
@@ -10,22 +11,35 @@ class Application extends Component {
     grudges: [],
   };
 
-  addGrudge = grudge => {
-    this.setState({ grudges: [grudge, ...this.state.grudges] });
-  };
+  componentDidMount() {
+    API.get('grudgesCRUD', '/grudges').then(grudges => {
+      // console.log('got grudges', { grudges });
+      this.setState({ grudges });
+    });
+  }
 
-  removeGrudge = grudge => {
-    this.setState({
-      grudges: this.state.grudges.filter(other => other.id !== grudge.id),
+  addGrudge = grudge => {
+    API.post('grudgesCRUD', '/grudges', { body: grudge }).then(() => {
+      this.setState({ grudges: [grudge, ...this.state.grudges] });
     });
   };
 
+  removeGrudge = grudge => {
+    API.del('grudgesCRUD', '/grudges/object/' + grudge.id).then(() => {
+      this.setState({
+        grudges: this.state.grudges.filter(other => other.id !== grudge.id),
+      });
+    })
+  };
+
   toggle = grudge => {
-    const othergrudges = this.state.grudges.filter(
-      other => other.id !== grudge.id,
-    );
     const updatedGrudge = { ...grudge, avenged: !grudge.avenged };
-    this.setState({ grudges: [updatedGrudge, ...othergrudges] });
+    API.put('grudgesCRUD', '/grudges', { body: updatedGrudge }).then(() => {
+      const othergrudges = this.state.grudges.filter(
+        other => other.id !== grudge.id,
+      );
+      this.setState({ grudges: [updatedGrudge, ...othergrudges] });
+    });
   };
 
   render() {
