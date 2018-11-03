@@ -118,4 +118,119 @@ Happy coding with awsmobile!
   * To add database table details
 * awsmobile push
   * To upload the latest project changes to Mobile Hub from your local machine.
+* awsmobile console
+  * To launch the browser to check if application changes made it to the Mobile Hub.
 
+## Adding Cloud API with Mobile Hub
+
+* awsmobile cloud-api enable --prompt
+  * To create, remove, or edit an API related to the application.
+
+<pre>
+Adding lambda function code on:
+C:\Users\phili\Desktop\coding_projects\frontend_masters\rapid_dev_aws\grudges\awsmobilejs\backend\cloud-api\grudges/
+...
+Path to be used on API for get and remove an object should be like:
+/grudges/object/:id
+
+Path to be used on API for list objects on get method should be like:
+/grudges
+
+JSON to be used as data on put request should be like:
+{
+  "avenged": "INSERT VALUE HERE",
+  "deed": "INSERT VALUE HERE",
+  "id": "INSERT VALUE HERE",
+  "person": "INSERT VALUE HERE"
+}
+To test the api from the command line (after awsmobile push) use this commands
+awsmobile cloud-api invoke grudgesCRUD <method> <path> [init]
+</pre>
+
+* awsmobile push
+* awsmobile console
+
+## Saving React State to the Cloud API
+
+## Publishing Your App
+
+* awsmobile publish
+  * To first upload the latest project changes to Mobile Hub and then publish the react application on S3.
+  * <https://aws.amazon.com/cloudfront/>
+  * <https://aws.amazon.com/route53>
+
+## API and Auth Modules
+
+* We used the Authenticator HOC (Higher Order Component), but there are also lower level APIs that we can use.
+
+<pre>
+Auth.signIn(username, password)
+  .then(console.log)
+  .catch(console.error);
+
+Auth.signOut().then(console.log).catch(console.error);
+</pre>
+
+* You can get information about the current user.
+
+<pre>
+const user = await Auth.currentAuthenticatedUser()
+const session = await Auth.currentSession();
+</pre>
+
+* The API class has the methods you'd suspect and then one additional one.
+
+<pre>
+import { API } from 'aws-amplify';
+
+API.get(apiName, path, init);
+API.post(apiName, path, init);
+API.patch(apiName, path, init);
+API.put(apiName, path, init);
+API.del(apiName, path, init);
+API.graphql(graphqlOperation);
+</pre>
+
+* Each CRUD method takes 3 arguments
+  * apiName: The name of the API Gateway you want to hit.
+  * path: The path you want to hit on that API.
+  * init: Additional options (e.g. header, body, query strings)
+
+* Getting grudges
+
+<pre>
+API.get('grudgesCRUD', '/grudges')
+  .then(grudges => console.log('All the grudges.', grudges))
+  .catch(console.error);
+
+API.get('grudgesCRUD', `/grudges/object/${grudge.id}`)
+  .then(grudges => console.log('Just one grudge.', grudges))
+  .catch(console.error);
+</pre>
+
+* A POST request
+
+<pre>
+import { API } from 'aws-amplify';
+
+API.post('grudgesCRUD', '/grudges', {
+  body: {
+    id: '123',
+    person: 'Bob Ross',
+    deed: 'Making painting look too easy.',
+    avenged: false,
+  },
+});
+</pre>
+
+* Updating and deleting
+
+<pre>
+API.put('grudgesCRUD', '/grudges', { body: updatedGrudge })
+  .then(console.log)
+  .catch(console.error);
+
+API.del('grudgesCRUD', '/grudges/object/${grudge.id}`)
+  .then(console.log)
+  .catch(console.error);
+</pre>
