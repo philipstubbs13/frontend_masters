@@ -75,3 +75,77 @@
 
 * AWS S3 Management Console: <https://console.aws.amazon.com/s3/home?region=us-east-2>
 * Setting up an S3 Bucket: <https://static.frontendmasters.com/resources/2018-08-14-deploy-apps-aws-react/06-Setting-Up-S3.pdf>
+
+## AWS CLI
+
+* Installing the AWS Command Line Interface
+  * <https://docs.aws.amazon.com/cli/latest/userguide/installing.html>
+  * aws configure
+  * You can also support multiple profiles with the AWS CLI.
+    * --profile sideproject
+
+## Deploying to S3 through the CLI
+
+* Anything you can do in the console you can do with the CLI.
+* Deploying React Application from the command line: <https://static.frontendmasters.com/resources/2018-08-14-deploy-apps-aws-react/08-Deploying-a-React-Application-from-the-Command-Line.pdf>
+* To list conents of the bucket associated with the domain name:
+  * aws s3 ls s3://<DOMAINNAME>
+* Copying a directory to S3
+  * aws s3 cp dist/ s3://mysuperfunwebsite.com/ --recursive
+  * aws s3 cp build/ s3://mysuperfunwebsite.com/ --recursive
+* To download the code for the base project you can use. By default, you'll be on the master branch.
+  * git clone https://github.com/stevekinney/noted-base.git
+* Live project code: <https://github.com/stevekinney/noted-live>
+* Build application
+  * yarn install
+  * yarn run build
+* aws --version
+* <https://docs.aws.amazon.com/cli/latest/userguide/awscli-install-windows.html#install-msi-on-windows>
+* C:\Program Files\Amazon\AWSCLI
+* aws s3 cp build/ s3://artowl.co --recursive
+* Add "deploy" script to package.json: "yarn run build && aws s3 cp build/ s3://artowl.co --recursive"
+
+## Route 53
+
+* Route 53 is a scalable DNS Service (Domain Name Service)
+* awesomeapp.io --> 52.84.82.66
+
+## Setting up DNS
+
+* Making Amazon Route 53 the DNS Service for an Existing Domain: <https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/MigratingDNS.html>
+
+## Creting a SSL Certificate
+
+* Certificate Manager > Provision certificates > Get started > Request a public certificate > Add domain name (artowl.co and www.artowl.co) > DNS validation > Create record in Route 53
+
+## Client side Routing and S3
+
+* Client side routing guide: <https://static.frontendmasters.com/resources/2018-08-14-deploy-apps-aws-react/09.1-Client-side-Routing-and-S3.pdf>
+
+## Setting up a www subdomain
+
+* <https://www.yes-www.org/>
+* Aliasing www subdomains guide: <https://static.frontendmasters.com/resources/2018-08-14-deploy-apps-aws-react/09.2-Aliasing-WWW-Subdomains.pdf>
+
+## Creating a CloudFront Distribution
+
+* <https://aws.amazon.com/cloudfront/>
+* Globally distributing the application around the world.
+
+## Rerouting DNS
+
+* Setting Up CloudFront Guide: <https://static.frontendmasters.com/resources/2018-08-14-deploy-apps-aws-react/11-CloudFront.pdf>
+* Use the full web address of the site provided by AWS's S3 service for Origin Domain Name
+* Got to Hosted zones in AWS's Route 53 service dashboard to update the Alias Target values.
+
+## CloudFront Overview
+
+* CloudFront supports HTTP/2 out of the box.
+* CloudFront will cache our assets in S3, which reduces the number of requests. This is nice because it reduces our costs.
+* By default, CloudFront ignores request headers.
+* Some CloudFront Custom Headers
+  * CloudFront-Is-Desktop-Viewer
+  * CloudFront-Is-Mobile-Viewer
+  * CloudFront-Is-SmartTV-Viewer
+  * CloudFront-Is-Tablet-Viewer
+  * CloudFront-Viewer-Country
