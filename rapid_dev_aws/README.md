@@ -234,3 +234,54 @@ API.del('grudgesCRUD', '/grudges/object/${grudge.id}`)
   .then(console.log)
   .catch(console.error);
 </pre>
+
+## Storage API Overview
+
+* Supports Basic "CRUD"
+
+```bash
+import { Storage } from aws-amplify;
+
+Storage.get('photos/lololol.png');
+Storage.put('photos/lololol.png');
+Storage.remove('photos/lololol.png');
+Storage.list('photos/');
+```
+
+* Three levels of storage
+
+```bash
+import { Storage } from 'aws-amplify';
+
+Storage.get('lololol.png'); // Default: public
+
+Storage.get('lololol.png', { level: 'public' });
+Storage.get('lololol.png', { level: 'protected' });
+Storage.get('lololol.png', { level: 'private' });
+Storage.vault.get('lololol.png'); // Default: private
+
+// Each of these return a promise
+```
+
+* You can also create URLs with expirations.
+
+```bash
+Storage.get('lololol.png', { expires: 60 })
+  .then(result => console.log(result))
+  .catch(err => console.log(err));
+```
+
+## Trapper Keeper React App
+
+```bash
+git clone https://github.com/stevekinney/trapper-keeper
+```
+
+* awsmobile user-files enable
+* awsmobile analytics disable
+* awsmobile push
+
+## Adding Auth to Make Images Private
+
+* awsmobile user-signin enable --prompt
+* awsmobile push
