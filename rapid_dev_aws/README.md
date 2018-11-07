@@ -444,4 +444,16 @@ query GetAllOfTheGrudges {
 
 * awsmobile init
 * yarn add aws-amplify aws-amplify-react
+
+## Other AWS Services
   
+* Amplify provides a set of helpers that make it easy to work with AWS.
+* It pairs nicely with AWS Mobile Hub and AppSync, but can be used without either.
+* AppSync makes it easy to quickly provision GraphQL services backed by either Dynamo, Elastic Search, or custom logic.
+* Areas of Further Research
+  * AWS Mobile Hub is framework agnostic.
+  * Pinpoint allows you to track users engagement and send push notifications based on different behavior.
+    * <https://aws.amazon.com/pinpoint/>
+  * AWS Mobile Hub supports integration Lex for building conversational experiences.
+    * <https://aws.amazon.com/lex/>
+  * AWS Mobile Hub applications are real applications and can play nicely with any AWS service.
