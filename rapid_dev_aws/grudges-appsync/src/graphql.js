@@ -10,3 +10,22 @@ export const ListGrudges = `
     }
   }
 `;
+
+export const CreateGrudge = `
+  mutation CreateGrudge(
+    $person: String!
+    $deed: String!
+    $avenged: Boolean!
+  ) {
+    createGrudge(input: {
+      person: $person,
+      deed: $deed,
+      avenged: $avenged
+    }) {
+      id
+      person
+      deed
+      avenged
+    }
+  }
+`;

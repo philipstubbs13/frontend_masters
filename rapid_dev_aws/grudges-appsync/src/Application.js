@@ -4,7 +4,7 @@ import Grudges from './Grudges';
 import './Application.css';
 
 import { API, graphqlOperation } from 'aws-amplify';
-import { ListGrudges } from './graphql';
+import { ListGrudges, CreateGrudge } from './graphql';
 
 class Application extends Component {
   state = {
@@ -20,7 +20,10 @@ class Application extends Component {
   }
 
   addGrudge = grudge => {
-    this.setState({ grudges: [grudge, ...this.state.grudges] });
+    API.graphql(graphqlOperation(CreateGrudge, grudge)).then(response => {
+      const newGrudge = response.data.createGrudge;
+      this.setState({ grudges: [newGrudge, ...this.state.grudges] });
+    });
   };
 
   removeGrudge = grudge => {
