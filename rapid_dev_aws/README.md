@@ -285,3 +285,163 @@ git clone https://github.com/stevekinney/trapper-keeper
 
 * awsmobile user-signin enable --prompt
 * awsmobile push
+
+## AppSync Overview
+
+* <https://aws.amazon.com/appsync/>
+* What is AppSync?
+  * GraphQL as a service
+  * AppSync will automatically create the database you need on your behalf.
+  * Can be used with existing backends with AWS Lambda functions. (This is beyond our scope.)
+  * Supports "real-time" subscriptions.
+  * Can be used offline. (This is beyond our scope.)
+
+## GraphQL Overview
+
+* GraphQL is a data query language developed and used by Facebook.
+* Queries get you stuff from the database.
+* Mutations change stuff in your database.
+* Subscripions subscribe you to changes in your database.
+* The schema is what your data look like. It's your API contact.
+* GraphQL is strongly typed.
+  * ! means required field
+  * No ! means optional field.
+
+```bash
+type BanhMi {
+  id: ID!
+  protein: String!
+  bread: String!
+  toppings: [String]
+}
+```
+
+* In your schema, you can define what queries an application can call.
+
+```bash
+type Query {
+  getBahnMi(id: ID!) BanhMi
+  getAllBanhMis: [Banhmi]
+}
+```
+
+* You can also define how that data can be mutated in your schema.
+
+```bash
+type CreateBanhMiInput {
+  id: ID!
+  protein: String!
+  bread: String!
+  toppings: [String]
+}
+
+type Mutation {
+  createBanhMi(input: CreateBanhMiInput!): BanhMi
+}
+```
+
+* Your queries can ask for just the data they need.
+
+```bash
+query GetBanhMi {
+  getBahnMi(id: 123) {
+    id
+    protein
+    bread
+    toppings
+  }
+}
+
+query GetBanhMi {
+  getBahnMi(id: 123) {
+    id
+    protein
+  }
+}
+```
+
+* Clients can mutate the data based on your schema.
+
+```bash
+mutation CreateBanhMi {
+  createBanhMi(input: {
+    id: "456",
+    protein: "jackfruit",
+    bread: "whole wheat",
+    topping: ["jalapenos", "cilantro"]
+  }) {
+    id
+    protein
+    bread
+    topping
+  }
+}
+```
+
+## Creating a Schema & Database
+
+## Queries
+
+```bash
+mutation CreateGrudge {
+  createGrudge(input: {
+    person: "Tanner",
+    deed: "Making me use my old MacBook Pro",
+    avenged: true
+  }) {
+    id
+    person
+    avenged
+  }
+}
+
+query GetGrudge {
+  getGrudge(id: "14b21192-f462-4147-aca4-b10a4e21670c") {
+    id
+    person
+    deed
+    avenged
+  }
+}
+
+query GetAllOfTheGrudges {
+  listGrudges{
+    items {
+      person
+    }
+  }
+}
+
+query GetAllOfTheGrudges {
+  listGrudges{
+    items {
+      person
+    }
+    nextToken
+  }
+}
+
+query GetAllOfTheGrudges {
+  listGrudges(limit: 2){
+    items {
+      person
+    }
+    nextToken
+  }
+}
+
+query GetAllOfTheGrudges {
+  listGrudges(limit: 2, nextToken: "eyJ2ZXJzaW9uIjoxLCJ0b2tlbiI6IkFRSUNBSGg5OUIvN3BjWU41eE96NDZJMW5GeGM4WUNGeG1acmFOMUpqajZLWkFDQ25BRVJ2aWJGcnN3bkovamM5ZVEyVnNPY0FBQUIzVENDQWRrR0NTcUdTSWIzRFFFSEJxQ0NBY293Z2dIR0FnRUFNSUlCdndZSktvWklodmNOQVFjQk1CNEdDV0NHU0FGbEF3UUJMakFSQkF4dXpMSHRpWGxFVWNMckZyOENBUkNBZ2dHUXNWUHg5SEVUMVhpRmJ6bGFMU3kvbFBwWXlRckFUdWpwdURoNytWTll1OGYzTTdWTkRxNFBMZHk4Y3huTVJzMnQ4LzNuaXhZSFVseUE1aGNURjhwSElTTm5QNUpYWGN4dk9Bb2FKaDdQZUI3UnVtOWhZYU5BS1U3Z2JJMk5zM2xVdDE3S0Y3OVB3cDh2c0c4cW9yN2EyQldwd2tlL29ndlgwOWpWOGtJdGVrVkJleEhsWnEzZEE3RmhaYktMTGp2V0dNTGdpTlVCbDg0ek82YnVUa0lSQzhvZkRuTzRScnNXQmxKMy91SytGZ29ZLzFoV0ZITUdxaWl5VTI5N1JUek1hOEN2U0tOWE8xSlFqdks2MU9JL2syZGtMaGk4ZXJWaUozTkIzTHhYNXdpUVNmM1QvMFVvWXZ2L3NrVy95MkhiL1F2dlFLQnQwK1FVRWp6ZjhqaW9zQ1NLL0ExMVBGRjFBYkx2dWtXdW8zT1YrSUZzL01VTE5ObzFHK2Z4cUF2S3p6ekpscldFQU1PR1dSSk5zV3JLNExMVlQ1VnYwWFBDZ2JzOEFNS3BLSGRyM2dNaXJGNVdvMGMvSXE2bEpubGIwR3dZdXJLa291THNjSy8vSTgrb1VrR2pMbVl4MktjbjI3cGdVUjJKcVhDWks5Qy9uZi9WTGM2MExndUxDbm1MN0NuVzR1WURDbHlPSWtMUTQ5MXlCZz09In0=" ){
+    items {
+      person
+    }
+    nextToken
+  }
+}
+```
+
+## Adding AppSync to React
+
+* awsmobile init
+* yarn add aws-amplify aws-amplify-react
+  
