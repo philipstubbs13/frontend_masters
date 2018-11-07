@@ -29,3 +29,14 @@ export const CreateGrudge = `
     }
   }
 `;
+
+export const SubscribeToNewGrudges = `
+  subscription onCreateGrudge {
+    onCreateGrudge {
+      id
+      person
+      deed
+      avenged
+    }
+  }
+`
