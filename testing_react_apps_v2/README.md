@@ -35,3 +35,18 @@ git.io/testing-worshop
 * But really, what is a JavaScript test?
   * <https://blog.kentcdodds.com/but-really-what-is-a-javascript-test-46fe5f3fad77>
   * Something that throws an error when things are wrong.
+
+## Writing a React Test
+
+```bash
+npm run test:react
+```
+
+## Configuring Jest & Babel
+
+```bash
+cd ./other/configuration/calculator
+npm run dev
+npm install --save-dev jest
+npm t
+```
