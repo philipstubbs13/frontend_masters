@@ -50,3 +50,80 @@ npm run dev
 npm install --save-dev jest
 npm t
 ```
+
+## Jest JSDOM
+
+```bash
+"jest": {
+  "testEnvironment": "node"
+},
+```
+
+```bash
+"jest": {
+  "testEnvironment": "jsdom"
+},
+```
+
+## CSS Imports
+
+* Created configuration file called jest.config.js.
+* Created file at test/style-mock.js
+
+```bash
+npm install --save-dev identity-obj-proxy
+```
+
+## CSS Modules
+
+```bash
+npm install --save-dev babel-plugin-dynamic-import-node
+```
+
+## Handling Dynamic Imports
+
+## Adding Code Coverage Reports
+
+* Add this to package.json
+
+```bash
+"test": "jest --coverage",
+```
+
+* Add this to jest-config.js
+
+```bash
+collectCoverageFrom: ['**/src/**/*.js'],
+```
+
+## Jest Watch Mode
+
+```bash
+"test:watch": "jest --watch",
+```
+
+```bash
+npm run test:watch
+```
+
+## Jest Config Review
+
+* Added jest as a dependency.
+* Added identity-obj-proxy as a dependency.
+* Added babel-plugin-dynamic-import-node as a dependency.
+* Added the following scripts:
+
+```bash
+"test": "jest --coverage",
+"test:watch": "jest --watch"
+```
+
+* Added a couple tests.
+* Added jest-config.js
+  * Added moduleNameMapper to support css modules.
+  * Added setupTestFrameworkScriptFile for anything not supported by default.
+  * Specified where we want our coverage to be collected.
+  * Specified coverage thresholds.
+* Updated .babelrc.js
+  * because we do care about tree shaking.
+  * because we have dynamic imports to support.
