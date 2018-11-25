@@ -380,6 +380,23 @@ mutation CreateBanhMi {
 
 ## Creating a Schema & Database
 
+* Create API > Author from scratch
+
+```bash
+type Grudge {
+  id: ID!
+  person: String!
+  deed: String!
+  avenged: Boolean!
+}
+
+type Query {
+  fetchGrudges: [Grudge]!
+}
+```
+
+* Click Create Resouces to create DynamoDB database.
+
 ## Queries
 
 ```bash

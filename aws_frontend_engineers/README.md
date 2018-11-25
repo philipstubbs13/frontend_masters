@@ -149,3 +149,8 @@
   * CloudFront-Is-SmartTV-Viewer
   * CloudFront-Is-Tablet-Viewer
   * CloudFront-Viewer-Country
+
+## Error Pages with CloudFront
+
+* Go to the distribution details in AWS's CloudFront service dashboard to update the Error Pages setting.
+* Setting up CloudFront Error Pages Guide: <https://static.frontendmasters.com/resources/2018-08-14-deploy-apps-aws-react/13-CloudFront-Error-Pages.pdf>
