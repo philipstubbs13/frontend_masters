@@ -127,3 +127,12 @@ npm run test:watch
 * Updated .babelrc.js
   * because we do care about tree shaking.
   * because we have dynamic imports to support.
+
+## Unit Testing a React Component
+
+```bash
+npm run test:client
+```
+
+* <https://blog.kentcdodds.com/but-really-what-is-a-javascript-mock-10d060966f7d>
+* <https://github.com/kentcdodds/how-jest-mocking-works>
