@@ -4,7 +4,10 @@
   "description": "An app to teach you to write React",
   "main": "src/App.js",
   "scripts": {
-    "test": "",
+    "test": "jest --silent",
+    "test:update": "jest --silent -u",
+    "test:watch": "jest --silent --watch",
+    "test:coverage": "jest --silent --coverage",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
     "dev": "parcel src/index.html"

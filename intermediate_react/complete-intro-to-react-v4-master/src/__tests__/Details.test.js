@@ -15,3 +15,12 @@ test("snapshot", () => {
 // </h1>
 // `);
 // });
+
+test("shows modal when toggleModal is called", () => {
+  const c = create(<Details search={() => {}} />);
+  const instance = c.getInstance();
+
+  expect(instance.state.showModal).toBe(false);
+  instance.toggleModal();
+  expect(instance.state.showModal).toBe(true);
+});
