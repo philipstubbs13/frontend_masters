@@ -40,8 +40,10 @@
   },
   "dependencies": {
     "@reach/router": "^1.1.1",
+    "emotion": "^10.0.5",
     "petfinder-client": "^0.0.3",
     "react": "^16.4.2",
-    "react-dom": "^16.4.2"
+    "react-dom": "^16.4.2",
+    "react-emotion": "^10.0.0"
   }
 }
