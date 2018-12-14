@@ -1,7 +1,22 @@
 import React from "react";
 import { Link } from "@reach/router";
-import styled, { injectGlobal } from "react-emotion";
+import styled, { injectGlobal, keyframes } from "react-emotion";
 import colors from "./colors";
+
+const Spin = keyframes`
+  from {
+    transform: rotate(0deg)
+  }
+
+  to {
+    transform: rotate(360deg)
+  }
+`;
+
+const SpyGlass = styled("span")`
+  display: inline-block;
+  animation: 1s ${Spin} linear infinite;
+`;
 
 injectGlobal`
   * {
@@ -31,9 +46,9 @@ const NavBar = () => {
   <Container>
     <NavLink to="/">Adopt Me!</NavLink>
     <NavLink to="/search-params">
-      <span aria-label="search" role="img">
+      <SpyGlass aria-label="search" role="img">
         🔍
-      </span>
+      </SpyGlass>
     </NavLink>
   </Container>;
 };
