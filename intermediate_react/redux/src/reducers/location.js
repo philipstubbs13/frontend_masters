@@ -8,3 +8,12 @@ export default function locationReducer(state = "Seattle, WA", action) {
     return state;
   }
 }
+
+// test("locationReducer", () => {
+//   expect(
+//     locationReducer("Seattle, WA", {
+//       type: "SET_LOCATION",
+//       payload: "San Francisco, CA"
+//     })
+//   ).toBe("San Francisco");
+// });
