@@ -164,3 +164,45 @@ npm install redux redux-thunk react-redux
 ```bash
 npm install babel-cli express
 ```
+
+## Preact
+
+* <https://github.com/developit>
+* <https://github.com/developit/preact-compat>
+
+```bash
+npm un react react-dom @reach/router
+npm i preact preact-compat preact-context preact-router
+```
+
+* Replace "react" ad "react-dom" with "preact-compat" in *.js files. Make sure to include quotes around "react", "react-dom", and "preact-compat" when doing find and replace in vs code.
+
+* Relace "@reach/router" with "preact-router"
+
+* Anywhere there is a Link, replace to with href.
+
+* In SearchContext.js, add:
+
+```bash
+import { createContext } from "preact-context";
+```
+
+* In SearchParams.js, change navigate to route.
+* In Details.js, need to wrap Modal in div.
+
+```bash
+rm -rf .cache/ dist/
+npm run dev
+```
+
+## Building for Production
+
+```bash
+npx parcel build src/index.html
+```
+
+```bash
+cd dist/
+gzip App.3aa96046.js
+ls -lsah
+```
