@@ -1,0 +1,43 @@
+{
+  "name": "adopt-me",
+  "version": "1.0.0",
+  "description": "An app to teach you to write React",
+  "main": "src/App.js",
+  "scripts": {
+    "test": "",
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "lint": "tslint --project .",
+    "dev": "parcel src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/btholt/complete-intro-to-react-v4.git"
+  },
+  "author": "Brian Holt <btholt@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/btholt/complete-intro-to-react-v4/issues"
+  },
+  "homepage": "https://github.com/btholt/complete-intro-to-react-v4#readme",
+  "devDependencies": {
+    "@types/reach__router": "^1.2.2",
+    "@types/react": "^16.7.18",
+    "@types/react-dom": "^16.0.11",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "parcel-bundler": "^1.9.7",
+    "prettier": "^1.14.2",
+    "tslint": "^5.12.0",
+    "tslint-config-prettier": "^1.17.0",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "@reach/router": "^1.1.1",
+    "petfinder-client": "^0.0.3",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2"
+  }
+}

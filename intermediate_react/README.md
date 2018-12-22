@@ -206,3 +206,44 @@ cd dist/
 gzip App.3aa96046.js
 ls -lsah
 ```
+
+* <https://preactjs.com/guide/differences-to-react>
+
+## Code Organization
+
+* <https://github.com/btholt/photo-gallery/>
+  * Helps mitigate problem of dead css.
+
+## TypeScript
+
+* <https://www.typescriptlang.org/>
+
+```bash
+ npm i -D typescript
+ ```
+
+ Run this inside root directory:
+
+```bash
+npx tsc --init
+```
+
+* <https://definitelytyped.org/>
+
+```bash
+npm install -D @types/react @types/react-dom @types/reach__router
+```
+
+* Switching from ESLint to TSLint
+
+```bash
+npm uninstall eslint babel-eslint eslint-config-prettier eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
+```
+
+```bash
+npm install -D tslint tslint-react tslint-config-prettier
+```
+
+```bash
+rm .eslintrc.json
+```
