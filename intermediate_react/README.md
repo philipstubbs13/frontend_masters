@@ -247,3 +247,7 @@ npm install -D tslint tslint-react tslint-config-prettier
 ```bash
 rm .eslintrc.json
 ```
+
+```bash
+npx tsc --noEmit
+```
