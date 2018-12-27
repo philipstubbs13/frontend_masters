@@ -1,0 +1,77 @@
+##############################
+# GROCERY ITEM CATEGORIES
+##############################
+
+GET https://localhost:3100/api/grocery/categories
+
+##############################
+# GROCERY ITEMS
+##############################
+
+GET https://localhost:3100/api/grocery/items
+
+###
+# By default this returns 10 items, but we can ask for more with the limit queryparam
+
+GET https://localhost:3100/api/grocery/items?limit=2
+
+###
+# Or "offset" the list of results (i.e., for pagination)
+
+GET https://localhost:3100/api/grocery/items?offset=10
+
+###
+# We can also filter by category
+
+GET https://localhost:3100/api/grocery/items?category=fruit
+
+
+##############################
+# CURRENT SHOPPING CART
+##############################
+
+###
+# You can set the contents of your shopping cart as follows.
+
+PUT https://localhost:3100/api/cart/items HTTP/1.1
+content-type: application/json
+
+{"data":
+  [
+    {"groceryItem": { "id": 132 }, "qty": 9},
+    {"groceryItem": { "id": 134 }, "qty": 2},
+    {"groceryItem": { "id": 118 }, "qty": 1}
+  ]
+}
+
+##############################
+# ORDER
+##############################
+
+###
+# Get a collection of orders in the system
+
+GET https://localhost:3100/api/orders HTTP/1.1
+
+###
+# Create a new order. This will result in all cart items being removed
+# and a new order being created (and returned)
+
+POST https://localhost:3100/api/order HTTP/1.1
+content-type: application/json
+
+{"data":
+  [
+    {"groceryItem": { "id": 132 }, "qty": 9},
+    {"groceryItem": { "id": 134 }, "qty": 2},
+    {"groceryItem": { "id": 118 }, "qty": 1}
+  ]
+}
+
+##############################
+# PUSH-SUBSCRIPTION
+##############################
+POST https://localhost:3100/api/push-subscription HTTP/1.1
+content-type: application/json
+
+{"endpoint":"https://fcm.googleapis.com/fcm/send/d5zr78aM0Is:APA91bFsdo7JWQuclBoGdOxnenu…i4CAxUgoSMXYK3khDYnXNYdKD34JSW7gDTfk5rSA_UN7CIjKG5aekHy2UFEWTaN1fsl7gMeN4q","keys":{"p256dh":"BIf4WiWDEnPBluoQaxfyg6JGEX73LIT11tuB9p2MbIQF6paYdDA301gSITCVBjfGpur1v3UfuSsZULYbc1UGOFs=","auth":"5hU-ISOurqOJ6tVEEufUNw=="}}

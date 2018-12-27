@@ -1,0 +1,10 @@
+node_modules
+dist
+yarn-error*
+key.pem
+cert.pem
+tmp
+db/development.sqlite
+.DS_Store
+private/*
+!private/README.md

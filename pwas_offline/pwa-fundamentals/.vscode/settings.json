@@ -1,0 +1,18 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+  "files.exclude": {
+    "node_modules/**": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true
+  },
+  "vsicons.associations.folders": [
+     { "icon": "binary", "extensions": ["db"], "format": "svg" }
+  ],
+  "vsicons.associations.files": [
+     { "icon": "license", "extensions": ["license-exercises"], "filename": true, "format": "svg" },
+     { "icon": "bat", "extensions": ["run"], "filename": true, "format": "svg" },
+     { "icon": "bat", "extensions": ["rest"], "format": "svg" }
+  ]
+}
