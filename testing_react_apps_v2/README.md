@@ -136,3 +136,9 @@ npm run test:client
 
 * <https://blog.kentcdodds.com/but-really-what-is-a-javascript-mock-10d060966f7d>
 * <https://github.com/kentcdodds/how-jest-mocking-works>
+
+## react-testing-library
+
+## Snapshot Testing
+
+* <https://blog.kentcdodds.com/making-your-ui-tests-resilient-to-change-d37a6ee37269>
