@@ -78,3 +78,56 @@
 
 ## Render Properties
 
+## The Flux Pattern
+
+* Make a dispatcher
+
+```bash
+const AppDispatcher = new Dispatcher();
+```
+
+* An action creator is simply a function that dispatches an object.
+
+```bash
+export const addItem = value => {
+  AppDispatcher.dispatch({
+    type: 'ADD_NEW_ITEM',
+    item: {
+      id: uniqueId(),
+      packed: false,
+      value,
+    },
+  });
+};
+```
+
+* Stores register themselves with the dispatcher
+
+```bash
+class ItemStore extends EventEmitter {
+  constructor() {
+    super();
+    AppDispatcher.register(action => {
+      if (action.type === 'ADD_NEW_ITEM') { ... }
+      if (action.type === 'UPDATE_ITEM') { ... }
+      if (action.type === 'REMOVE_ITEM' ) { ... }
+    });
+  }
+}
+```
+
+* The store contains models. It registers itself with the dispatcher and receives actions.
+
+* action (noun): The minimal amount of information necessary to represent the change that should occur.
+
+* Actions are the only way to initiae a change to the state inside a store.
+
+* Actions can contain additional information, but they don't need to.
+
+* Whenver it does something based on an action, it emits a change event.
+
+* Your views listen for these change events.
+
+* Your views can trigger actions based on user interaction.
+
+* Which then goes to the dispatcher and then to the store, which triggers another change - updating the view.
