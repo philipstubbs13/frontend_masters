@@ -49,3 +49,32 @@
 * Use sensible defaults.
 
 ## State Architecture Patterns
+
+* React state is stored in a component and passed down as props to its children.
+* Data down. Events up.
+* Identify every component that renders something based on that state.
+* Find a common owner component (a single component above all the components that need the state in the hierarchy).
+* Either the common owner or another component higher up in the hierarchy should own the state.
+* If you can't find a component where it makes sense to own the state, create a new component simply for holding the state and add it somewhere in the hierarchy above the common owner component.
+* Though this sounds complex, it's really just a few lines of code. And it's really explicit how your data is flowing throughout the app.
+* While it may be a little more typing than you're used to, remember that code is read for more than it's written, and it's extremely easy to read this modular, explicit code.
+* As you start to build large libraries of components, you'll appreciate this explicitness and modularity, and with code reuse, your lines of code will start to shrink.
+* This effectively means that all state needs to live in the topmost common component that needs access.
+* The Lowest Common Ancestor
+* Deep component trees
+
+## Introduction to the Container pattern
+
+* Draw a line between state and presentation.
+* Container components manage state and pass it to presentational components.
+* Presentational components receive props and render UI.
+  * They also receive actions and pass them back to the container.
+  * They either only have a render() method or they are stateless functional components.
+
+## Higher Order Components
+
+* A container factory.
+* Hey, I'm going to need this state all over the place - and I don't want to pass it all around.
+
+## Render Properties
+
