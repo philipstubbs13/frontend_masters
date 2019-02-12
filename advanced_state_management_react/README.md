@@ -131,3 +131,20 @@ class ItemStore extends EventEmitter {
 * Your views can trigger actions based on user interaction.
 
 * Which then goes to the dispatcher and then to the store, which triggers another change - updating the view.
+
+## Redux
+
+* Redux is considered to be an implementation of the Flux pattern.
+* we're going to start by explaining Redux outside of the context of React.
+* With Flux, you'd probably end up with a different store for every noun/model in your application.
+* The whole state tree of your application is kept in one store.
+* Just one plain old JavaScript object.
+* Like Flux, one does not simply modify the state tree.
+* Redux is small.
+* Five methods
+  * applyMiddleware: function()
+  * bindActionCreators: function()
+  * combineReducers: function()
+  * compose: function()
+  * createStore: function()
+* <http://bit.ly/redux-codealong>
