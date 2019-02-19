@@ -2,6 +2,9 @@
 
 * Course: <https://frontendmasters.com/courses/git-in-depth/>
 * Slides and Code: <https://github.com/nnja/advanced-git>
+* git.io/advanced-git
+* nina@nnja.io
+* @nnja
 
 ## Exercise 1
 
@@ -145,3 +148,81 @@ git config rerere.enabled true
 ## Exercise 5 - History and Diffs
 
 * <https://github.com/nnja/advanced-git/blob/master/exercises/Exercise5-HistoryAndDiffs.md>
+
+## Fixing Mistakes
+
+* checkout
+* reset
+* revert
+* clean
+
+## Exercise 6 - fixing mistakes
+
+* <https://github.com/nnja/advanced-git/blob/master/exercises/Exercise6-FixingMistakes.md>
+
+## Rebase Pro Tip
+
+* Before you rebase / fixup / squash / reorder:
+* make a copy of your current branch:
+
+```bash
+git branch my_branch_backup
+```
+
+* git branch will make a new branch, without switching to it
+* if rebase succeeds but you messed up...
+
+```bash
+git reset my_branch_backup --hard
+```
+
+* You're back in business.
+
+* Rebase advantages
+  * Rebase is incredibly powerful!
+  * you can slice and dice your git history.
+  * It's easy to fix previous mistakes in code.
+  * You can keep your git history neat and clean.
+
+* Commit early and often vs good commits
+  * Git Best Practice
+    * commit often, perfect later, publish once.
+  * When working locally:
+    * Commit whenever you make changes.
+    * It'll help you be a more productive developer.
+  * Before pushing work to a shared repo:
+    * Rebase to clean up the commit history.
+
+## Exercise 7 - Git Rebase and Amend
+
+* <https://github.com/nnja/advanced-git/blob/master/exercises/Exercise7-RebaseAndAmend.md>
+
+## Contributing to open source projects - pull requests
+
+* Before opening a PR:
+  * Keep commit history clean and neat. Rebase if needed.
+  * Run projects tests on your code.
+  * Pull in Upstream changes (preferably via rebase to avoid merge commits)
+  * check for a CONTRIBUTING (.md/.txt) in the project root.
+
+* After opening a PR:
+  * Explain your changes thoroughly in the pull request.
+  * Link to any open issues that your pull request might fix.
+  * Check back for comments from the maintainers.
+
+## Exercise 8 - Forks and Remote Repos
+
+* <https://github.com/nnja/advanced-git/blob/master/exercises/Exercise8-ForksAndRemoteRepos.md>
+
+## Continuous integration
+
+* Travis CI
+* Getting setup is easy
+  * Go to travis-ci.org, log in with your github account.
+  * add a travis.yml configuration file
+  * push to trigger builds.
+* Sample pull request: git.io/travis-ci-demo
+* Look at build requests
+  * visit travis-ci.org/<username>/<project>
+* Add an image to your README to display the build status.
+  * bit.ly/travis-status
