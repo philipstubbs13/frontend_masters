@@ -116,3 +116,32 @@ git stash clear
 ## Exercise 2 - staging and stashing
 
 * <https://github.com/nnja/advanced-git/blob/master/exercises/Exercise2-StagingAndStashing.md>
+
+## References
+
+* References are pointers to commits.
+
+## Exercise 3
+
+* <https://github.com/nnja/advanced-git/blob/master/exercises/Exercise3-References.md>
+
+## Merge Conflicts
+
+* Git RERERE - Reuse Recorded Resolution
+* Turn it on:
+
+```bash
+git config rerere.enabled true
+```
+
+* Use --global flag to enable for all projects.
+* When I commit the conflict resolution, it's recorded.
+* The resoltion is automatically reapplied.
+
+## Exercise 4 - Merging and ReReRe
+
+* <https://github.com/nnja/advanced-git/blob/master/exercises/Exercise4-MergingAndReReRe.md>
+
+## Exercise 5 - History and Diffs
+
+* <https://github.com/nnja/advanced-git/blob/master/exercises/Exercise5-HistoryAndDiffs.md>
