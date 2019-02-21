@@ -183,3 +183,104 @@ function foo() {
 ```
 
 ## Default Values
+
+```bash
+
+function foo(x) {
+  x = x !== undefined ? x : 42;
+}
+
+foo( undefined )
+
+
+function foo(x = 42) {
+
+}
+
+foo(0)
+foo(null)
+foo(undefined)
+foo.apply(null, []);
+foo.apply(null, [,] );
+```
+
+```bash
+
+function required() {
+  throw "Parameter required!";
+}
+
+function foo(id = required("id"), x = id) {
+
+}
+
+foo(); // !
+foo(); // !
+
+```
+
+```bash
+var x = 1;
+
+function foo( x = 2, f = function() { return x; } ) {
+  var x = 5;
+  console.log( f() );
+}
+
+foo();
+```
+
+## Gather and spread operators
+
+* Imperative includes all of the implementation details of how
+* Purpose of abstraction is focus.
+
+```bash
+function foo() {
+  var args = [].slice.call ( arguments );
+  args.unshift( 42 );
+  bar.apply ( null, args );
+}
+
+function foo( x, ...args ) {
+  bar( 42, ...args );
+}
+```
+
+## Using the Gather and Spread Operator
+
+```bash
+var x = [1,2,3];
+var y = [4,5];
+var z = [0].concat(x,y,[6]);
+```
+
+```bash
+var x = [1,2,3];
+var y = [4, 5];
+var z = [0,...x,...y,6];
+
+foo( 0,...x,...y,6 )
+```
+
+```bash
+function foo(x,y,...rest) {
+  return rest;
+}
+
+var a = [1,2,3];
+var b = [4,5,6];
+
+foo ( ...a, ...b );
+```
+
+```bash
+var str = "Hello";
+
+[...str]
+```
+
+## Babel
+
+* Transpiling - take the es6 code and convert it into the equivalent of what will be es5.
+* babeljs.io
