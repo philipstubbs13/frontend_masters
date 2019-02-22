@@ -284,3 +284,45 @@ var str = "Hello";
 
 * Transpiling - take the es6 code and convert it into the equivalent of what will be es5.
 * babeljs.io
+
+## Array Destructuring
+
+```bash
+function foo() {
+  return [1,2,3];
+}
+
+var tmp = foo();
+var a = tmp[0];
+var b = tmp[1];
+var c = tmp[2];
+```
+
+```bash
+function foo() {
+  return [1,2,3,4,5,6];
+}
+
+var a,b,c,args;
+
+var o = {};
+
+[
+    o.a,
+    o.b = 42,
+    o.c,
+    ...o.args
+]  = foo() || [];
+```
+
+```bash
+var x = 10, y = 20;
+
+[x,y] = [y,x];
+```
+
+```bash
+var a = [1,2,3];
+
+[ , , ...a ] = [ 0, ...a, 4 ];
+```
