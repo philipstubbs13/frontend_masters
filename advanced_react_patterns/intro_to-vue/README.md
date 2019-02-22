@@ -69,3 +69,22 @@
 
   * Exercise: <https://codepen.io/sdras/pen/vZjozM/>
   * Solution: <https://codepen.io/sdras/pen/685454ccb793ad59193a369c58b8747b>
+
+## Methods, Computed, Watchers
+
+* Methods - are bound to vue instance, they are incredibly useful for functions you would like to access in directives.
+  * Runs whenever an update occurs.
+  * Not cached
+  * Typically invoked from v-on/@, but flexible.
+  * 
+
+
+* Computed Properties - calculations that will be cached and will only update when needed. Highly performant but use with understanding.
+  * Runs only when a dependency has changed.
+  * Cached
+  * Should be used as a property, in place of data.
+  * By default getter only, but you can define a setter.
+  * using our computed property in place of the data, we now have a different view of the data.
+
+* Exercise: <https://codepen.io/sdras/pen/WOyjoj/>
+* Solution: <https://codepen.io/sdras/pen/9405ba833415572d34ec7c3ba13b1608>
