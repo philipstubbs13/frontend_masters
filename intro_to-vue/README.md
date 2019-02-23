@@ -267,3 +267,49 @@ export default {
 * style scoped allows us to easily scope the styles for this component to only this component.
   * @import styles: vue-style-loader
 * Slots in Vue components with the scoped style tags, they apply to the component that has the slots.
+
+## Lifecycle hooks
+
+* The lifecycle hooks provide you a method so that you might trigger something precisely at different junctures of a component's lifecycle. Components are mounted when we instantiate them, and in turn unmounted, for instance when we toggle them in a v-if/v-else statement.
+  * beforeCreate
+  * created
+  * beforeMount
+  * mounted
+  * beforeUpdate
+  * updated
+  * activated
+  * deactivated
+  * beforeDestroy
+  * destroyed
+* Lifecycle hooks also auto-bind to the instance so that you can use the component's state, and methods. Again, you don't have to console.log to find out what this refers to.
+* For this reason though, you shouldn't use an arrow function on a lifecycle method, as it will return the parent instead of giving you nice binding out of the box.
+
+## Introducing Nuxt.js
+
+* automatic code splitting
+* server side rendering
+* lighthouse reports: <https://developers.google.com/web/tools/lighthouse/>
+* powerful routing system with asynchronous data
+* great lighthouse scores out of the gate
+* static file serving
+* ES6/ES7 transpilation
+* hot reloading in development
+* pre-processor: SASS, LESS,Stylus, etc
+* Write Vue files
+
+## Nuxt.js Application Walkthrough
+
+```bash
+npm install -g vue-cli
+
+-----------
+
+vue init nuxt/starter my-project
+cd my-project
+yarn
+
+npm run dev
+```
+
+* <https://github.com/sdras/intro-to-vue/tree/master/setup2>
+* Exercise: <https://codepen.io/sdras/pen/owaWwd>
