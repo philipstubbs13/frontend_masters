@@ -327,3 +327,46 @@ npm run dev
     * The current element transitions out and then the new element transitions in.
 * JavaScript hooks
 * <https://daneden.github.io/animate.css/>
+
+## Filters, Mixins, and Custom Directives
+
+* Filters aren't replacements for methods, computed values, or watchers, because filters don't transform the data, just the output that the user sees.
+* Examples of using filter
+  * Tip calculator, formatting dates, chance currency
+* Filters sound like it would be good to filter a lot of data, but filters are rerun on every single update, so better to use computed, for values like these that should be cached.
+* It's a common situation: you have two components that are pretty similar, they share the same basic functionality, but there's enough that's different about each of them that you come to a crossroads: do I split this component into two different components? Or do I keep one component, but create enough variance with props that I can alter each one?
+* A mixin allows you to encapsulate one pice of functionality so that you can use it in different components throughout the application.
+* If written correctly, they are pure - they don't modify or change things outside of the function's scope, so you will reliably always receive the same value with the same inputs on multiple executions.
+* Some examples mixins
+  * getting dimensions of the viewport and component
+  * gathering specific mousemove events
+  * base elements of charts
+  * <https://github.com/paulpflug/vue-mixins>
+* Merging with mixins
+  * By default, mixins will be applied first, and the component will be applied second so that we can override it as necessary.
+  * The component has the last say.
+* Global mixins
+  * Global mixins are literally applied to every single component. One use I can think of that mekes sense is something like a plugin, where you may need to gain access to everything.
+  * But still, the use case for them is extremely limited and they should be considered with great caution.
+* Custom directives
+  * v-example - this will instantiate a directive, but doesn't accept any arguments. Without passing a value, this would not be very flexible, but you could still hange some piece of functionality of of the DOM element.
+  * v-example="value" - this will pass a value into the directive, and the directive figures out what to do based off of that value.
+  * v-example="'string'" - this will let you use a string as an expression.
+  * v-example:arg="value" - this allows us to pass in an argument to the directive. In the example below, we're binding to a class, and we'd style it with an object, stored separately.
+  * v-example:arg.modifier="value" - this allows us to use a modifier.
+  * <http://imakewebthings.com/waypoints/>
+* Exercise: <https://github.com/sdras/intro-to-vue>
+* Solution: <https://codepen.io/sdras/pen/a74e42adcead4d3a6968f5cc746709eb?editors=1010>
+
+## Vuex
+
+* Centralized store for shared data and logic, even shared methods or async.
+* Unidirectional data flow
+* Influenced by Flux application architecture
+* Similar to Redux
+* You can still use Redux if you like but this is Vue's version.
+* Why? In a complex single page application, passing state between many components, and especialy deeply nested or sibling components, can get complicated quickly. Having one centralized place to access your data can help you stay organized.
+* When? 
+  * Multiple instances of children/siblings communicating
+  * I'd like to see what all of the state looks like and keep it organized in one place.
+* Warning: not a replacement for single component methods.
