@@ -370,3 +370,48 @@ npm run dev
   * Multiple instances of children/siblings communicating
   * I'd like to see what all of the state looks like and keep it organized in one place.
 * Warning: not a replacement for single component methods.
+
+## Vuex Setup
+
+```bash
+npm install --save vuex
+
+yarn add vuex
+```
+
+* I set it up this way: within my /src directory, I create another directory named store (this is a preference, you could also just create a store.js file in that same directory), and a file named store.js.
+
+* The initial set up in store.js would look something like this (vstore sublime snippet)
+
+```bash
+import Vue from 'vue';
+import Vuex from 'vuex';
+
+Vue.use(Vuex);
+
+export const store = new Vuex.Store({
+  state: {
+    key: value
+  }
+});
+```
+
+* Getters will make values able to show statically in our templates. In other words, getters can read the value, but not mutate the state.
+* Mutations allow us to update the state, but they will always be synchronous. Mutations are the only way to change data in the state in the store.
+* Actions will allow us to update the state, asynchronously, but will use an existing mutation. This can be very helpful if you need to perform a few different mutations at once in a particular order, or reach out to a server.
+* We separate actions and mutations because we don't want to get into an ordering problem.
+* <https://github.com/sdras/vue-weather-notifier>
+* Repo/Exercise: <https://github.com/sdras/intro-to-vue>
+
+## Further resources
+
+* Vue docs: <https://vuejs.org/>
+* Vue repo: <https://github.com/vuejs>
+* Nuxt docs: <https://nuxtjs.org/>
+* Vuex docs: <https://github.com/vuejs/vuex>
+* CSS tricks guide: <https://css-tricks.com/guides/vue/>
+* awesome vue: <https://github.com/vuejs/awesome-vue>
+* vue newsleter: <https://news.vuejs.org/>
+* monterail blog: <https://www.monterail.com/blog>
+* vue tips: <http://vuetips.com/>
+* the majesty of vue: <https://leanpub.com/vuejs2>
