@@ -313,3 +313,17 @@ npm run dev
 
 * <https://github.com/sdras/intro-to-vue/tree/master/setup2>
 * Exercise: <https://codepen.io/sdras/pen/owaWwd>
+
+## Animations
+
+* Transitions are taking one thing that is at one particular state and another thing that is at another state and it's interpolating those values.
+* Animations can have multiple steps. Animations are slightly more powerful.
+* <http://cubic-bezier.com/#.17,.67,.83,.67>
+* Exercise: <https://codepen.io/sdras/pen/pRWxGg>
+* Transition modes
+  * in-out 
+    * The current element waits until the new element is done transitioning in to fire.
+  * out-in
+    * The current element transitions out and then the new element transitions in.
+* JavaScript hooks
+* <https://daneden.github.io/animate.css/>
