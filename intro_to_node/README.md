@@ -115,3 +115,4 @@ source .bashrc
 * require
 * The Nodejs runtime injects another global, require.
 * This function takes a relative path to the module that you want to consume, and synchronously loads it by returning whatever the target module exported.
+* <https://jestjs.io/>
