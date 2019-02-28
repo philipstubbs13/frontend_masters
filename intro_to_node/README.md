@@ -116,3 +116,13 @@ source .bashrc
 * The Nodejs runtime injects another global, require.
 * This function takes a relative path to the module that you want to consume, and synchronously loads it by returning whatever the target module exported.
 * <https://jestjs.io/>
+
+## Shipped modules
+
+* Nodejs ships with a bunch of helpful modules already.
+* fs - fileSystem module to interacting with files on a machine.
+* http - low level-ish module for creating network based programs, like APIs
+* path - useful for manipulating path strings and handling differences across many OS's
+* ...many more
+* url
+* crypto

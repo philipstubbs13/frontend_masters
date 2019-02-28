@@ -1,3 +1,1 @@
-module.exports = () => {
-  console.log('name')
-}
+var me = "me"
