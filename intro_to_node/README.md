@@ -126,3 +126,46 @@ source .bashrc
 * ...many more
 * url
 * crypto
+
+## Remote modules
+
+* download and use other modules from the Internets
+* Nodejs has grown a bunch, and bunch of that growth is due to its community and the ability to share modules and consume them at will.
+* You can slap together an app really fast by reusing public modules. Which are the same as the modules you make, but packaged for downloading.
+* This sounds nice, but now you have to be aware of malicious code. Also, you need a system to help with the management of remote modules (downloading, publishing, updating, etc)
+
+## Three module types, one require
+
+* modules you created are always relative paths. ".js" is implied.
+* Custom local modules
+
+```bash
+var lib = require('../rel/path/to/lib') // Always have to use a "." first
+```
+
+* remote modules
+
+```bash
+var lib = require('lib') // the same name you used to install it with npm
+```
+
+* shipped modules
+
+```bash
+var fs = require('fs') // internal module, remote module with same name takes it.
+```
+
+## npm
+
+* CLI to manage remote modules.
+* Ships with node.js
+* allows you to publish, download, and update modules
+* Uses package.json file in your Nodejs project to determine dependencies.
+* Stores remote modules in the node_modules folder.
+* <https://www.theregister.co.uk/2016/03/23/npm_left_pad_chaos/>
+* ...whole bunch of other stuff
+
+## yarn
+
+* made by facebook
+* was faster than npm - uses cdn to cache things. npm does this now too though.
