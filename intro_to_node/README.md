@@ -169,3 +169,52 @@ var fs = require('fs') // internal module, remote module with same name takes it
 
 * made by facebook
 * was faster than npm - uses cdn to cache things. npm does this now too though.
+
+## Asynchronous Code in Node.js
+
+* Node.js is single threaded and async like the browser, but you'll probably do more async things.
+* nodejs is single threaded and event based. just like the browser.
+* Unlinke the browser, your nodejs app will be shared by all clients.
+
+## Async patterns
+
+* async / await is legit
+* callback pattern
+
+```bash
+// callback takes error as first arg, and result as second
+doAsyncThing((error, result) => {})
+```
+
+* promises
+
+```bash
+doAsyncThing()
+  .then(result => {})
+  .catch(error => {})
+```
+
+* async / await
+
+```bash
+const run = async () => {
+  const results = await doAsyncThing() // must return a promise
+  console.log('hello')
+}
+```
+
+## Error handling
+
+* Errors kill your app, just like the browser.
+* Any thrown or unhandled errors will cause the process to crash and exit.
+* Your app may have errors that should not cause a crash, so you must handle accordingly.
+
+## Servers
+
+* One server, handling many requests from clients.
+* A server's job is to handle a request from some sort of client (browser, mobile app, another server, etc)
+* Without considering scaling, one server instance will handle many client requests. Compared to a client app where that code only cared about itself on the host machine.
+* Nodejs has built in and community packages for build all types of servers (APIs, static, realtime, etc)
+* <https://www.npmjs.com/package/mime>
+* <https://www.nginx.com/>
+* <https://nodejs.org/dist/latest-v8.x/docs/api/util.html#util_util_promisify_original>
