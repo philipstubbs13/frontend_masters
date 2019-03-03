@@ -218,3 +218,80 @@ const run = async () => {
 * <https://www.npmjs.com/package/mime>
 * <https://www.nginx.com/>
 * <https://nodejs.org/dist/latest-v8.x/docs/api/util.html#util_util_promisify_original>
+
+## Debugging Node
+
+* just like chrome
+* Level 1
+  * Use console.log to log your way through fixing your app. In production, record your logs.
+* Level 2
+  * Use tne node inspector when starting your app and debug just like you would an browser app in chrome.
+
+  ```bash
+  node --inspect exercises/api/server.js
+  ```
+
+  Go to chrome://inspect/#devices
+
+* Level 3
+  * Text editor integration offers the most seamless experience.
+
+## Testing Node Libraries
+
+* export your modules and use a testing framework.
+* Before you can test your code, make sure it is testable. As long as you can export what you want to test, you should be able to test it. There are other concerns specific to what libraries and frameworks you use.
+* You can test pretty much anything in Nodejs. Browser apps, API's, CLI's, scripts, tools, etc. Your test themselves will be executed in Nodejs, so they have the ability to pretty much do anything.
+
+## Anatomy of tests
+
+* many tools for the same job.
+* Your code to be tested.
+* Test Suite - responsible for helping organize your tests, provide hooks, and overall environment.
+* Assertion library - does the actual comparisons in your test.
+* Mocks + Spies - toools to help you test your code without testing other code or actually running your code ( mock out api calls, check to see if an internal function was called)
+
+## Types of tests
+
+* everything can be tested with node
+* unit
+* integration
+* end-to-end
+  * <https://github.com/ariya/phantomjs>
+  * <https://developers.google.com/web/updates/2017/06/headless-karma-mocha-chai>
+* UI
+* snapshot
+* performance
+* ... so many more
+
+## Sharing modules
+
+* push code to github, publish to NPM
+* Sharing your modules are easy. Just a few things you have to check:
+  * add node_modules to gitignore.
+  * declare remote modules as devDependencies if you only need them to develop with (jest)
+  * think about how your app will be used and what dependencies the host app might have, you don't want to include another version (although npm tries to fix this for you)
+  * is this private or public?
+
+## Deploying your servers
+
+* follow cloud provider instructions, and never hard code secrets.
+* <https://nodejs.org/api/process.html#process_process_env>
+* Each cloud provider has its own method of deploying your apps on their platforms. Mostof them have some integration with Github or a CLI to assist.
+* Few things to remember
+  * remove secrets and use environment vars
+  * setup a CLI flow for your app
+  * make sure you are developing with the same version of node you are deploying to
+
+## Deploying to Heroku
+
+* Deploy one of the exercies to heroku(server) or npm (cli)
+
+## Further Tools and Resources
+
+* Express: <https://expressjs.com/en/guide/routing.html>
+* Webpack: <https://frontendmasters.com/courses/webpack-fundamentals/>
+* <https://github.com/tj/commander.js/>
+* <https://babeljs.io/repl>
+* <https://tipe.io/>
+* <https://frontendmasters.com/courses/api-node-rest-graphql/>
+
