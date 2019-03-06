@@ -37,3 +37,31 @@
 
 * <https://kentcdodds.com/blog/but-really-what-is-a-javascript-test/>
 * Fundamentally, a test is something that throws an error if there's a problem.
+
+## Jest Testing Framework
+
+```bash
+npm run test:expect
+```
+
+* <https://github.com/atlassian/jest-in-case>
+* <https://github.com/kentcdodds/rtl-css-js>
+* <https://kentcdodds.com/blog/what-code-comments-can-teach-us-about-scaling-a-codebase>
+
+## Code Coverage
+
+* Instanbul
+  * <https://istanbul.js.org/>
+
+* Mac
+
+```bash
+open coverage/lcov-report/index.html
+```
+
+* Windows
+
+```bash
+start coverage/lcov-report/index.html
+```
+  
