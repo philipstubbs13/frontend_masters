@@ -65,3 +65,14 @@ open coverage/lcov-report/index.html
 start coverage/lcov-report/index.html
 ```
   
+## Mocks
+
+```bash
+npm run test:mock
+```
+
+* <https://kentcdodds.com/blog/pure-modules>
+
+```bash
+npm test controllers.*users.todo.js
+```
