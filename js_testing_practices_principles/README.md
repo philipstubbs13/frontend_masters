@@ -76,3 +76,9 @@ npm run test:mock
 ```bash
 npm test controllers.*users.todo.js
 ```
+
+## Test Driven Development
+
+* Red
+* Green
+* Refactor
