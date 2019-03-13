@@ -25,3 +25,9 @@
     * variables
     * weird characters
     * expressions
+
+```bash
+_.each = function(list, callback) {
+  //... TODO
+}
+```
