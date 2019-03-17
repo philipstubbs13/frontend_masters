@@ -26,6 +26,10 @@ _.filter = function(arr, cb) {
   return storage;
 }
 
-_.filter(videoData, function(suspectObject) {
+const suspects = _.filter(videoData, function(suspectObject) {
   return suspectObject.present;
+});
+
+const suspectsNames = _.map(suspects, suspect => {
+  return suspects.name
 });
