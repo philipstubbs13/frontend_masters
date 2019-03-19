@@ -31,3 +31,5 @@ _.each = function(list, callback) {
   //... TODO
 }
 ```
+
+## Scope
