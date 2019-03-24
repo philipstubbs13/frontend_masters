@@ -47,3 +47,11 @@ _.each = function(list, callback) {
 * An inner function can access both its local scope variables and variables in its containing scope, provided the variables have different names.
 * between calls to an inner function, that inner function retains access to a variable in an outer scope. Modifying those variables has a lasting effect between calls to the inner function.
 * the fule about retaining access to variables from an outer scope still applies, even after the outer function call (that created the outer scope) has returned.
+
+## Higher order functions and callbacks
+
+* Higher order functions
+  * Takes a function as an input (argument)
+  * Returns a function as the output.
+
+* Callbacks are functions we pass to functions.
