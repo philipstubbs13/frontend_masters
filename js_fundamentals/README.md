@@ -55,3 +55,8 @@ _.each = function(list, callback) {
   * Returns a function as the output.
 
 * Callbacks are functions we pass to functions.
+
+## Functional Utilities
+
+* Currying
+* Composing
