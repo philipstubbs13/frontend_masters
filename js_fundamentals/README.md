@@ -60,3 +60,18 @@ _.each = function(list, callback) {
 
 * Currying
 * Composing
+
+## Closure
+
+* When you put two functions inside of a function.
+* scope isolation.
+
+```bash
+function checkscope() {
+  var innerVar = "local scope";
+  function innerFunc() {
+    return innerVar;
+  };
+return innerFunc;
+};
+```
