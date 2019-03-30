@@ -326,3 +326,60 @@ var a = [1,2,3];
 
 [ , , ...a ] = [ 0, ...a, 4 ];
 ```
+
+## Object Destructuring
+
+## Nested Object Destructuring
+
+## Destructuring and Function Parameters
+
+```bash
+function foo( [a,b,c] = [] ) {
+  console.log( a, b, c);
+}
+
+foo( [1, 2, 3]);
+```
+
+## Advanced Destructuring
+
+```bash
+var defaults = {
+  method: "POST",
+  callback: function(){}
+  headers: {
+    "content-type": "text/plain"
+  }
+};
+
+var config = {
+  url: "http://some.url",
+  callback: foo,
+  headers: {
+    "x-requested-with": "foo"
+  }
+};
+
+
+{
+  let {
+    method = "POST",
+    url,
+    callback = function(){},
+    headers: {
+      "content-type": contentType = "text/plain",
+      "x-requested-with": xRequestedWith
+    }
+  } = config;
+
+  config = {
+    method,
+    url,
+    callback,
+    headers: {
+      "content-type": contentType,
+      "x-requested-with": xRequestedWith
+    }
+  };
+}
+```
