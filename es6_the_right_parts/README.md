@@ -450,3 +450,24 @@ var total = 319.7;
 var msg = currency`Hello, ${name}, your
 order (#${orderNumber}) was $${total}.`;
 ```
+
+## Symbols
+
+```bash
+var x = Symbol( " whatever description " );
+
+var obj = {
+  id: 42
+};
+
+obj[x] = "shhh this is secret!";
+```
+
+## Well known symbols
+
+```bash
+Symbol.iterator
+Symbol.toStringTag
+Symbol.toPrimitive
+Symbol.isConcatSpreadable
+```
