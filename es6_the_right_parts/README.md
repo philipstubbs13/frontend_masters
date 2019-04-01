@@ -471,3 +471,130 @@ Symbol.toStringTag
 Symbol.toPrimitive
 Symbol.isConcatSpreadable
 ```
+
+## Iterators
+
+* A simple interface for stepping through data.
+
+```bash
+var arr = [1,2,3];
+
+var it = arr[Symbol.iterator]();
+
+it.next(); // { value: 1, done: false }
+it.next(); // { value: 2, done: false }
+it.next(); // { value: 3, done: false }
+it.next(); // { value: undefined, done: true }
+```
+
+```bash
+var arr = [1,2,3];
+
+var str = "Hello";
+
+for ( var v of arr ) {
+  console.log( v );
+}
+
+for ( var v of str ) {
+  console.log( v );
+}
+
+[ ...str ]
+
+[ x, y, ...rest ] = [ ...str ];
+```
+
+## Creating a Custom Iterator
+
+```bash
+var obj = {
+  [Symbol.iterator]() {
+    var idx = this.start, en = this.end;
+    var it = {
+      next: () => {
+        if (idx <= en ) {
+          var v = this.values[idx];
+          idx++;
+          return { value: v, done: false }
+        }
+        else {
+          return { done: true };
+        }
+      }
+    };
+
+    return it;
+  },
+  values: [ 2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32 ],
+  start: 4,
+  end: 13
+};
+
+var vals = [ ...obj ];
+```
+
+## Generators
+
+* A generator is a function that can be started and stopped as many times as you would like.
+* state machine
+* generates values
+
+```bash
+function *main() {
+  console.log("hello");
+  yield 9;
+  console.log("world");
+  return 10;
+}
+
+var it = main();
+
+it.next(); // { value: 9, done: false }
+
+it.next(); // { value: 10, done: true }
+
+for ( var v of main()) {
+  console.log( v );
+}
+```
+
+```bash
+function uniqID() {
+  while (true) {
+    yield Math.random();
+  }
+}
+
+var numbers = uniqID();
+
+numbers.next().value
+```
+
+## Computed Generated Methods
+
+```bash
+var obj = {
+  *[Symbol.iterator]() {
+    for (var i = this.start; i <= this.end; i++) {
+      yield this.values[i];
+    }
+  },
+  values: [ 2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32 ],
+  start: 4,
+  end: 13
+};
+
+var vals = [ ...obj ];
+```
+
+## Ranges
+
+```bash
+Number.prototype[Symbol.iterator] = function*(){
+  for (var i=0; i<=this; i++) {
+    yield i+
+  }
+};
+[...8]
+```
