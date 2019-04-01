@@ -383,3 +383,70 @@ var config = {
   };
 }
 ```
+
+## Concise Properties and Methods
+
+```bash
+var a = 1;
+
+var obj = {
+  a,
+  b() { },
+  // b: function() {}
+  [c]: 42,
+  [c+"fn"]() { },
+  *foo(){},
+  *[c+"gn"]() { }
+};
+```
+
+## Template Strings
+
+```bash
+var name = "Kyle";
+var orderNumber = "123";
+var total = 319.7;
+
+var msg = "Hello, " + name + ", your \
+order (#" + orderNumber + ") was $" +
+total + ".";
+```
+
+```bash
+var name = "Kyle";
+var orderNumber = "123";
+var total = 319.7;
+
+var msg = `Hello, ${name}, your
+order (#${orderNumber}) was $${total}.`;
+```
+
+* A template literal is a multiline string. The old es5 way is just a string that spans multiple lines.
+* Interpolated string literals (interpoliterals)
+
+## Tag Functions
+
+```bash
+function currency(strings, ...values){
+  var str = "";
+  for (var i = 0; i < strings.length; i++) {
+    if (i > 0) {
+      if (typeof values[i-1] == "number") {
+        str += values[i-1].toFixed(2);
+      }
+      else {
+      str += values[i-1];
+      }
+    }
+    str += strings[i];
+  }
+  return str;
+}
+
+var name = "Kyle";
+var orderNumber = "123";
+var total = 319.7;
+
+var msg = currency`Hello, ${name}, your
+order (#${orderNumber}) was $${total}.`;
+```
