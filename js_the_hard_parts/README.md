@@ -33,3 +33,8 @@
 * Higher order functions - highly valuable tool & often part of the Codesmith interview.
 
 ## Higher Order Functions
+
+## Callbacks and Higher Order Functions Exercises
+
+* <http://csbin.io/callbacks>
+* Solution: <https://github.com/FrontendMasters/fm-snippets/blob/master/2018-01-22-javascript-hard-parts/fem-JavaScriptTheHardParts-CallbacksSolutions.js>
