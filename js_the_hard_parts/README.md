@@ -38,3 +38,28 @@
 
 * <http://csbin.io/callbacks>
 * Solution: <https://github.com/FrontendMasters/fm-snippets/blob/master/2018-01-22-javascript-hard-parts/fem-JavaScriptTheHardParts-CallbacksSolutions.js>
+
+## Passing Functions
+
+* <http://csbin.io/callbacks>
+* Solutions: <https://github.com/FrontendMasters/fm-snippets/blob/master/2018-01-22-javascript-hard-parts/fem-JavaScriptTheHardParts-CallbacksSolutions.js>
+
+## First Class Objects
+
+* Functions in Javascript = first class objects
+* They can co-exist with and can be treated like any other javascript object.
+
+1. assigned to variables and properties of other objects.
+2. passed as arguments into functions.
+3. returned as values from functions.
+
+## Higher Oder function
+
+* A function that can take in another function.
+* The outer function that takes in the function (our callback) is a higher-order function.
+* Takes in a function or passes out a function.
+
+## Callback function
+
+* A function that can be passed in as input.
+* The function we pass in is a callback function.
