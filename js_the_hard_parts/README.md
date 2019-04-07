@@ -74,3 +74,13 @@
 * Closures exercises: <http://csbin.io/closures>
 * Closures solutions: <https://github.com/FrontendMasters/fm-snippets/blob/master/2018-01-22-javascript-hard-parts/fem-JavaScriptTheHardParts-ClosuresSolutions.js>
 * Where you define your functions determines what variables your function have access to when you call the function.
+* There is a way to run a function outside where it was defined - return the function and assign it to a new variable.
+* Closure - the closed over variable environment ("my backpack")
+* Lexical scope
+  * when a function is defined, it gets a [[scope]] property that references the Local Memory/Variable Environment in which it has been defined.
+  * Wherever we call the incrementCounter function - it will always look first in its immediate local memory (variable environment), and then in the [[scope]] property next before it looks any further up.
+* JavaScript static/lexical scoping
+  * Our lexical scope (the available live data when our function was defined) is what determines our available variables and prioritization at function execution, not where our function is called.
+* The power of closure
+  * Now: our functiongs get 'memories' - once, memoize.
+  * Advanced: We can implement the module pattern in JavaScript.
