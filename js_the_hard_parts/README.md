@@ -84,3 +84,17 @@
 * The power of closure
   * Now: our functiongs get 'memories' - once, memoize.
   * Advanced: We can implement the module pattern in JavaScript.
+
+## Asynchronous JavaScript
+
+* Asynchronicity is the backbone of modern web development in JavaScript.
+* JavaScript is single threaded (one command executing at  time) and has a synchronous execution model (each line is executed in order the code appears)
+* So wht if we need to wait some time before we can execute certain bits of code? Perhaps we need to wait on fresh data from an API/server request or for a timer to complete and then execute our code.
+* We have a conundrum - a tension between wanting to delay some code execution but not wanting to block the thread from any further code running while we wait.
+* Web Browser APIs/features
+* Exercises: <https://jsbin.com/hijijag/1/edit?js,console,output>
+* Solutions: <https://github.com/FrontendMasters/fm-snippets/blob/master/2018-01-22-javascript-hard-parts/fem-JavaScriptTheHardParts-AsynchronicitySolutions.js>
+* Callback queue
+* We have two rules for the execution of our asynchronously delayed code:
+  * Hold each deferred function in a queue (the Callback Queue) when the API 'completes'
+  * Add the function to the Call stack (i.e. execute the function) ONLY when the call stack is totally empty (Have the Event Loop check this condition).
