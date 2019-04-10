@@ -98,3 +98,4 @@
 * We have two rules for the execution of our asynchronously delayed code:
   * Hold each deferred function in a queue (the Callback Queue) when the API 'completes'
   * Add the function to the Call stack (i.e. execute the function) ONLY when the call stack is totally empty (Have the Event Loop check this condition).
+  
