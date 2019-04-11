@@ -106,4 +106,19 @@
   * Writing/Reading to File system (Node)
   * Writing/reading database (Node)
 * XMLHttpRequest (XHR)
+* Asynchronous callbacks, Web APIs, the Callback Queue and Event loop allow us to defer our actions until the 'work'(an API request, timer, etc) is completed and continue running our code line by line in the meantime.
+* Aysynchronous JavaScript is the backbone of the modern web - letting us build fast 'non-blocking' applications
   
+## Object Oriented JavaScript
+
+* OOP - an enormously popular paradigm for structuring our complex code
+  * easy to add features and functionality.
+  * Performant (efficient in terms of memory)
+  * Easy for us and other developers to reason about (a clear structure)
+* Objects - store functions with their associated data.
+* Encapsulation - binding together the data and functions that manipulate the data.
+* Object.create(null);
+  * Creates an empty object.
+* Generate objects using a function.
+* Exercies: <http://csbin.io/oop>
+* Solutions: <https://github.com/FrontendMasters/fm-snippets/blob/master/2018-01-22-javascript-hard-parts/fem-JavaScriptTheHardParts-OOPSolutions.js>
