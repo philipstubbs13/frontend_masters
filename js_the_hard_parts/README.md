@@ -98,4 +98,12 @@
 * We have two rules for the execution of our asynchronously delayed code:
   * Hold each deferred function in a queue (the Callback Queue) when the API 'completes'
   * Add the function to the Call stack (i.e. execute the function) ONLY when the call stack is totally empty (Have the Event Loop check this condition).
+* There are many things where waiting would block our thread and we use Browser APIs for instead.
+  * A timer to finish running.
+  * New information from a server (Ajax)
+  * Indication that a portion of the page has been loaded.
+  * User interaction (clicks, mouseovers, drags)
+  * Writing/Reading to File system (Node)
+  * Writing/reading database (Node)
+* XMLHttpRequest (XHR)
   
