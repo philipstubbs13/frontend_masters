@@ -125,3 +125,7 @@
 * Prototype chain bond
 * Exercises: <http://csbin.io/oop>
 * Solutions: <https://github.com/FrontendMasters/fm-snippets/blob/master/2018-01-22-javascript-hard-parts/fem-JavaScriptTheHardParts-OOPSolutions.js>
+
+## new operator
+
+* The new keyword automates a lot of our manual work.
