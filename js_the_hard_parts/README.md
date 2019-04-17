@@ -3,6 +3,8 @@
 * Instructor: Will Sentance
 * <https://frontendmasters.com/courses/javascript-hard-parts/>
 * Slides: <https://frontendmasters.com/assets/resources/willsentance/js-the-hard-parts.pdf>
+* will.sentance@gmail.com
+* will@codesmith.io
 
 ## Global Execution Context
 
@@ -129,3 +131,15 @@
 ## new operator
 
 * The new keyword automates a lot of our manual work.
+
+## Class Syntactic Sugar
+
+* Exercise: <http://csbin.io/oop>
+* Solution:<https://github.com/FrontendMasters/fm-snippets/blob/master/2018-01-22-javascript-hard-parts/fem-JavaScriptTheHardParts-OOPSolutions.js>
+
+## Wrapping up
+
+* The Hard Parts Challenge Code
+* Codesmith Residency
+* <https://www.codesmith.io/>
+* codesmith.io/hardparts/eq9k
