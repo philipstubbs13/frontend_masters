@@ -55,3 +55,23 @@
 * Allow you to execute functions on an incoming request with guaranteed order.
 * Great for authenticating, transforming the request, tracking, error handling.
 * Middleware can also respond to request like a controller would, but that is not their intent.
+
+## REST routes with Express
+
+* Express was designed with REST in mind and has all you need.
+* Express has a robust route matching system that allows for exact, regex, glob, and parameter matching.
+* It also supports HTTP verbs - CRUD - on a route based level. Together with the routing, you can create REST APIs.
+* Routes match in the order that they were defined (top to bottom)
+* For abstraction, express allows you to create sub routers that combine to make a full router.
+
+## Data modeling with MongoDB
+
+* Schemas for a schemaless DB?
+  * You should always use a schema for models, and mongoose makes it easy.
+  * MongoDB is a Schemaless document store, but you should always use schemas if you don't want to go crazy.
+  * MongoDB has added support for creating schemas, but Mongoose is much better.
+  * We can create models for each REST resouce we want to expose via the API.
+
+* Schemas to models
+  * Schemas are the instructions for the models.
+  * Schemas hold the instructions
