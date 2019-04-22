@@ -75,3 +75,25 @@
 * Schemas to models
   * Schemas are the instructions for the models.
   * Schemas hold the instructions
+
+## Routes and controllers
+
+* Controllers are just middleware but with the intent on returning some data.
+* Controllers handle what a Route + Verb combo can access from the DB.
+* Think of them as the final middleware in the stack for a request. Their is no intent to proceed to another middleware function after a controller.
+* Controllers implement the logic that interacts with our DB models.
+* Can generalize controllers to work for many models because we're going with a REST approach which requires CRUD actions on resources.
+
+## Using models
+
+* Mongoose models work very nicely with CRUD.
+* C - model.create(), new model()
+* R - model.find(), model.findById(), model.findOne()
+* U - model.update(), model.findByIdAndUpdate(), model.findOneAndUpdate()
+* D - model.remove(), model.findByIdAndUpdate(), model.findOneAndRemove()
+
+* GET / Read many
+* GET /:id Read one
+* POST / Create one
+* PUT /:id Update one
+* DELETE /:id Delete one
