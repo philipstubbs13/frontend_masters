@@ -146,3 +146,32 @@ function data([
   // ..
 }
 ```
+
+## Object Destructuring
+
+```bash
+function data() {
+  return { a: 1, b: 2, c: 3};
+}
+var first, second, third
+
+var tmp = data();
+first = tmp.a;
+second = tmp.b;
+third = tmp.c;
+```
+
+```bash
+function data() {
+  return { a: 1, b: 2, c: 3, d: 4};
+}
+
+var tmp;
+var first, second;
+
+tmp = {
+  b: second,
+  a: first,
+  ...third
+} = data();
+```
