@@ -175,3 +175,40 @@ tmp = {
   ...third
 } = data();
 ```
+
+## Nested object and array destructuring
+
+```bash
+var obj = {
+  a: 1,
+  b: {
+    x: 2
+  }
+  c: 3
+};
+
+var {
+  a,
+  b,
+  b: {
+    x: W
+  }
+  c
+} = obj
+```
+
+## Named Arguments
+
+## Destructuring and Restructuring
+
+## Array .find(..) Array .includes(..)
+
+* <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find>
+* <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex>
+* <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes>
+
+## flat and flatMap
+
+* <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap>
+* <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat>
+* <https://twitter.com/search?q=smooshgate&src=typd>
