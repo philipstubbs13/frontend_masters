@@ -212,3 +212,35 @@ var {
 * <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flatMap>
 * <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat>
 * <https://twitter.com/search?q=smooshgate&src=typd>
+
+## Iterators + Generators
+
+* <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators>
+
+```bash
+var str = "Hello";
+var it = str[Symbol.iterator]();
+
+for (let v of it) {
+  console.log(v);
+}
+
+// "H" "e" "l" "l" "o"
+
+for (let v of str) {
+  console.log(v);
+}
+
+// "H" "e" "l" "l" "o"
+```
+
+```bash
+var str = "Hello";
+
+var letters = [...str];
+letters;
+
+// ["H", "e", "l", "l", "o"]
+```
+
+* Obojects are not iterables.
