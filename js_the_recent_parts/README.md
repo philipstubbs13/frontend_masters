@@ -243,4 +243,8 @@ letters;
 // ["H", "e", "l", "l", "o"]
 ```
 
-* Obojects are not iterables.
+* Objects are not iterables.
+
+## RegExp Improvements
+
+* <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp>
