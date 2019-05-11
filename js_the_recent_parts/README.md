@@ -248,3 +248,19 @@ letters;
 ## RegExp Improvements
 
 * <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp>
+
+* dotall mode
+  * <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/dotAll>
+
+## Async Await functions
+
+* <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function>
+* <https://github.com/getify/fasy>
+* Async function problems
+  * await Only Promises
+  * Scheduling (Starvation)
+    * <https://en.wikipedia.org/wiki/Communicating_sequential_processes>
+  * External Cancelation
+    * <https://www.youtube.com/watch?v=VDaKLQE03ss>
+    * <https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API>
+    * <https://github.com/getify/caf>

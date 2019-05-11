@@ -6,8 +6,13 @@ function getFile(file) {
 
 async function loadFiles(files) {
 	// request all files concurrently
+  var prs = files.map(getFile);
 
-	// print in order, sequentially
+  // print in order, sequentially
+  for (let pr of prs) {
+    console.log(await pr);
+  }
+
 }
 
 loadFiles(["file1","file2","file3"]);
