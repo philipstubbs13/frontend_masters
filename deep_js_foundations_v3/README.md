@@ -105,3 +105,104 @@ Math.sign(3); // 1
 Math.sign(-0); // -0
 Math.sign(0); // 0
 ```
+
+## Fundamental Objects
+
+* Use new:
+  * Object()
+  * Array()
+  * Date()
+  * Function()
+  * RegExp()
+  * Error()
+* Don't use new:
+  * String()
+  * Number()
+  * Boolean()
+
+## Abstract Operations
+
+* <https://www.ecma-international.org/ecma-262/9.0/index.html#sec-abstract-operations>
+* aka coercion
+* ToPrimitive(hint) (7.1.1)
+* hint: "number"
+  * valueOf()
+  * toString()
+* hint: "string"
+  * toString()
+  * valueOf()
+* ToString (7.1.12)
+  
+```bash
+null "null"
+undefined "undefined"
+true "true"
+false "false"
+3.14159 "3.1459"
+0 "0"
+-0 "0"
+```
+
+```bash
+[]  ""
+[1,2,3] "1,2,3"
+[null,undefined]  ","
+[[],[],[],[]] ",,,"
+```
+
+```bash
+{}  "[object Object]"
+{a:2} "[object Object]"
+{toString(){ return "X";}} "X"
+```
+
+* toNumber
+
+```bash
+""  0
+"0"  0
+"-0"  -0
+"  009 "  9
+"3.1459"  3.1459
+"0."  0
+".0"  0
+"."  NaN
+```
+
+```bash
+false  0
+true  1
+null  0
+undefined  NaN
+```
+
+```bash
+[""]  0
+["0"]  0
+["-0"] -0
+```
+
+* ToBoolean (7.1.2)
+  * Falsy
+    * "",
+    * 0, -0
+    * null
+    * NaN
+    * false
+    * undefined
+  * Truthy
+    * "foo"
+    * 23
+    * { a: 1}
+    * [1,3]
+    * true
+    * function(){..}
+
+## Boxing
+
+* form of implicit coercion.
+* all programming languages have type conversions, because it's absolutely necessary.
+
+## Type conversion corner cases
+
+* A quality JS program embraces coercions, making sure the types involved in every operation are clear. thus, corner cases are safely managed.
