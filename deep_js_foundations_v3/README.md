@@ -228,3 +228,39 @@ undefined  NaN
 * When the types match, do the triple equals.
 * == allows coercion (types different)
 * === disallows coercion (types same)
+* Double equals prefers numeric comparison
+* Double equals only compares primitives.
+* Double equality --> only primitives
+* Summary of double equals algorithm
+  * If the types are the same: ===
+  * If null or undefined: equal
+  * If non-primitives: ToPrimitive
+  * Prefer: ToNumber
+
+* Corner cases
+
+```bash
+[] = ![]; // true WAT!?
+```
+
+```bash
+var workshopStudents = [];
+
+if (workshopStudents) {
+  // yep
+}
+
+if (workshopStudents == true) {
+  // nope
+}
+
+if(workshopStudents == false) {
+  //yep
+}
+```
+
+* Corner cases summary
+  * Avoid:
+    * == with 0 or "" (or even "  ")
+    * == with non-primitives
+    * == true or == false: allow toBoolean or use ===
