@@ -206,3 +206,25 @@ undefined  NaN
 ## Type conversion corner cases
 
 * A quality JS program embraces coercions, making sure the types involved in every operation are clear. thus, corner cases are safely managed.
+
+## Implicit Coercion
+
+* Hiding unnecessary details, re-focusing the reader and increasing clarity.
+* Is showing the reader the extra type details helpful or distracting?
+
+## Understanding features
+
+* "If a feature is sometimes useful and sometimes dangerous and if there is a better option then always use the better option." -- "The Good Parts", Crockford
+* Useful: when the reader is focused on what's important.
+* Dangerous: when the reader can't tell what will happen.
+* Better: when the reader understands the code.
+* It is irresponsible to knowingly avoid usage of a feature that can improve code readability.
+
+## Double and triple equals
+
+* == checks value (loose)
+* === checks value and type (strict)
+* Spec: <https://www.ecma-international.org/ecma-262/9.0/index.html#sec-strict-equality-comparison>
+* When the types match, do the triple equals.
+* == allows coercion (types different)
+* === disallows coercion (types same)
