@@ -264,3 +264,24 @@ if(workshopStudents == false) {
     * == with 0 or "" (or even "  ")
     * == with non-primitives
     * == true or == false: allow toBoolean or use ===
+
+* You should prefer double equals in all possible places.
+* Knowing types is always better than not knowing them.
+* Static types is not the only (or even necessarily best) way to know your types.
+* == is not about comparisons with unknown types.
+* == is about comparisons with known type(s), optionally where conversions are helpful.
+* If you know the type(s) in a comparison: 
+  * if both types are the same, == is identical to ===
+  * Using === would be unnecessary. so prefer the shorter ==
+  * Since === is pointless when the types don't match, it's similarly unnecessary when they do match.
+  * If the types are different, using one === would be broken.
+  * Summary: whether the types match or not, == is the more sensible choice.
+* If you don't know the types in a comparison:
+  * Not knowing the types means not fully understanding that code.
+  * So best to refactor so you know the types.
+  * The uncertainty of not knowing types should be obvious to reader.
+  * The most obvious signal is ===.
+  * Not knowing the types is equivalent to assuming type conversion.
+  * Summary: If you can't or won't use known and obvious types, === is the only reasonable choice.
+* Summary: making types known and obvious leads to better code. If types are known, == is best.
+  * Otherwise, fall back to ===.
