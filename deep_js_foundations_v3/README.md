@@ -285,3 +285,26 @@ if(workshopStudents == false) {
   * Summary: If you can't or won't use known and obvious types, === is the only reasonable choice.
 * Summary: making types known and obvious leads to better code. If types are known, == is best.
   * Otherwise, fall back to ===.
+
+## Typescript, Flow, and type-aware linting
+
+* Benefits
+  * Catch type-related mistakes.
+  * Communicate type intent.
+  * Provide IDE feedback.
+* Caveats
+  * Inferencing is best-guess, not a guarantee.
+  * Annotations are optional.
+  * Any part of the application that isn't typed introduces uncertainty.
+* <https://github.com/niieani/typescript-vs-flowtype>
+* Typescript and Flow
+  * Pros
+    * They make types more obvious in your code.
+    * Familiarity: they look like other language's type systems.
+    * Extremely popular these days.
+    * They're very sophisticated and good at what they do.
+  * Con
+    * They use "non-js-standard" syntax (or code comments).
+    * They require* a build process, which raises the barrier to entry.
+    * Their sophistication can be intimidating to those without prior formal types experience.
+    * They focus more on "static types" (variables, parameters, returns, properties, etc) than value types.
