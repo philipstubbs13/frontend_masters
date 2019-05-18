@@ -308,3 +308,6 @@ if(workshopStudents == false) {
     * They require* a build process, which raises the barrier to entry.
     * Their sophistication can be intimidating to those without prior formal types experience.
     * They focus more on "static types" (variables, parameters, returns, properties, etc) than value types.
+* You simply cannot write quality JS programs without knowing the types involved in your operations.
+* The better approach is to embrace and learn JS's type system, and to adopt a coding style which makes types as obvious as possible.
+* Typl - embraces and unlocks the best parts of JS's type and coercion.
