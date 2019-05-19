@@ -311,3 +311,8 @@ if(workshopStudents == false) {
 * You simply cannot write quality JS programs without knowing the types involved in your operations.
 * The better approach is to embrace and learn JS's type system, and to adopt a coding style which makes types as obvious as possible.
 * Typl - embraces and unlocks the best parts of JS's type and coercion.
+
+## Scope
+
+* Scope: where to look for things.
+* JavaScript organizes scopes with functions and blocks.
