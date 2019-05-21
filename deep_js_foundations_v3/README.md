@@ -316,3 +316,20 @@ if(workshopStudents == false) {
 
 * Scope: where to look for things.
 * JavaScript organizes scopes with functions and blocks.
+* Dynamic global variables
+* Strict mode
+  * place "use strict" at the top of your file/program.
+  * Have to opt in - not in javascript by default.
+* undefined means a variable exists but at the moment it has no value.
+* undeclared - never formally declared in any scope we have access too.
+* Lexical scope elevator
+
+## Function Expressions
+
+* Named function expressions: benefits
+  * reliable function self-reference (recursion, etc)
+  * More debuggable stack traces
+  * More self-documenting code.
+* Arrow functions
+  * Arrow functions are anonymous.
+* (Named) function declaration > named function expression > anonymous function expression.
