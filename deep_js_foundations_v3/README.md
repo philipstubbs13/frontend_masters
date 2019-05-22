@@ -338,3 +338,12 @@ if(workshopStudents == false) {
 
 * Dynamic scope does not exist in javascript.
 * Principle of least exposure/privilege
+* IIFE - immediately invoked function expression
+
+## Block scoping
+
+* Use let when block scoping.
+* var attaches itself to the function scope.
+* you can use var more than once in a function scope. Can't do that with a let.
+* let is not the new var - it is let + var. Both are useful for our programs.
+* Only use const for primitive, immutable values (strings, numbers, and booleans)
