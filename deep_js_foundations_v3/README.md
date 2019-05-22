@@ -333,3 +333,8 @@ if(workshopStudents == false) {
 * Arrow functions
   * Arrow functions are anonymous.
 * (Named) function declaration > named function expression > anonymous function expression.
+
+## Lexical scope and dynamic scope
+
+* Dynamic scope does not exist in javascript.
+* Principle of least exposure/privilege
