@@ -347,3 +347,12 @@ if(workshopStudents == false) {
 * you can use var more than once in a function scope. Can't do that with a let.
 * let is not the new var - it is let + var. Both are useful for our programs.
 * Only use const for primitive, immutable values (strings, numbers, and booleans)
+
+## Hoisting
+
+* Start putting function declarations at bottom of file/scope and executable code at the top. Take advantage of the fact that functions "hoist".
+* var hoisting - usually bad
+* function hosting - actually pretty useful. extremely useful for code readability.
+* let doesn't hoist
+  * statement is meant in good spirit but is inaccurate.
+  * TDZ error - temporal dead zone.
