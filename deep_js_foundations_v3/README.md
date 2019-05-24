@@ -356,3 +356,14 @@ if(workshopStudents == false) {
 * let doesn't hoist
   * statement is meant in good spirit but is inaccurate.
   * TDZ error - temporal dead zone.
+
+## Closure
+
+* Closure is when a function "remembers" its lexical scope even when the function is executed outside that lexical scope.
+
+## Module Pattern
+
+* Module pattern requires the concept of encapsulation (hiding data and behavior).
+* Modules encapsulate data and behavior (methods) together. The state(data) of a module is held by its methods via closure.
+* Minimally expose only what's necessary (principle of least exposure).
+* Module Factory.
