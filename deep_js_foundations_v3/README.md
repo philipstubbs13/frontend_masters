@@ -367,3 +367,31 @@ if(workshopStudents == false) {
 * Modules encapsulate data and behavior (methods) together. The state(data) of a module is held by its methods via closure.
 * Minimally expose only what's necessary (principle of least exposure).
 * Module Factory.
+* ES6 modules and Node.js
+  * workshop.mjs instead of workshop.js (different file extension)
+
+  ```bash
+  var teacher = "Kyle"
+
+  export default function ask(question) {
+    console.log(teacher, question);
+  };
+  ```
+
+* TC39 is an ECMA committee which follows a process to develop language features for JavaScript.
+* Importing modules
+
+```bash
+import ask from 'workshop.mjs';
+
+import * as workshop from 'workshop.mjs';
+```
+
+## Objects (Oriented)
+
+* this
+* class {}
+* Prototypes
+* "Inheritance" vs "Behavior Delegation" (OO vs OLOO)
+* this
+  * A function's this references the execution context for that call, determined entirely by how the function was called.
