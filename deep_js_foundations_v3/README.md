@@ -395,3 +395,18 @@ import * as workshop from 'workshop.mjs';
 * "Inheritance" vs "Behavior Delegation" (OO vs OLOO)
 * this
   * A function's this references the execution context for that call, determined entirely by how the function was called.
+
+## The new keyword
+
+* Create a brand new empty object.
+* *Link that bject to another object.
+* Call function with this set to the new object.
+* If function does not return an object, assume return of this.
+
+## this: determination
+
+* Is the function called by new?
+* is the function called by call() or apply()?
+  * Note: bind() effectively uses apply()
+* Is the function called on a context object?
+* DEFAULT: global object (except strict mode)
