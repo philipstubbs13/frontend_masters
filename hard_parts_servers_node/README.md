@@ -57,3 +57,32 @@ server.listen(80)
   * Node not only will auto-run our function at the right moment, it will also automatically insert whatever the relevant data is as the additional argument (input)/
   * Sometimes it will even insert a set of functions in an object (as an argument) which give us direct access to the message (in Node) being sent back to the user and allows us to add data to that message.
   * People often end up using req and res for the parameters...
+
+## Request and Response with Node
+
+* Messages are sent in HTTP format - The protocol for browser-server interaction.
+* HTTP message: Request line (url, method), Headers, Body (optional)
+
+## Node with HTTP
+
+* Our return message is also in HTTP format.
+* We can use the body to send the data and headers to send important metadata.
+* In the headers we can include info on the format of the data being sent back - e.g. it's html so to load it as a webpage.
+* Getting access to Node's built in features with require.
+  * We have to tell Node we want to have access to each of its C++ features independently - we get a built in function to do this require.
+
+  ```bash
+  const http = require('http');
+  ```
+
+* How do we start JavaScript off to do all this?
+  * Write the code (VSCode et all)
+  * Load it into Node and run it (have to load in using the terminal interface)
+  * Need to reload our code with Node every time we make a change so nodemon.
+* Cloud Node Development
+  * Do we need an always-on computer in our house to run a server?
+    * Write code on your computer.
+    * SSH into someone else's computer (ne of AWS's)
+    * Set up DNS to match domain name to right IP.
+* Local Node Development
+  * OS developers included the loopback feature with localhost as the pseudo-domain.
