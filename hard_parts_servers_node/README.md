@@ -23,3 +23,37 @@
   * CPU - for cryptography and optimizing hashing passwords.
   * Kernel - I/O management
 * C++ has many features that let it directly interact with the OS directly. JavaScript does not! So it has to work with C++ to control these computer features. What is this combination known as? ...Node.js.
+* JS --> Node --> Computer feature (e.g. network, file system)
+
+## Executing Node Code
+
+* So let's see JavaScript other talent- built-in labels that trigger Node features.
+  * We can set up, with a JavaScript label, a Node.js feature(and so computer internals) to wait for requests for html/css/js/tweets from our users.
+  * How? The most powerful built-in Node feature of all: http (and its associated built-in label in JS - also http conveniently).
+* Using http feature of Node to set up an open socket.
+
+```bash
+const server = http.createServer()
+server.listen(80)
+```
+
+* Inbound web request -> run code to send back message
+* If inbound message -> send back data.
+
+## Calling Methods in Node
+
+* Node auto-runs the code (function) for us when a request arrives from a user.
+  * We don't know when the inbound request would come - we have to rely on Node to trigger JS code to run.
+  * JavaScript is single-threaded and synchronous. All slow work (e.g. speaking to a database) is done by Node in the background.
+
+```bash
+const server = http.createServer(doOnIncoming)
+server.listen(80)
+```
+
+## Calling a function under the hood
+
+* Two parts to calling a function - executing its code and inserting input (arguments)
+  * Node not only will auto-run our function at the right moment, it will also automatically insert whatever the relevant data is as the additional argument (input)/
+  * Sometimes it will even insert a set of functions in an object (as an argument) which give us direct access to the message (in Node) being sent back to the user and allows us to add data to that message.
+  * People often end up using req and res for the parameters...
