@@ -86,3 +86,9 @@ server.listen(80)
     * Set up DNS to match domain name to right IP.
 * Local Node Development
   * OS developers included the loopback feature with localhost as the pseudo-domain.
+
+## Error Handling in Node
+
+* Node will automatically send out the appropriate event depending on what it gets from the computer internals(http message or error)
+* Node events: <https://nodejs.org/api/events.html>
+* Node docs for on: <https://nodejs.org/api/events.html#events_emitter_on_eventname_listener>
