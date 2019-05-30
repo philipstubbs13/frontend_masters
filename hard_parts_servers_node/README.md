@@ -92,3 +92,11 @@ server.listen(80)
 * Node will automatically send out the appropriate event depending on what it gets from the computer internals(http message or error)
 * Node events: <https://nodejs.org/api/events.html>
 * Node docs for on: <https://nodejs.org/api/events.html#events_emitter_on_eventname_listener>
+
+## File System API
+
+* Node documentation on file system (fs): <https://nodejs.org/api/fs.html#fs_file_system>
+* Every file has a 'path' ( a link - like a domestic url)
+* JSON is a javascript-ready data format.
+* JSON parse: <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse>
+* JSON: <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON>
