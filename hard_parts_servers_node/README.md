@@ -100,3 +100,5 @@ server.listen(80)
 * JSON is a javascript-ready data format.
 * JSON parse: <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse>
 * JSON: <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON>
+* Documentation on readFile: <https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback>
+* threads: <https://en.wikipedia.org/wiki/Thread_(computing)>
