@@ -102,3 +102,19 @@ server.listen(80)
 * JSON: <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON>
 * Documentation on readFile: <https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback>
 * threads: <https://en.wikipedia.org/wiki/Thread_(computing)>
+
+## Call Stack
+
+* Call stack is JS's behind the scenes way of tracking what line of code is currently running.
+* Whatever is on the top of the call stack is the function we are currently running.
+* JSON.parse: <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse>
+* Buffer: <https://nodejs.org/api/buffer.html#buffer_buffer>
+* Error-first callbacks: <https://nodejs.org/api/errors.html#errors_error_first_callbacks>
+
+## Node Streams
+
+* Streams: <https://nodejs.org/api/stream.html#stream_stream>
+* What if Node used the event (message-broadcasting) pattern to send out a message(event) each time a sufficient batch of the json data had been loaded in.
+* Streams are chunks of data.
+* Callback queue
+* Event loop
