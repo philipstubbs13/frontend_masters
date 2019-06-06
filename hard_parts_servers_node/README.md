@@ -127,3 +127,7 @@ server.listen(80)
 * setImmediate - <https://nodejs.org/api/timers.html#timers_setimmediate_callback_args>
 * Timer Queue
 * IO Queue
+* Check Queue
+* Microtask Queue
+* <https://nodejs.org/de/docs/guides/event-loop-timers-and-nexttick/#process-nexttick>
+* Close Queue
