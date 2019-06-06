@@ -118,3 +118,12 @@ server.listen(80)
 * Streams are chunks of data.
 * Callback queue
 * Event loop
+
+## Async in Node
+
+* Call stack: JavaScript keeps track of what function is being run and where it was run from. Whenever a function is to be run, it's added to the call stack.
+* Callback queue - any functions delayed from running (and run automatically by Node) are added to the callback queue when the background Node task has completed (or there's been some activity like a request)
+* Event loop - Determines what function/code to run next from the queue(s)
+* setImmediate - <https://nodejs.org/api/timers.html#timers_setimmediate_callback_args>
+* Timer Queue
+* IO Queue
