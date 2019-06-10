@@ -4,5 +4,4 @@
 * <https://github.com/btholt/complete-intro-to-react-v5>
 * Course notes: <https://btholt.github.io/complete-intro-to-react-v5/>
 * Podcast: <https://frontendhappyhour.com/>
-* git checkout https://github.com/btholt/complete-intro-to-react-v5/commit/aec9d9897b529b732fba0f83b23f4b09b1354720
   
