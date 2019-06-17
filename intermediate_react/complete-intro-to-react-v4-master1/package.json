@@ -39,6 +39,8 @@
     "react-test-renderer": "^16.6.3"
   },
   "dependencies": {
+    "@emotion/babel-preset-css-prop": "^10.0.9",
+    "@emotion/core": "^10.0.10",
     "@reach/router": "^1.1.1",
     "emotion": "^10.0.5",
     "petfinder-client": "^0.0.3",
