@@ -18,3 +18,17 @@
 * Catch common mistakes (i.e. incomplete refactors)
 * Move some runtime errors to compile time.
 * Provide your consumers (including you) with a great DX.
+
+## Type Systems and Type Equivalence
+
+* Nominal Type Systems answer this question based on whether x is an instance of a class/type named HTMLInputElement.
+
+* Structural Type Systems only care about the shape of an object. This is how typescript works.
+
+## Object Shapes
+
+* When we talk about the shape of an object, we're referring to the names of properties and types of their values.
+
+## Wider vs Narrower
+
+* Describes: relative differences in range of a type's allowable values.
