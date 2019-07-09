@@ -2,6 +2,7 @@
 
 * <https://frontendmasters.com/courses/testing-react/>
 * Instructor: Kent C. Dodds
+* Jest
 
 ## What this workshop is
 
