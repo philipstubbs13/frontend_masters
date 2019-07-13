@@ -143,3 +143,4 @@ npm run test:client
 ## Snapshot Testing
 
 * <https://blog.kentcdodds.com/making-your-ui-tests-resilient-to-change-d37a6ee37269>
+* <https://kentcdodds.com/blog/effective-snapshot-testing>
