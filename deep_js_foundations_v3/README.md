@@ -410,3 +410,5 @@ import * as workshop from 'workshop.mjs';
   * Note: bind() effectively uses apply()
 * Is the function called on a context object?
 * DEFAULT: global object (except strict mode)
+* only use => arrow functions when you need lexical this.
+  * <https://github.com/getify/eslint-plugin-arrow-require-this>
