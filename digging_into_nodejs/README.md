@@ -5,3 +5,14 @@
 * <https://en.wikipedia.org/wiki/POSIX>
 * <https://github.com/substack/minimist>
 * <http://yargs.js.org/>
+* util: <https://nodejs.org/api/util.html>
+* fs: <https://nodejs.org/api/fs.html>
+* path: <https://nodejs.org/api/path.html>
+* Node streams
+  * <https://frontendmasters.com/courses/networking-streams/>
+  * <https://github.com/substack/stream-handbook>
+  * readable.pipe: <https://nodejs.org/api/stream.html#stream_readable_pipe_destination_options>
+* stream module: <https://nodejs.org/api/stream.html>
+* zlib module:<https://nodejs.org/api/zlib.html>
+* <https://github.com/getify/caf>
+* fetch: <https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API>
