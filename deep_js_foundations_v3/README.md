@@ -412,3 +412,7 @@ import * as workshop from 'workshop.mjs';
 * DEFAULT: global object (except strict mode)
 * only use => arrow functions when you need lexical this.
   * <https://github.com/getify/eslint-plugin-arrow-require-this>
+
+## class
+
+* <https://gist.github.com/getify/86bed0bb78ccb517c84a6e61ec16adca>
