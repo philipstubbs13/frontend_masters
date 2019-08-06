@@ -16,3 +16,5 @@
 * zlib module:<https://nodejs.org/api/zlib.html>
 * <https://github.com/getify/caf>
 * fetch: <https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API>
+* <https://www.sqlite.org/index.html>
+* <https://nodejs.org/dist/latest-v8.x/docs/api/util.html>
