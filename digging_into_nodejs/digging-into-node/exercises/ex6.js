@@ -6,8 +6,10 @@ var util = require("util");
 var path = require("path");
 var http = require("http");
 
-// var express = require("express");
+var express = require("express");
 var sqlite3 = require("sqlite3");
+
+var app = express();
 
 
 // ************************************
@@ -44,7 +46,35 @@ main();
 // ************************************
 
 function main() {
-	// TODO: define routes
+  defineRoutes();
+
+	httpserv.listen(HTTP_PORT);
+	console.log(`Listening on http://localhost:${HTTP_PORT}...`);
+}
+
+function defineRoutes() {
+  app.get("/get-records", async function(req,res){
+    var records = await getAllRecords();
+    res.writeHead(200, {
+      "Content-Type": "application/json",
+      "Cache-Control": "no-cache"
+    });
+    res.end(JSON.stringify(records));
+  });
+
+  app.use(function(req, res, next){
+
+    next();
+  })  
+
+  app.use(express.static(WEB_PATH, {
+    maxAge: 100,
+    setHeaders: function setHeaders(res){
+      res.setHeader("Server", "Node Workshop: ex6");
+    }
+  }));
+
+  // TODO: define routes
 	//
 	// Hints:
 	//
@@ -68,9 +98,6 @@ function main() {
 	// 	match: /[^]/,
 	// 	serve: "404.html",
 	// },
-
-	httpserv.listen(HTTP_PORT);
-	console.log(`Listening on http://localhost:${HTTP_PORT}...`);
 }
 
 // *************************
