@@ -4,10 +4,10 @@
 
 var util = require("util");
 var path = require("path");
-// var http = require("http");
+var http = require("http");
 
 var sqlite3 = require("sqlite3");
-// var staticAlias = require("node-static-alias");
+var staticAlias = require("node-static-alias");
 
 
 // ************************************
@@ -35,14 +35,15 @@ var SQL3 = {
 	exec: util.promisify(myDB.exec.bind(myDB)),
 };
 
-// var fileServer = new staticAlias.Server(WEB_PATH,{
-// 	cache: 100,
-// 	serverInfo: "Node Workshop: ex5",
-// 	alias: [
-// 	],
-// });
+var fileServer = new staticAlias.Server(WEB_PATH,{
+	cache: 100,
+	serverInfo: "Node Workshop: ex5",
+	alias: [
+    
+	],
+});
 
-// var httpserv = http.createServer(handleRequest);
+var httpserv = http.createServer(handleRequest);
 
 main();
 
@@ -50,7 +51,18 @@ main();
 // ************************************
 
 function main() {
+  httpserver.listen(HTTP_PORT);
 	// console.log(`Listening on http://localhost:${HTTP_PORT}...`);
+}
+
+async function handleRequest(req, res){
+  if(req.url = "/hello") {
+    res.writeHead(200, { "Content-Type": "text/plain" });
+    res.end("Hello world");
+  } else {
+    res.writeHead(404);
+    res.end();
+  }
 }
 
 // *************************
