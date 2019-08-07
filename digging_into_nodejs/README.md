@@ -21,3 +21,5 @@
 * HTTP: <https://nodejs.org/api/http.html>
 * <https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API>
 * <https://expressjs.com/en/api.html>
+* <https://nodejs.org/api/child_process.html>
+* <https://github.com/GoogleChromeLabs/ndb>
