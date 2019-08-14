@@ -1,6 +1,6 @@
 "use strict";
 
-const version = 3;
+const version = 4;
 var isOnline = true;
 var isLoggedIn = false;
 var cacheName = `ramblings-${version}`;
@@ -66,9 +66,29 @@ function onActivate(evt) {
 }
 
 async function handleActivation() {
+  await clearCaches();
   await clients.claim();
   await cacheLoggedOutFiles(/*forceReload=*/true);
   console.log(`Service Worker (${version}) activated...`);
+}
+
+async function clearCaches() {
+  var cacheNames = await caches.keys();
+  var oldCacheNames = cacheNames.filter(function matchOldCache(cacheName){
+    if(/^ramblings-\d+$/.test(cacheName)) {
+      let [,cacheVersion] = cacheName.match(/^ramblings-(\d+)$/);
+      cacheVersion = (cacheVersion != null) ? Number(cacheVersion) : cacheVersion;
+        return (
+          cacheVersion > 0 &&
+          cacheVersion != version
+        ) 
+      }
+  });
+  return Promise.all(
+    oldCacheNames.map(function deleteCache(cacheName){
+      return caches.delete(cacheName);
+    })
+  )
 }
 
 async function cacheLoggedOutFiles(forceReload = false) {
