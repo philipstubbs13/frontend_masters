@@ -1,6 +1,6 @@
 "use strict";
 
-const version = 4;
+const version = 5;
 var isOnline = true;
 var isLoggedIn = false;
 var cacheName = `ramblings-${version}`;
@@ -26,6 +26,7 @@ var urlsToCache = {
 self.addEventListener("install", onInstall);
 self.addEventListener("activate", onActivate);
 self.addEventListener("message", onMessage);
+self.addEventListener("fetch", onFetch);
 
 main().catch(console.error);
 
@@ -59,6 +60,41 @@ function onMessage({ data }) {
     ({ isOnline, isLoggedIn } = data.statusUpdate);
     console.log(`Service Worker (v${version}) status update, isOnline:${isOnline}, isLoggedIn:${isLoggedIn}`);
   }
+}
+
+function onFetch(evt) {
+  evt.respondWith(router(evt.request));
+}
+
+async function router(req) {
+  var url = new URL(req.url);
+  var reqURL = url.pathname;
+  var cache = await caches.open(cacheName);
+
+  if (url.origin == location.origin) {
+    let res;
+    try {
+      let fetchOptions = {
+        method: req.method,
+        headers: req.headers,
+        credentials: "omit",
+        cache: "no-store"
+      };
+      res = await fetch(req.url,fetchOptions);
+      if (res && res.ok) {
+        await cache.put(reqURL, res.clone());
+        return res;
+      }
+    }
+    catch (err) {}
+
+    res = await cache.match(reqURL);
+    if (res) {
+      return res.clone();
+    }
+    
+  }
+  // TODO: figure out CORS request
 }
 
 function onActivate(evt) {
