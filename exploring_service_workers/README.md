@@ -11,3 +11,4 @@
 * <https://developer.mozilla.org/en-US/docs/Web/API/Transferable>
 * <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer>
 * <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics>
+* <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept>
