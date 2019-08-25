@@ -111,3 +111,5 @@ const secondStore = createStore(reducer, applyMiddleware(logger));
 ## Normalizing Data
 
 * <https://github.com/paularmstrong/normalizr>
+
+* <https://github.com/lodash/lodash/wiki/FP-Guide>
