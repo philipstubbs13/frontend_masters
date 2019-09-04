@@ -83,3 +83,7 @@ gatsby build && gatsby serve
   * CSS-in-JS
     * Cached class names aren't user friendly, e.g. class="sc-bdVaJa"
     * Add a stable CSS class.
+* Client-side routing
+  * Navigation where JavaScript controls browser history and dynamically maps URLs to each page or view.
+  * <https://www.gatsbyjs.org/blog/2019-07-11-user-testing-accessible-client-routing/>
+  * React FocusScopes: <https://twitter.com/devongovett/status/1100829054800846848>
