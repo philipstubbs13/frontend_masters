@@ -87,3 +87,15 @@ gatsby build && gatsby serve
   * Navigation where JavaScript controls browser history and dynamically maps URLs to each page or view.
   * <https://www.gatsbyjs.org/blog/2019-07-11-user-testing-accessible-client-routing/>
   * React FocusScopes: <https://twitter.com/devongovett/status/1100829054800846848>
+* <https://github.com/WICG/focus-visible>
+* Announcement patterns
+  * notify assistive tech users without moving focus.
+    * asynchronous save / update /etc.
+    * combobox usage / list filterin
+    * chat widgets
+    * title changes
+  * Aria live regions
+    * mesage command centers of varying importance.
+    * <https://www.w3.org/TR/wai-aria/#live_region_roles>
+  * Include multiple regions for stubborn situations.
+  * Site level announcement manager APIs.
