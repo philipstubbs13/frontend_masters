@@ -99,3 +99,24 @@ gatsby build && gatsby serve
     * <https://www.w3.org/TR/wai-aria/#live_region_roles>
   * Include multiple regions for stubborn situations.
   * Site level announcement manager APIs.
+* Semantic HTML
+  * Use heading and landmarks.
+  * Start with natie UI controls.
+  * Build semantics into templates.
+  * Verify assitive tech output.
+  * <https://webaim.org/techniques/semanticstructure/>
+  * <https://addons.mozilla.org/en-US/firefox/addon/web-developer/>
+  * <https://dequeuniversity.com/screenreaders/nvda-keyboard-shortcuts#nvda-the_basics>
+  * <https://dequeuniversity.com/screenreaders/voiceover-keyboard-shortcuts#vo-mac-the-rotor>
+* Unobtrusive motion
+  * Building safe and delightful interfaces.
+  * prefers-reduced-motion CSS
+  * media, animation playback controls.
+  * opt-in for autoplay
+  * <https://source.opennews.org/articles/motion-sick/>
+* Progressive enhancement
+  * Emphasize core web page content first, then add layers of presentation and features on top as browsers/network connections allow.
+    * Turn off JavaScript.
+    * Provide accessible baseline markup.
+    * Add ARIA with scripting.
+    * Prioritize core user flows.
