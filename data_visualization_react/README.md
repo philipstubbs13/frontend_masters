@@ -72,3 +72,17 @@
     * d: path to follow
     * Moveto, Lineto, Curveto, Arcto
     * <https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths>
+* <https://observablehq.com/@sxywu/data-visualization-for-react-developers-starter>
+* Scales
+  * scale: mapping from data attributes (domain) to display (range).
+  * date -> x-value
+  * value -> y-value
+  * value -> opacity
+  * etc.
+  * <https://github.com/d3/d3/blob/master/API.md#scales-d3-scale>
+
+```bash
+d3.scaleLinear()
+  .domain([min, max]) // input
+  .range([min, max]); // output
+```
