@@ -6,3 +6,7 @@
 * Recursion
   * Define a function that calls itself.
   * Using a function to define itself.
+* Sorting algorithms
+  * Bubble Sort
+  * Insertion Sort
+  * <https://www.bigocheatsheet.com/>
