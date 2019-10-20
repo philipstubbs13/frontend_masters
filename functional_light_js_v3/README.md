@@ -33,3 +33,9 @@
   * Side effects impurify the benefits of functional programming.
   * No such thing as "no side effects"
   * Avoid them where possible, make them obvious otherwise.
+* Pure Functions
+* Same Input, Same Output
+* Pure function calls act in insolation. Given the same input, they always produce the same output.
+* A pure function is one in which every time we execute that function with the same inputs, we absolutely, positively know it will give the same output.
+* Function Purity is a level of confidence.
+  * How confident are we the readers in a function's behavior?
