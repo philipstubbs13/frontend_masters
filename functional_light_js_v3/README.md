@@ -39,3 +39,20 @@
 * A pure function is one in which every time we execute that function with the same inputs, we absolutely, positively know it will give the same output.
 * Function Purity is a level of confidence.
   * How confident are we the readers in a function's behavior?
+* Functional programming - having pure functions and then side effects on the outer shell.
+* Arguments
+  * A parameter is the thing in the function definition.
+  * Arguments get assigned to parameters.
+  * Arguments are the inputs to the functions.
+  * The shape of a function is the number and kinds of things you pass into it as well as the number and kinds of things that come out of it.
+    * unary function - single value in, single value out.
+    * binary function - takes 2 inputs, returns 1 output.
+    * Functional programmers tend to prefer unary functions.
+    * n-nary functions - more than 2 inputs. Vastly less common because the more inputs a function has, the harder it is to make it work with other functions.
+* Higher order functions (HOF) - a function that either receives as its inputs one or more functions and/or returns returns one or more functions.
+* A function of one shape can be adapted to have another shape.
+* Flip adapter - takes in a function, gives back a flipped function.
+* Reverse adapter
+* Spread adapter - a function that can take an array and spread it out into individual ones.
+* Point-Free - defining a function without needing to define its points (aka its inputs).
+* Equational Reasoning
