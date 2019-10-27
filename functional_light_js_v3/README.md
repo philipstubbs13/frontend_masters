@@ -56,3 +56,10 @@
 * Spread adapter - a function that can take an array and spread it out into individual ones.
 * Point-Free - defining a function without needing to define its points (aka its inputs).
 * Equational Reasoning
+* Closure
+  * Closure is when a function "remembers" the variables around it even when that function is executed elsewhere.
+  * Closure is not necessarily functionally pure.
+  * Lazy vs Eager Execution
+  * Memoization
+    * Utility called memoize that is built into all of your favorite functional programming libraries.
+    * memoization is like the word memorization but they forgot the r.
