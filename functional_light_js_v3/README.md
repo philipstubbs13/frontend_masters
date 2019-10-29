@@ -63,3 +63,11 @@
   * Memoization
     * Utility called memoize that is built into all of your favorite functional programming libraries.
     * memoization is like the word memorization but they forgot the r.
+* Referential transparency
+  * A function call is pure if it has referential transparency.
+  * A function call can be replaced with its return value and not affect any of the rest of the program.
+* Generalized to specialized
+* Function parameter order:
+  * General -> Specific
+* Partial application
+* Currying
