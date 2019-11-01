@@ -71,3 +71,8 @@
   * General -> Specific
 * Partial application
 * Currying
+* Partial Application vs Currying
+  * Both are specialized techniques.
+  * Partial application presets some arguments now, receives the rest on the next call.
+  * Currying doesn't preset any arguments, receives each argument one at a time.
+* Composition
