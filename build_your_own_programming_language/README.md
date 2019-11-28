@@ -15,4 +15,9 @@
   * Lexical analysis
   * Syntactic analysis
   * Pyschoanalysis
-
+* Parsing (a.k.a syntactic analysis)
+  * Turn the tokens into an intermediate representation or abstract syntax tree.
+  * AST Explorer: <https://astexplorer.net/#/gist/1819fd0f4c1e3690539a1257c054016a/bc5b7c792483456d5a48ba5c668acde715b9a6ab>
+* <https://github.com/estree/estree#the-estree-spec>
+* Evaluation - REPLs
+  * read-evaluate-print-loop. REPL
