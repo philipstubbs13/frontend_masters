@@ -368,4 +368,164 @@ Name: Alice had a score of 97
 >>> dict(zip(players, scores))
 {'Nina': 100, 'Bob': 5, 'Alice': 97}
 >>>
+
+
+
+
+
+>>> # Comprehension, Slicing, Zip Exercise
+...
+>>> [for num in range(100) if num % 2 == 0]
+  File "<stdin>", line 1
+    [for num in range(100) if num % 2 == 0]
+       ^
+SyntaxError: invalid syntax
+>>> [num in range(100) if num % 2 == 0]
+  File "<stdin>", line 1
+    [num in range(100) if num % 2 == 0]
+                                      ^
+SyntaxError: invalid syntax
+>>> [num for num in range(100) if num % 2 == 0]
+[0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94,
+96, 98]
+>>> my_list = [num for num in range(100) if num % 2 == 0]
+>>> import random
+>>> help(random.randint)
+Help on method randint in module random:
+
+randint(a, b) method of random.Random instance
+    Return random integer in range [a, b], including both end points.
+
+>>> random.randint(0, 100)
+90
+>>> random.randint(0, 100)
+73
+>>> random.randint(0, 100)
+68
+>>> my_dict = {num: random.randint(0, 100) for num in my_list}
+>>> my_list
+[0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94,
+96, 98]
+>>> my_dict.values()
+dict_values([45, 66, 43, 52, 89, 93, 15, 82, 24, 93, 28, 42, 0, 46, 92, 59, 86, 94, 2, 69, 31, 81, 17, 62, 50, 9, 10, 96, 7, 74, 42, 77, 35, 29, 3, 11, 86, 61, 44, 49, 47, 91, 20, 34, 2, 84, 5, 4, 27, 13])
+>>> set(my_dict.values())
+{0, 2, 3, 4, 5, 7, 9, 10, 11, 13, 15, 17, 20, 24, 27, 28, 29, 31, 34, 35, 42, 43, 44, 45, 46,
+47, 49, 50, 52, 59, 61, 62, 66, 69, 74, 77, 81, 82, 84, 86, 89, 91, 92, 93, 94, 96}
+>>> {num for num in my_dict.values()}
+{0, 2, 3, 4, 5, 7, 9, 10, 11, 13, 15, 17, 20, 24, 27, 28, 29, 31, 34, 35, 42, 43, 44, 45, 46,
+47, 49, 50, 52, 59, 61, 62, 66, 69, 74, 77, 81, 82, 84, 86, 89, 91, 92, 93, 94, 96}
+>>>
+>>> list(range(100))
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]
+>>> my_list = [num for num in range(100)]
+>>> my_list[30:70]
+[30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69]
+>>> my_list[30:70:2]
+[30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68]
+>>> my_lis
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'my_lis' is not defined
+>>> my_list
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]
+>>> my_list[::-1]
+[99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5,
+4, 3, 2, 1, 0]
+>>> my_list.reverse() # does the same thing
+>>> my_list
+[99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5,
+4, 3, 2, 1, 0]
+>>> my_list # .reverse() sorted in place
+[99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5,
+4, 3, 2, 1, 0]
+>>> my_list.reverse()
+>>> my_list
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]
+>>> my_list[::-1]
+[99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85, 84, 83, 82, 81, 80, 79, 78, 77, 76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61, 60, 59, 58, 57, 56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5,
+4, 3, 2, 1, 0]
+>>> names = ["Nina", "Max", "Floyd", "Lloyd"]
+>>> scores = [random.randit(0, 100) for name in names]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 1, in <listcomp>
+AttributeError: module 'random' has no attribute 'randit'
+>>> scores = [random.randint(0, 100) for name in names]
+>>> scores
+[64, 62, 80, 22]
+>>> for name, score in zip(names, scores):
+... Readline internal error
+Traceback (most recent call last):
+  File "C:\Users\phili\Anaconda3\lib\site-packages\pyreadline\console\console.py", line 768, in hook_wrapper_23
+    res = ensure_str(readline_hook(prompt))
+  File "C:\Users\phili\Anaconda3\lib\site-packages\pyreadline\rlmain.py", line 571, in readline
+    self._readline_from_keyboard()
+  File "C:\Users\phili\Anaconda3\lib\site-packages\pyreadline\rlmain.py", line 536, in _readline_from_keyboard
+    if self._readline_from_keyboard_poll():
+  File "C:\Users\phili\Anaconda3\lib\site-packages\pyreadline\rlmain.py", line 556, in _readline_from_keyboard_poll
+    result = self.mode.process_keyevent(event.keyinfo)
+  File "C:\Users\phili\Anaconda3\lib\site-packages\pyreadline\modes\emacs.py", line 243, in process_keyevent
+    r = self.process_keyevent_queue[-1](keyinfo)
+  File "C:\Users\phili\Anaconda3\lib\site-packages\pyreadline\modes\emacs.py", line 286, in _process_keyevent
+    r = dispatch_func(keyinfo)
+  File "C:\Users\phili\Anaconda3\lib\site-packages\pyreadline\modes\basemode.py", line 257, in complete
+    completions = self._get_completions()
+  File "C:\Users\phili\Anaconda3\lib\site-packages\pyreadline\modes\basemode.py", line 200, in _get_completions
+    r = self.completer(ensure_unicode(text), i)
+  File "C:\Users\phili\Anaconda3\lib\rlcompleter.py", line 80, in complete
+    readline.redisplay()
+AttributeError: module 'readline' has no attribute 'redisplay'
+  File "<stdin>", line 2
+
+    ^
+IndentationError: expected an indented block
+>>> for name, score in zip(names, scores):
+...   print(f"{name} for {score} points")
+...
+Nina for 64 points
+Max for 62 points
+Floyd for 80 points
+Lloyd for 22 points
+>>> dict(zip(names, scores))
+{'Nina': 64, 'Max': 62, 'Floyd': 80, 'Lloyd': 22}
+>>> zip(names, scores)
+<zip object at 0x000001B9D5A8FCC8>
+>>> # what happens when generator is exhausted
+...
+>>> my_zip = zip(names, scores)
+>>> for z in my_zip:
+...  print(z)
+...
+('Nina', 64)
+('Max', 62)
+('Floyd', 80)
+('Lloyd', 22)
+>>> for z in my_zip:
+...   print(z)
+...
+>>>
+
+
+
+
+
+>>> True + True
+2
+>>> [1, 2, 3]
+[1, 2, 3]
+>>> str([1, 2, 3])
+'[1, 2, 3]'
+>>> repr([1, 2, 3])
+'[1, 2, 3]'
+>>> str(1)
+'1'
+>>> repr(1)
+'1'
+>>> import datetime
+>>> now = datetime.datetime.now()
+>>> str(now)
+'2019-12-01 06:58:08.482093'
+>>> repr(now)
+'datetime.datetime(2019, 12, 1, 6, 58, 8, 482093)'
+>>>
 ```
