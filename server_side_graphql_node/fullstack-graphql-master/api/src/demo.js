@@ -2,19 +2,38 @@ const gql = require('graphql-tag')
 const { ApolloServer } = require('apollo-server')
 
 const typeDefs = gql`
+  enum ShoeType {
+    JORDAN
+    NIKE
+    ADIDDAS
+    TIMBERLAND
+  }
+
   type User {
     email: String!
     avatar: String
     friends: [User]!
   }
 
-  type Shoe {
-    brand: String!
+  interface Shoe {
+    brand: ShoeType!
     size: Int!
   }
 
+  type Sneaker implements Shoe {
+    brand: ShoeType!
+    size: Int!
+    sport: String!
+  }
+
+  type Boot implements Shoe {
+    brand: ShoeType!
+    size: Int!
+    hasGrip: Boolean!
+  }
+
   input ShoesInput {
-    brand: String
+    brand: ShoeType
     size: Int
   }
 
@@ -38,9 +57,10 @@ const resolvers = {
   Query: {
     shoes(_, {input}) {
       return [
-        {brand: 'nike', size: 12},
-        {brand: 'adiddas', size: 14}
-        ].filter(shoe => shoe.brand === input.brand)
+        {brand: 'NIKE', size: 12, sport: 'basketball'},
+        {brand: 'TIMBERLAND', size: 14, hasGrip: true}
+        ]
+        // .filter(shoe => shoe.brand === input.brand)
     },
     me() {
       return {
@@ -53,6 +73,12 @@ const resolvers = {
   Mutation: {
     newShoe(_, {input}) {
       return input
+    }
+  },
+  Shoe: {
+    __resolveType(shoe) {
+      if(shoe.sport) return 'Sneaker'
+      return 'Boot'
     }
   }
 }
