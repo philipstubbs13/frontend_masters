@@ -16,6 +16,7 @@ const typeDefs = gql`
     name: String!
     type: String!
     img(height: String, width: String): String
+    owner: User! 
   }
 
   input PetInput {
