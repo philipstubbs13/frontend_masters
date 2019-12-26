@@ -12,9 +12,12 @@ module.exports = {
       return ctx.models.Pet.findOne(input)
     }
   },
-  // Mutation: {
-    
-  // },
+  Mutation: {
+    newPet(_, {input}, ctx) {
+      const pet = ctx.models.Pet.create(input)
+      return pet
+    }
+  },
   // Pet: {
   //   img(pet) {
   //     return pet.type === 'DOG'

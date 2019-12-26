@@ -18,10 +18,19 @@ const typeDefs = gql`
     size: Int
   }
 
+  input NewShoeInput {
+    brand: String!
+    size: Int!
+  }
+
   type Query {
     me: User!
     friends: [User]!
     shoes(input: ShoesInput): [Shoe]!
+  }
+
+  type Mutation {
+    newShoe(input: NewShoeInput!): Shoe!
   }
 `
 
@@ -39,6 +48,11 @@ const resolvers = {
         avatar: 'http://yoda.png',
         friends: []
       }
+    },
+  },
+  Mutation: {
+    newShoe(_, {input}) {
+      return input
     }
   }
 }
