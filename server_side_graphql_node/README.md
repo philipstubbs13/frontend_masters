@@ -132,3 +132,81 @@
     }
   }
   ```
+
+* Enums
+  * A set of discrete values that can be used in place of scalars. An enum field must resolve to one of the values in the Enum. Great for limiting a field to only a few different options.
+* Interfaces
+  * Abstract types that can't be used as field values but instead used as foundations for explicit types. Great for when you have types that share common fields, but differ slightly.
+
+  ```bash
+    {
+    shoes {
+      brand
+      size
+      ... on Sneaker {
+        sport
+        __typename
+      }  
+      ... on Boot {
+        hasGrip
+      }
+    }
+  }
+  ```
+
+* Unions
+  * Like interfaces, but without any defined common fields amonst the types. Useful when you need to access more than one disjoint type from one query, like a search.
+* Relationships
+
+```bash
+{
+  shoes {
+		user {
+      shoes {
+        user {
+          shoes {
+            user {
+              shoes {
+                size
+              }
+            }
+          }
+        }
+      }
+    }
+}
+```
+
+```bash
+{
+	pet {
+    name
+    owner {
+      username
+    }
+  }
+}
+```
+
+```bash
+{
+	pet {
+    name
+    owner {
+      username
+      pets {
+        name
+      }
+    }
+  }
+}
+```
+
+* Resources
+  * <https://www.prisma.io/>
+  * Hasura
+  * <https://www.npmjs.com/package/graphql-anywhere>
+  * <https://www.cloudflare.com/>
+  * <https://blog.apollographql.com/apollo-federation-f260cf525d21?gi=2d3715e180cd>
+  * <https://github.com/prisma-labs/graphql-yoga>
+  * <https://github.com/chentsulin/awesome-graphql>

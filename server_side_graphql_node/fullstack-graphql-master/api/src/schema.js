@@ -8,6 +8,7 @@ const typeDefs = gql`
   type User {
     id: ID!
     username: String!
+    pets: [Pet]!
   }
 
   type Pet {
