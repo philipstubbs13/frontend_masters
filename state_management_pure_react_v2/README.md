@@ -23,3 +23,7 @@
 ## Reducers
 
 * <https://codesandbox.io/s/github/stevekinney/grudges-react-state>
+
+## Context
+
+## Data Fetching and useEffect
