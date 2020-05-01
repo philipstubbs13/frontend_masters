@@ -27,3 +27,27 @@
 ## Context
 
 ## Data Fetching and useEffect
+
+## Thunks
+
+* A function returned from another function.
+* Code to be executed later.
+* useThunkReducer hook
+
+```bash
+const useThunkReducer = (reducer, initialState) =>{
+  const [state, dispatch] = useReducer(reducer, initialState)
+
+  const enhancedDispatch = action => {
+    console.log(action);
+
+    if (isFunction(action)) {
+      action(dispatch)
+    } else {
+      dispatch(action);
+    }
+  }
+
+  return [state, enhancedDispatch];
+}
+```
