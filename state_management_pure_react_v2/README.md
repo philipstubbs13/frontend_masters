@@ -51,3 +51,52 @@ const useThunkReducer = (reducer, initialState) =>{
   return [state, enhancedDispatch];
 }
 ```
+
+```bash
+const useUndoReducer = (reducer, initialState) => {
+  const undoState = {
+    past: [],
+    present: initialState,
+    future: []
+  };
+
+  const undoReducer = (state, action) => {
+    const newPresent = reducer(state, action);
+
+    if (action === 'UNDO') {
+      return;
+    }
+
+    if (action.type === 'REDO') {
+      return;
+    }
+  };
+
+  return useReducer(reducer, initialState);
+}
+```
+
+## Managing State in a Form
+
+```bash
+// useSetState
+import { useReducer } from 'react';
+
+const reducer = (previousState = {}, updatedState = {}) => {
+  return { ...previousState, ...updatedState };
+};
+
+const useSetState = ( initialState = {}) => {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const setState = updatedState => dispatch(updatedState);
+
+  return [state, setState];
+}
+
+export default useSetState;
+
+```
+
+* Third party hooks
+  * <https://nikgraf.github.io/react-hooks/>
