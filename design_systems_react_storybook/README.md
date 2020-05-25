@@ -10,3 +10,7 @@
 * <https://coolors.co/>
 * <https://www.figma.com/file/FUgY11amAHtmR2zyiHcSYs/fem-react-storybook?node-id=13%3A2>
 * <https://type-scale.com/>
+* <https://undraw.co/search>
+* <https://thenounproject.com/>
+* <https://dank.sh/>
+* <https://polished.js.org/>
