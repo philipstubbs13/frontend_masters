@@ -10,7 +10,80 @@ const BUTTON_MODIFIERS = {
   large: () => `
     font-size: ${typeScale.h5};
     padding: 16px 24px;
-  `
+  `,
+  warning: () => `
+    background-color: ${defaultTheme.status.warningColor};
+    color: ${defaultTheme.textColorInverted};
+
+
+    &:hover, &:focus {
+      background-color: ${defaultTheme.status.warningColorHover};
+      outline: 3px solid ${defaultTheme.status.warningColorHover};
+    }
+
+    &:active {
+      background-color: ${defaultTheme.status.warningColorActive}
+    }
+  `,
+  secondaryButtonWarning: () => `
+    background: none;
+    border: 2px solid ${defaultTheme.status.warningColor};
+    color: ${defaultTheme.status.warningColor};
+  `,
+  tertiaryButtonWarning: () => `
+    background: none;
+    color: ${defaultTheme.status.warningColor};
+  `,
+  primaryButtonError: () => `
+    background-color: ${defaultTheme.status.errorColor};
+    color: ${defaultTheme.textColorInverted};
+  `,
+  secondaryButtonError: () => `
+    background: none;
+    border: 2px solid ${defaultTheme.status.errorColor};
+    color: ${defaultTheme.status.errorColor};
+  `,
+  tertiaryButtonError: () => `
+    background: none;
+    color: ${defaultTheme.status.errorColor};
+  `,
+  error: () => `
+    background-color: ${defaultTheme.status.errorColor};
+    color: ${defaultTheme.textColorInverted};
+
+    &:hover, &:focus {
+      background-color: ${defaultTheme.status.errorColorHover}
+    }
+
+    &:active {
+      background-color: ${defaultTheme.status.errorColorActive};
+    }
+  `,
+  primaryButtonSuccess: () => `
+    background-color: ${defaultTheme.status.successColor};
+    color: ${defaultTheme.textColorInverted};
+  `,
+  secondaryButtonSuccess: () => `
+    background: none;
+    border: 2px solid ${defaultTheme.status.successColor};
+    color: ${defaultTheme.status.successColor};
+  `,
+  tertiaryButtonSuccess: () => `
+    background: none;
+    color: ${defaultTheme.status.successColor};
+  `,
+  success: () => `
+    background-color: ${defaultTheme.status.successColor};
+    color: ${defaultTheme.textColorInverted};
+
+    &:hover, &:focus {
+      background-color: ${defaultTheme.status.successColorHover}
+    }
+
+    &:active {
+      background-color: ${defaultTheme.status.successColorActive};
+    }
+  `,
 }
 
 const Button = styled.button`
