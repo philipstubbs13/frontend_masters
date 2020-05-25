@@ -14,3 +14,10 @@
 * <https://thenounproject.com/>
 * <https://dank.sh/>
 * <https://polished.js.org/>
+* <https://codesandbox.io/s/reverent-currying-fbhix?fontsize=14&hidenavigation=1&theme=dark>
+
+* Install Storybook
+
+```bash
+npx -p @storybook/cli sb init
+```
