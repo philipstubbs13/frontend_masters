@@ -4,9 +4,9 @@
     "plugin:import/errors",
     "prettier"
   ],
-  "rules": [
+  "rules": {
     "no-console": 1
-  ],
+  },
   "plugins": ["import"],
   "parserOptions": {
     "ecmaVersion": 2018,
