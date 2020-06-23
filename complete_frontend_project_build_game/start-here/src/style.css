@@ -98,6 +98,12 @@ body {
   top: 0;
   left: 0;
   right: 0;
+  background-color: blueviolet;
+  color: white;
+  padding: 25px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 12px;
 }
 
 .modal:empty {
