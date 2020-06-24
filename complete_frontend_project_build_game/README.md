@@ -8,4 +8,8 @@
 git commit -m "initial commit :octocat:"
 ```
 
-* test
+```bash
+rm -rf .cache dist
+```
+
+* <https://xstate.js.org/docs/>
