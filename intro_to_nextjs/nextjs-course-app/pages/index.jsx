@@ -3,6 +3,7 @@
 import { jsx } from 'theme-ui'
 import Link from 'next/link'
 
+
 export default () => (
   <div sx={{ height: `calc(100vh - 60px)` }}>
     <div sx={{ variant: 'containers.page', display: 'flex', alignItems: 'center', height: '100%' }}>
@@ -10,3 +11,11 @@ export default () => (
     </div>
   </div>
 )
+
+export function getStaticProps(context) {
+  console.log(context)
+
+  return {
+    props: {}
+  }
+}
