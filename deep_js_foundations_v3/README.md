@@ -416,3 +416,20 @@ import * as workshop from 'workshop.mjs';
 ## class
 
 * <https://gist.github.com/getify/86bed0bb78ccb517c84a6e61ec16adca>
+
+## Prototypes
+
+* Objects are built by "constructor calls" (via new)
+* A "constructor call" makes an object "based on" its own prototype.
+* A constructor is making a copy of the prototype.
+* A "constructor call" makes an object linked to its own prototype.
+* <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object>
+* <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf>
+* OOLO: Objects Linked to Other Objects
+* <https://www.lua.org/about.html>
+* Object.create es5 feature
+* Delegation: Design Pattern
+
+## Bonus: Typl
+
+* <https://github.com/getify/TypL>
