@@ -64,3 +64,10 @@
   * Make the problem as straightforward as possible.
   * Be honest with the time constraints.
   * Have a code review checklist.
+* Big-O
+  * Big Omega - "best case"
+  * Big Theta - "average case"
+  * Big O - "worst case"
+  * Count the loops.
+* Phone Screen Coding Exercise
+  * <https://codepen.io/jemyoung/pen/0817cc37159377752b6cd9bf70d40883?editors=1011>
