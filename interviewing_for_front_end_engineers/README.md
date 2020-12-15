@@ -71,3 +71,8 @@
   * Count the loops.
 * Phone Screen Coding Exercise
   * <https://codepen.io/jemyoung/pen/0817cc37159377752b6cd9bf70d40883?editors=1011>
+* On-Site Preparation
+  * Practice writing code without a computer.
+  * Go over general sample problems.
+  * Ask your friends to test you.
+  * Try to ask what the style of technical questions will be.
