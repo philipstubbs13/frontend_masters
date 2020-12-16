@@ -76,3 +76,109 @@
   * Go over general sample problems.
   * Ask your friends to test you.
   * Try to ask what the style of technical questions will be.
+* Strings
+  * primitive type
+  * useful methods
+    * .split()
+    * .toLowerCase()
+    * .substring()
+    * .startsWith()
+  * Strings are immutable.
+* Reversing a String
+  * <https://github.com/young/frontend-interviewing/blob/master/questions/reverse.js>
+  * Talk out what you want.
+
+  ```bash
+  function reverse(str) {
+    return str.split('').reverse().join(');
+  }
+  ```
+
+* Built-in Methods
+  * Arrays
+    * Object.entries()
+    * Array.from()
+    * [...item]
+  * .isArray()
+  * .filter()
+  * .reduce()
+  * .concat()
+  * .join()
+  * .pop()
+  * .push()
+  * .map()
+* Removing Duplicate Strings Exercise
+  * <https://github.com/young/frontend-interviewing/blob/master/questions/duplicateStrings.js>
+
+  ```bash
+  function removeDuplicates(str) {
+    const arr = str.split(' ');
+
+    const set = new Set(arr);
+    const newString = [...set].join(' ');
+
+    return newString;
+  }
+  ```
+
+* Flattening an array
+  * <https://github.com/young/frontend-interviewing/blob/master/questions/flatten.js>
+
+  ```bash
+  function flatten(arr) {
+    arr.reduce((acc, item) => {
+      if (Array.isArray(item)) {
+        acc = acc.concat(flatten(item));
+      } else {
+        acc.push(item);
+      }
+      return acc;
+    }, []);
+
+    return someNewArray;
+  }
+  ```
+
+  * Scope
+    * .call()
+    * .apply()
+    * .bind()
+    * <https://github.com/young/frontend-interviewing/blob/master/questions/bind.js>
+
+    ```bash
+    function.prototype.bind = function(context) {
+      const fn = this;
+
+      return function() {
+        fn.call(context);
+      }
+    }
+    ```
+
+* Timing
+  * setInterval()
+  * setTimeout()
+  * <https://github.com/young/frontend-interviewing/blob/master/questions/debounce.js>
+
+  ```bash
+    fn1 = debounce(fn, time);
+    fn1()
+
+    function debounce(fn, time) {
+      let setTimeoutId;
+
+      return function() {
+
+        if (setTimeoutId) {
+          clearTimeout(setTimeoutId);
+          // throttle - same thing as debounce but
+          // just return here instead of clearTimeout.
+        }
+
+        setTimeoutId = setTimeout(() => {
+          fn.apply(this, arguments);
+          setTimeoutId = null;
+        }, time)
+      }
+    }
+  ```
