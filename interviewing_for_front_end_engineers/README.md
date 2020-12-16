@@ -2,6 +2,7 @@
 
 * <https://frontendmasters.com/courses/interviewing-frontend/>
 * <https://docs.google.com/presentation/d/1-04cvp4xDLNb8YRWpkmPTEY_4r-56sM5J178lxjU4vA/edit?usp=sharing>
+* <https://github.com/young/frontend-interviewing>
 * Podcast: Front End Happy Hour
 * 3 types of programmers
   * programming is match
@@ -182,3 +183,71 @@
       }
     }
   ```
+
+* Trees
+  * Root
+  * Nodes
+    * Children
+    * Parent
+  * <https://github.com/young/frontend-interviewing/blob/master/questions/domTree.js>
+
+  ```bash
+  function reversePath(element, root) {
+    const path = [];
+    let pointer = element;
+
+    while(pointer.parent) {
+      const index = pointer.parent.children.indexOf(pointer);
+      path.push(index);
+
+      pointer = pointer.parent;
+    }
+
+    pointer = root;
+
+    while (path.length) {
+      pointer = children[path.pop()];
+    }
+  }
+  ```
+
+* Rendering
+  * requestAnimationFrame()
+  * <https://github.com/young/frontend-interviewing/blob/master/questions/moveElement.js>
+
+  ```bash
+    function moveElement(duration, distance, element) {
+      const start = performance.now();
+
+      function move(currentTime) {
+        const elapsed = currentTime - start;
+        const progress = elapsed / duration;
+        const amountToMove = progress * distance;
+
+        element.style.transform = `translateX(${ amountToMove }px)`;
+
+        if (amountToMove < distance) {
+          requestAnimationFrame(move);
+        }
+      }
+
+
+      requestAnimationFrame(move);
+    }
+  ```
+
+* Promises
+  * <https://github.com/young/frontend-interviewing/blob/master/questions/sleep.js>
+
+  ```bash
+    function sleep(time) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve();
+        }, time)
+      });
+    }
+  ```
+
+* Exercise Answers
+  * <https://github.com/young/frontend-interviewing/tree/master/answers>
