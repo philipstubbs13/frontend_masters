@@ -14,7 +14,9 @@ const machine = createMachine({
   //   px: 0,
   //   py: 0,
   // }
-  // context: ...,
+  context: {
+    //...
+  },
   states: {
     idle: {
       on: {
