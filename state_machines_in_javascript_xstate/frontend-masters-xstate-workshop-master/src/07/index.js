@@ -38,7 +38,7 @@ const resetPosition = assign({
   py: 0,
 });
 
-const dragDropMachine = createMachine({
+const createDragDropMachine = (user) => createMachine({
   // The initial state should check auth status instead.
   initial: 'idle',
   context: {
@@ -48,9 +48,25 @@ const dragDropMachine = createMachine({
     dy: 0,
     px: 0,
     py: 0,
-    user: undefined,
+    user,
   },
   states: {
+    checkingAuth: {
+      on: {
+        '': [
+          {
+            cond: (context, event) => {
+              return !!context.user;
+            },
+            target: 'idle'
+          },
+          {
+            target: 'unauthorized'
+          }
+        ]
+      }
+    },
+    unauthorized: {},
     // Add two states:
     // - checkingAuth (with transient transitions)
     // - unauthorized
@@ -80,7 +96,9 @@ const dragDropMachine = createMachine({
   },
 });
 
-const service = interpret(dragDropMachine);
+const service = interpret(
+  createDragDropMachine({ name: 'David'})
+);
 
 service.onTransition((state) => {
   elBox.dataset.state = state.value;
