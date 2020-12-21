@@ -30,6 +30,12 @@ const assignDelta = assign({
   },
 });
 
+const assignXDelta = assign({
+  dx: (context, event) => {
+    return event.clientX - context.px;
+  },
+});
+
 const resetPosition = assign({
   dx: 0,
   dy: 0,
@@ -57,6 +63,20 @@ const dragDropMachine = createMachine({
       },
     },
     dragging: {
+      initial: 'normal',
+      states: {
+        normal: {
+          'keydown.shift': 'locked'
+        },
+        locked: {
+          on: {
+            mousemove: {
+              actions: assignXDelta
+            },
+            'keyup.shift': 'normal',
+          }
+        }
+      },
       // Add hierarchical (nested) states here.
       // We should have a state for normal operation
       // that transitions to a "locked" x-axis behavior
@@ -65,7 +85,7 @@ const dragDropMachine = createMachine({
       on: {
         mousemove: {
           actions: assignDelta,
-          internal: false,
+          // internal: false,
         },
         mouseup: {
           actions: [assignPosition],
@@ -110,6 +130,18 @@ elBody.addEventListener('mouseup', (event) => {
 elBody.addEventListener('keyup', (e) => {
   if (e.key === 'Escape') {
     service.send('keyup.escape');
+  }
+});
+
+elBody.addEventListener('keydown', (e) => {
+  if (e.key === 'Shift') {
+    service.send('keydown.shift');
+  }
+});
+
+elBody.addEventListener('keyup', (e) => {
+  if (e.key === 'Shift') {
+    service.send('keyup.shift');
   }
 });
 
