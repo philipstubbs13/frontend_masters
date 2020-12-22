@@ -19,20 +19,43 @@ const machine = createMachine({
   states: {
     idle: {
       on: {
-        FETCH: 'pending',
+        FETCH: {
+          target: 'pending'
+        }
       },
     },
     pending: {
+      on: {
+        RESOLVE: 'resolved'
+      },
       invoke: {
+        src: (context, event) => {
+          return randomFetch();
+        },
+        onDone: {
+          target: 'resolved',
+          actions: (_, event) => {
+            console.log(event);
+          }
+        },
+        onError: {
+          target: 'rejected'
+        }
         // Invoke your promise here.
         // The `src` should be a function that returns the source.
       },
     },
     resolved: {
       // Add a transition to fetch again
+      on: {
+        FETCH: 'pending'
+      }
     },
     rejected: {
       // Add a transition to fetch again
+      on: {
+        FETCH: 'pending'
+      }
     },
   },
 });
