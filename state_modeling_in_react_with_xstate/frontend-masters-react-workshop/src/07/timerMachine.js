@@ -29,8 +29,17 @@ export const timerMachine = createMachine({
       },
     },
     running: {
-      // Invoke the callback service here.
-      // ...
+      invoke: {
+        src: (context) => (sendBack) => {
+          const i = setInterval(() => {
+            sendBack({ type: 'TICK' })
+          }, 1000 * context.interval)
+
+          return () => {
+            clearInterval(i)
+          }
+        }
+      },
 
       initial: 'normal',
       states: {
