@@ -92,8 +92,8 @@ myList.insert(3)
 //   tail: {value: 3, next: null}
 // }
 console.log(myList);
-// myList.removeTail();
-// console.log(myList);
+myList.removeTail();
+console.log(myList);
 // myList.removeNext(prevNode)
 
 function removeNext(list, prevNode) {
