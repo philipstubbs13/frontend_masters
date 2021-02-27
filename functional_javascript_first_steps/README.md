@@ -18,4 +18,13 @@
   * established community and tools.
 * Avoid side effects
   * do nothing but return output based on nothing but input.
-  
+* Recursion
+* Tail Call Optimization
+* Proper Tail Calls
+* first class functions
+  * can be passed around as values (like callbacks)
+* higher order functions
+  * take other functions as input/output
+* Remember: Don't loop
+  * use higher-order functions like map, reduce, filter instead.
+* <https://www.datasciencecentral.com/forum/topics/what-is-map-reduce>
