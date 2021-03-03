@@ -28,3 +28,9 @@
 * Remember: Don't loop
   * use higher-order functions like map, reduce, filter instead.
 * <https://www.datasciencecentral.com/forum/topics/what-is-map-reduce>
+* Closure
+  * Functions can define functions
+  * return the inner function and it will "remember" scope.
+  * This lets us "partially apply" functions to "lock in" some arguments and make more reusable functions.
+* Currying breaks up a multi-arg function into a series of single-arg ones.
+* The Lambda Function
