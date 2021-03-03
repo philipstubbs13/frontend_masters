@@ -34,3 +34,9 @@
   * This lets us "partially apply" functions to "lock in" some arguments and make more reusable functions.
 * Currying breaks up a multi-arg function into a series of single-arg ones.
 * The Lambda Function
+* Functional Composition
+  * It's functons all the way down.
+  * program === function(s)
+  * Flow data through functions
+    * outputs become inputs become outputs.
+  * function composition lets us make complex programs out of simple functions.
