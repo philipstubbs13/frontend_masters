@@ -40,3 +40,11 @@
   * Flow data through functions
     * outputs become inputs become outputs.
   * function composition lets us make complex programs out of simple functions.
+* Immutability
+  * Avoid mutability for happier programming.
+  * don't change in-place; instead, replace.
+  * Copying data isn't very efficient...
+    * immutable data structures to the rescue!
+  * Immutable (aka persistent) data structures
+    * use "structural sharing" to reuse unchanged data.
+  * <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array>
