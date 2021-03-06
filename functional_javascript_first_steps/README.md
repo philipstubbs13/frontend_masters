@@ -48,3 +48,4 @@
   * Immutable (aka persistent) data structures
     * use "structural sharing" to reuse unchanged data.
   * <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array>
+  * Immutable data structures video: <https://www.youtube.com/watch?v=n5REbbvRYqQ>
