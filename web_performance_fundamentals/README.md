@@ -26,3 +26,6 @@
 * CrUX (Chrome User Experience) reports
   * crux-compare.netlify.app
 * <https://web.dev/>
+* <https://docs.google.com/presentation/d/1CrM6VDlMsAfA6OLU2iCh-UbDpu-7F-gZlIGGtCLsdz0/edit>
+* <https://www.lightest.app/>
+* <https://developer.mozilla.org/en-US/docs/Web/API/Window/performance>
