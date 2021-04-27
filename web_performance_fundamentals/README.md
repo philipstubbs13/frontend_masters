@@ -29,3 +29,4 @@
 * <https://docs.google.com/presentation/d/1CrM6VDlMsAfA6OLU2iCh-UbDpu-7F-gZlIGGtCLsdz0/edit>
 * <https://www.lightest.app/>
 * <https://developer.mozilla.org/en-US/docs/Web/API/Window/performance>
+* <https://docs.google.com/spreadsheets/d/1WkDM3yg--bs9XHm2C5rcG3kKOGfjuKYcOZHmCpufOyo/edit#gid=274986865s>
