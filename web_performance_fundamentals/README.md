@@ -30,3 +30,7 @@
 * <https://www.lightest.app/>
 * <https://developer.mozilla.org/en-US/docs/Web/API/Window/performance>
 * <https://docs.google.com/spreadsheets/d/1WkDM3yg--bs9XHm2C5rcG3kKOGfjuKYcOZHmCpufOyo/edit#gid=274986865s>
+* <https://tinypng.com/>
+* <https://performancebudget.io>
+* <https://frontendmasters.com/courses/web-performance/>
+* <https://frontendmasters.com/courses/performance-webpack/>
