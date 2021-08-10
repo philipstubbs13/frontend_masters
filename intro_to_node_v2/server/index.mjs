@@ -12,7 +12,7 @@ const server = http.createServer((req, res) => {
     })
 
     req.on('close', () => {
-      console.log(body)
+      console.log(JSON.parse(body))
     })
 
     res.writeHead(201)
