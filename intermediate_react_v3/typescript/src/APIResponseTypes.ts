@@ -6,7 +6,7 @@ export interface Pet {
   animal: Animal;
   description: string;
   breed: string;
-  image: string[];
+  images: string[];
   city: string;
   state: string;
 }

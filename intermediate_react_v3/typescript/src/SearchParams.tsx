@@ -1,27 +1,29 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, FunctionComponent } from "react";
 import ThemeContext from "./ThemeContext";
 import useBreedList from "./useBreedList";
 import Results from "./Results";
+import { PetAPIResponse, Animal, Pet } from "./APIResponseTypes";
+import { RouteComponentProps } from "react-router";
 
-const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
+const ANIMALS: Animal[] = ["bird", "cat", "dog", "rabbit", "reptile"];
 
-const SearchParams = () => {
-  const [animal, updateAnimal] = useState("");
+const SearchParams: FunctionComponent = () => {
+  const [animal, updateAnimal] = useState("" as Animal);
   const [location, updateLocation] = useState("");
   const [breed, updateBreed] = useState("");
-  const [pets, setPets] = useState([]);
+  const [pets, setPets] = useState([] as Pet[]);
   const [breeds] = useBreedList(animal);
   const [theme, setTheme] = useContext(ThemeContext);
 
   useEffect(() => {
-    requestPets();
+    void requestPets();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function requestPets() {
     const res = await fetch(
       `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
     );
-    const json = await res.json();
+    const json = (await res.json()) as PetAPIResponse;
 
     setPets(json.pets);
   }
@@ -31,7 +33,7 @@ const SearchParams = () => {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          requestPets();
+          void requestPets();
         }}
       >
         <label htmlFor="location">
@@ -48,8 +50,8 @@ const SearchParams = () => {
           <select
             id="animal"
             value={animal}
-            onChange={(e) => updateAnimal(e.target.value)}
-            onBlur={(e) => updateAnimal(e.target.value)}
+            onChange={(e) => updateAnimal(e.target.value as Animal)}
+            onBlur={(e) => updateAnimal(e.target.value as Animal)}
           >
             <option />
             {ANIMALS.map((animal) => (

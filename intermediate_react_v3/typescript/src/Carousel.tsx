@@ -18,9 +18,11 @@ class Carousel extends Component<IProps> {
       return;
     }
 
-    this.setState({
-      active: +event.target.dataset.index,
-    });
+    if (event.target.dataset.index) {
+      this.setState({
+        active: +event.target.dataset.index,
+      });
+    }
   };
 
   render(): ReactNode {
