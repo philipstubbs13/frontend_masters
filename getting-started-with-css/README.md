@@ -6,3 +6,4 @@
 * <https://fonts.google.com/?query=oxygen>
 * <https://www.fontpair.co/>
 * <https://www.internetfundamentals.com/watch/>
+* <https://cssgradient.io/>
