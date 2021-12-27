@@ -8,3 +8,5 @@
 * <https://www.internetfundamentals.com/watch/>
 * <https://cssgradient.io/>
 * Complete homepage on github: <https://github.com/jen4web/fem-getting-started-with-css/>
+* <https://jen4web.substack.com/p/hamburgers>
+* <https://jen4web.substack.com/p/css-dropdowns>
