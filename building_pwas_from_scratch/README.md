@@ -7,3 +7,4 @@
   * web app
   * web app manifest
   * service worker
+* <https://maskable.app/>
