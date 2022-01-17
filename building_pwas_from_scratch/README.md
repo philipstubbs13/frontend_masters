@@ -8,3 +8,4 @@
   * web app manifest
   * service worker
 * <https://maskable.app/>
+* <chrome://serviceworker-internals/>
