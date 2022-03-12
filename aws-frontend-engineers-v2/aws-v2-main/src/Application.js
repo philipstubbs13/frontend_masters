@@ -7,7 +7,7 @@ function Application() {
   return (
     <main className="h-screen">
       <h1 className="text-3xl font-bold bg-yellow-300 p-4 border-b-2 border-yellow-400">
-        Incredibly Important Thoughts
+        Atomic Thoughts and Stuff
       </h1>
       <div className="grid grid-cols-12 grid-rows-1 gap-4 h-full">
         <Navigation>
