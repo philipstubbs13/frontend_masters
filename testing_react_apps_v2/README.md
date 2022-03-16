@@ -3,6 +3,7 @@
 * <https://frontendmasters.com/courses/testing-react/>
 * Instructor: Kent C. Dodds
 * Jest
+* <https://slides.com/kentcdodds/testing-react-apps>
 
 ## What this workshop is
 
@@ -42,6 +43,37 @@ git.io/testing-worshop
 ```bash
 npm run test:react
 ```
+
+```bash
+// So you can use JSX (which transpiles down to React.createElement):
+import React from 'react'
+
+// So you can render the component for testing:
+import ReactDOM from 'react-dom'
+
+// So you can create a react element for the component you're testing:
+import ItemList from '../item-list'
+
+test('renders "no items" when no items are given', () => {
+  const container = document.createElement('div')
+  ReactDOM.render(<ItemList items={[]} />, container)
+  expect(container.textContent).toMatch('no items')
+})
+
+test('renders the items given', () => {
+  const container = document.createElement('div')
+  ReactDOM.render(<ItemList items={['apple', 'orange', 'pear']} />, container)
+  expect(container.textContent).toMatch('apple')
+  expect(container.textContent).toMatch('orange')
+  expect(container.textContent).toMatch('pear')
+})
+```
+
+and here's an outline example of your first test:
+* Create a "container" to render your component into (tip: use document.createElement('div'))
+* Render your component (tip: use ReactDOM.render(JSX, container))
+* Make your assertion(s) on the textContent of the container
+* (tip: expect's toMatch function might be what you want for example: `expect('some text content').toMatch('text')`)
 
 ## Configuring Jest & Babel
 
@@ -95,9 +127,19 @@ npm install --save-dev babel-plugin-dynamic-import-node
 
 ```bash
 collectCoverageFrom: ['**/src/**/*.js'],
+coverageThreshold: {
+  global: {
+    statements: 18,
+    branches: 10,
+    functions: 19,
+    lines: 18
+  }
+}
 ```
 
 ## Jest Watch Mode
+
+add to package.json
 
 ```bash
 "test:watch": "jest --watch",
@@ -138,9 +180,102 @@ npm run test:client
 * <https://blog.kentcdodds.com/but-really-what-is-a-javascript-mock-10d060966f7d>
 * <https://github.com/kentcdodds/how-jest-mocking-works>
 
-## react-testing-library
+```bash
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Editor from '../editor.todo' 
+import * as utilsMock from '../../utils/api'
+
+jest.mock('../../utils/api', () => {
+  return {
+    posts: {
+      create: jest.fn(() => Promise.resolve())
+    }
+  }
+})
+
+const flushPromises = () => {
+  return new Promise(resolve => {
+    setTimeout(resolve, 0)
+  })
+}
+
+test('calls onSubmit with the username and password when submitted', async () => {
+  const container = document.createElement('div')
+  const fakeUser = { id: 'foobar' }
+  const fakeHistory = {
+    push: jest.fn()
+  }
+  ReactDOM.render(<Editor user={fakeUser} history={fakeHistory} />, container)
+  const form = container.querySelector('form')
+  const { title, content, tags } = form.elements
+  title.value = 'I like twix'
+  content.value = 'Like a lot... Sorta'
+  tags.value = 'twix,      my,  likes'
+
+  const submit = new window.Event('submit')
+  form.dispatchEvent(submit)
+
+  await flushPromises()
+
+  expect(fakeHistory.push).toHaveBeenCalledTimes(1)
+  expect(fakeHistory.push).toHaveBeenCalledWith('/')
+  expect(utilsMock.posts.create).toHaveBeenCalledTimes(1)
+  expect(utilsMock.posts.create).toHaveBeenCalledWith({
+    authorId: fakeUser.id,
+    title: title.value,
+    content: content.value,
+    tags: ['twix', 'my', 'likes'],
+    date: expect.any(String)
+  })
+})
+```
+
+```bash
+import Login from '../login'
+import ReactDOM from 'react-dom'
+import React from 'react'
+
+// Basic unit test
+test('calls onSubmit with the username and password when submitted', () => {
+  const handleSubmit = jest.fn();
+  const container = document.createElement('div')
+  ReactDOM.render(<Login onSubmit={handleSubmit} />, container)
+
+  const form = container.querySelector('form')
+  const { username, password } = form.elements
+  username.value = 'chucknorris'
+  password.value = 'I do not need a password'
+
+  form.dispatchEvent(new window.Event('submit'))
+
+  expect(handleSubmit).toHaveBeenCalledTimes(1)
+  expect(handleSubmit).toHaveBeenCalledWith({
+    username: username.value,
+    password: password.value
+  })
+  // Arrange
+  // create a fake object to hold the form field values (username and password)
+  // create a jest.fn() for your submit handler
+  // render the Login component to a div
+  // TIP: const div = document.createElement('div')
+  //
+  // get the field nodes
+  // TIP: const inputs = div.querySelectorAll('input')
+  // TIP: const form = div.querySelector('form')
+  // fill in the field values
+  //
+  // Act
+  // submit the form:
+  // TIP: formNode.dispatchEvent(new window.Event('submit'))
+  //
+  // Assert
+  // ensure your submit handler was called properly
+})
+```
 
 ## Snapshot Testing
 
 * <https://blog.kentcdodds.com/making-your-ui-tests-resilient-to-change-d37a6ee37269>
 * <https://kentcdodds.com/blog/effective-snapshot-testing>
+
