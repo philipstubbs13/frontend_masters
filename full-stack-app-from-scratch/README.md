@@ -2,3 +2,24 @@
 
 * <https://frontendmasters.com/courses/fullstack-app-next/introduction/>
 * course notes: <https://tinted-gym-f99.notion.site/Fullstack-course-notes-Students-3202660c315b438aba6c1ae051963572>
+* <https://chakra-ui.com/>
+* <https://react-icons.github.io/react-icons/>
+* <https://www.prisma.io/docs/concepts/components/prisma-schema>
+* <https://insomnia.rest/>
+* <https://httpie.io/>
+
+```bash
+npx prisma migrate dev
+```
+
+```bash
+npx prisma db push
+```
+
+```bash
+npx prisma db seed
+```
+
+```bash
+npx prisma studio
+```
