@@ -7,6 +7,7 @@
 * <https://www.prisma.io/docs/concepts/components/prisma-schema>
 * <https://insomnia.rest/>
 * <https://httpie.io/>
+* <https://nextjs.org/docs/middleware>
 
 ```bash
 npx prisma migrate dev
@@ -22,4 +23,8 @@ npx prisma db seed
 
 ```bash
 npx prisma studio
+```
+
+```bash
+npx prisma migrate reset
 ```
