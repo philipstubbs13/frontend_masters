@@ -8,6 +8,7 @@
 * <https://insomnia.rest/>
 * <https://httpie.io/>
 * <https://nextjs.org/docs/middleware>
+* <https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame>
 
 ```bash
 npx prisma migrate dev
