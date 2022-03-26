@@ -28,7 +28,7 @@ const playerMachine = createMachine({
               // This will always go to the 'ready.playing' state
               // Instead, go to the most recent child of the 'ready' state
               // (Hint: target a history state!)
-              target: 'ready',
+              target: 'ready.hist',
             },
           },
         },
@@ -48,6 +48,9 @@ const playerMachine = createMachine({
               },
             },
             // Add a sibling history state here
+            hist: {
+              type: 'history'
+            }
           },
           always: {
             cond: (ctx) => ctx.elapsed >= ctx.duration,
