@@ -49,6 +49,54 @@ section ul {
     padding: 0;
     margin: 0;
 }
+/* header and nav styles */
+.header {
+    background-color: var(--color5);
+}
+header {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* navigation styling - universal across breakpoints */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: space-between;
+}
+nav li {
+    flex-basis: 48%;
+    margin-bottom: 0.5rem;
+}
+
+nav li:first-child {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+    background-color: var(--color10);
+    display: block;
+    padding: 0.5rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+nav li:first-child a {
+    background-color: transparent;
+}
+nav a:hover {
+    background-color: var(--color1);
+    color: var(--color5);
+}
+
 
 
 /* To keep mobile screens from being stupid long, consider setting a max height on the images and hide the overflow. 
@@ -235,6 +283,22 @@ footer address {
     footer address {
         margin-top: 0;
     }
+    nav ul {
+        justify-content: center;
+        gap: 1.2em;
+    }
+    nav li {
+        flex-basis: auto;
+        margin-bottom: 0;
+    }
+    nav a {
+        color: var(--color1);
+        background-color: transparent;
+    }
+    nav a:hover {
+        color: var(--color2);
+        background-color: transparent;
+    }
 }
 
 @media (min-width: 800px) {
@@ -248,4 +312,22 @@ footer address {
     address {
         flex-basis: 65.5%;
     }
+    /* navigation - logo in the center */
+    nav ul {
+        justify-content: flex-end;
+    }
+    nav li:first-child {
+        flex-basis: auto;
+        margin: 0 auto;
+        order: 2;
+    }
+    nav li:nth-child(2),
+    nav li:nth-child(3) {
+        order: 1
+    }
+    nav li:nth-child(4),
+    nav li:nth-child(5) {
+        order: 3
+    }
+
 }
