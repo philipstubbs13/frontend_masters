@@ -1,0 +1,10 @@
+.DS_Store
+node_modules
+/build
+/.svelte-kit
+/package
+.env.*
+*.db
+*.db-journal
+cypress/videos
+cypress/screenshots
