@@ -34,4 +34,10 @@
     * Book called "The business of expertise"
 * Skill and Effort are inversely proportionate.
 * Patterns are Important.
+* Architecture
+    * The biggest problem in the development and maintenance of large-scale software systems is complexity - large systems are hard to understand.
+    * Vertical Development
+    * Horizontal Development
+    * When we achieve clear functional cohesion from cleanly abstracted layers, natural patterns of convention will emerge.
+    * Fine-grained functionality reduces code variance between domain models. Performing an action on one model is almost identical to the same action on any other model.
 
