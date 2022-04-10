@@ -40,4 +40,19 @@
     * Horizontal Development
     * When we achieve clear functional cohesion from cleanly abstracted layers, natural patterns of convention will emerge.
     * Fine-grained functionality reduces code variance between domain models. Performing an action on one model is almost identical to the same action on any other model.
+* Horizontal Tour
+    * Layers
+        * Actions
+        * Selectors
+        * Entities
+        * Reducers
+        * Facades
+        * Effects
+        * Wiring
+* Domain Models
+    * <https://stackblitz.com/edit/rad-domain-models-start-pka35i>
+    * <https://react-jsonschema-form.readthedocs.io/en/latest/>
+    * <https://formly.dev/>
+* Utility Functions
+    * <https://stackblitz.com/edit/rad-name-generator-start>
 
