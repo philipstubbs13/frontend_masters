@@ -55,4 +55,13 @@
     * <https://formly.dev/>
 * Utility Functions
     * <https://stackblitz.com/edit/rad-name-generator-start>
-
+* Model Name Variations
+    * <https://stackblitz.com/edit/rad-name-generator-start-8iuh8m>
+* CLI
+    * <https://stackblitz.com/edit/rad-cli-generator-ks8pn1>
+* Generators
+    * <https://stackblitz.com/edit/rad-template-generator-start-cdawyp?file=index.ts>
+* Generating Layers
+    * <https://stackblitz.com/edit/rad-layer-generator-start-vvxbce>
+* Generating Stacks
+    * <https://stackblitz.com/edit/rad-stack-generator-start>
