@@ -1,6 +1,8 @@
 # Rapid Application Development with Code Generation
 
 * <https://frontendmasters.com/courses/rapid-app-dev/>
+* <https://twitter.com/simpulton?lang=en>
+* <https://www.linkedin.com/in/lukasruebbelke/>
 * course code: <https://github.com/onehungrymind/rad-patterns-workshop>
 * Is it possible that you could build applications 10x faster than you are right now?
 * <https://stackblitz.com/edit/rad-rapid-primer-start-hfhqwz>
@@ -65,3 +67,7 @@
     * <https://stackblitz.com/edit/rad-layer-generator-start-vvxbce>
 * Generating Stacks
     * <https://stackblitz.com/edit/rad-stack-generator-start>
+* Generating Reducers
+    * <https://stackblitz.com/edit/rad-event-storming-generator>
+* Mock API Generation
+    * <https://stackblitz.com/edit/rad-mock-api-generator>
