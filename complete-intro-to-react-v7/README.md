@@ -5,6 +5,7 @@
 * Course Repo: <https://github.com/btholt/complete-intro-to-react-v7>
 * Course Project Files: <https://github.com/btholt/citr-v7-project>
 * <https://kaleidoscope.app/>
+* <https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z>
 
 * prettier
 
@@ -15,3 +16,9 @@
 ```bash
  npx prettier src/App.js --write
  ```
+
+ * eslint
+
+ ```bash
+ npx eslint ./src/App.js
+```
