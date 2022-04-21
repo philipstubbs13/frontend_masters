@@ -6,6 +6,7 @@
 * Course Project Files: <https://github.com/btholt/citr-v7-project>
 * <https://kaleidoscope.app/>
 * <https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z>
+* <https://github.com/getify/TNG-Hooks>
 
 * prettier
 
@@ -21,4 +22,11 @@
 
  ```bash
  npx eslint ./src/App.js
+```
+
+* Building for production
+
+```bash
+npx parcel build src/index.html
+npx serve dist
 ```
