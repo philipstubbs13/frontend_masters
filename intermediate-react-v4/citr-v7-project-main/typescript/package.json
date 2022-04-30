@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "parcel src/index.html",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
-    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet"
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --quiet"
   },
   "author": "Brian Holt <btholt+citr-v7-project@gmail.com>",
   "license": "Apache-2.0",
@@ -14,8 +14,11 @@
     "@babel/plugin-proposal-class-properties": "7.16.7",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "@typescript-eslint/parser": "^5.13.0",
     "eslint": "8.8.0",
     "eslint-config-prettier": "8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "2.25.4",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
