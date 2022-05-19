@@ -45,10 +45,10 @@ function $(selector: string) {
 }
 
 namespace $ {
-  export function ajax({url, successCb }  : { url: string, successCb: (data: any) => void }): any {
+  export function ajax({url, success }  : { url: string, success: (data: any) => void }): any {
     return fetch(url)
       .then(resp => resp.json())
-      .then(successCb)
+      .then(success)
   }
 }
 
