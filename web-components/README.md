@@ -15,6 +15,7 @@
 * <https://webcomponents.dev/blog/all-the-ways-to-make-a-web-component/>
 * lit: <https://slideswithsuperpowers.netlify.app/79>
 * basic counter: <https://codepen.io/philipstubbs13/pen/ZErjKgm?editors=1010>
+* <https://github.com/webcomponents-cg/community-protocols>
 
 ```bash
 npm init @open-wc
