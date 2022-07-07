@@ -2483,8 +2483,8 @@ mocha@^4.0.1:
     supports-color "4.4.0"
 
 moment@2.x.x:
-  version "2.19.0"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.19.0.tgz#44f675ef6b944942762581b1c179fb679e599d67"
+  version "2.29.4"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.4.tgz#3dbe052889fe7c1b2ed966fcb3a77328964ef108"
 
 mongodb-core@2.1.15:
   version "2.1.15"
