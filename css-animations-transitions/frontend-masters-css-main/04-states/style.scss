@@ -35,14 +35,18 @@ body {
   }
 
   &[data-state='subscribe'] {
-    // Add an animation here
+    animation: slide-up 1s both;
   }
 
   &[data-state='success'] {
+    --color: rgb(43, 184, 102);
+    animation: good-job 1s both;
     // Change the color and/or add an animation here
   }
 
   &[data-state='error'] {
+    --color: rgb(237, 80, 41);
+    animation: shake 1s both;
     // Change the color and/or add an animation here
   }
 
@@ -120,5 +124,17 @@ body {
   from,
   to {
     transform: none;
+  }
+}
+
+@keyframes good-job {
+  from, to {
+    transform: none;
+  }
+  50% {
+    transform: translateY(-100%)
+  }
+  90% {
+    transform: translateY(0) scaleY(0.8)
   }
 }

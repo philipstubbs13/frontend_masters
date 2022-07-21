@@ -16,3 +16,4 @@
 - [How FLIP Works](https://codepen.io/davidkpiano/pen/EbwrQQ)
 - [FLIP Transition with CSS Variables](https://codepen.io/team/keyframers/pen/MWaoyNQ)
 - [FLIP Between States](https://codepen.io/team/keyframers/pen/xxVOLeM)
+- https://aerotwist.com/blog/flip-your-animations/
