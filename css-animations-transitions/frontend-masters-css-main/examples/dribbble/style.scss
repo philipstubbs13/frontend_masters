@@ -1,0 +1,59 @@
+@import '../styles/base';
+
+body {
+    font-family: serif;
+    background-color: #0a4b47;
+    color: #FEFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 5vw;
+    margin: 0;
+
+    & + h1 {
+        color: #EEFCAD;
+    }
+}
+
+.headings {
+    animation: headings 4s both;
+    text-align: center;
+}
+
+h1:first-child {
+    animation: first-heading 4s both;
+}
+
+h1:nth-child(2) {
+    animation: second-heading 4s both;
+}
+
+@keyframes first-heading {
+    from {
+        clip-path: polygon(0%, 0%, 0%, 0%, 0%, 100%, 0%, 100%);
+    }
+    50%, to {
+        clip-path: polygon(0%, 0%, 100%, 0%, 100%, 100%, 0%, 100%);
+    }
+}
+
+@keyframes second-heading {
+    from, 50%{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes headings {
+    from, 50% {
+        transform: translateY(50%) scale(1.5);
+    }
+    to {
+        transform: none;
+    }
+}

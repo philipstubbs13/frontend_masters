@@ -1,8 +1,26 @@
 @import '../styles/base.scss';
 
 .circle {
-  height: 5vmin;
-  width: 5vmin;
+  --x-px: calc(var(--x) * 1px);
+  --y-px: calc(var(--y) * 1px);
+  height: 10vmin;
+  width: 10vmin;
   border-radius: 50%;
   background-color: blue;
+  transform: translate(
+    calc(var(--x-px) - 50%),
+    calc(var(--y-px) - 50%));
+
+  &::before {
+    content: attr(style);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-bottom: 0.25rem;
+    color: white;
+    font-family: monospace;
+    background: black;
+    padding: 0.5rem;
+    white-space: nowrap;
+  }
 }

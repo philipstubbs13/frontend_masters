@@ -6,3 +6,4 @@
 * <https://linear.app/>
 * <https://csstriggers.com/>
 * <https://help.rive.app/runtimes/state-machines>
+* <https://bennettfeely.com/clippy/>
