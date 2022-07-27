@@ -75,4 +75,86 @@
   * Both are specialized techniques.
   * Partial application presets some arguments now, receives the rest on the next call.
   * Currying doesn't preset any arguments, receives each argument one at a time.
+
 * Composition
+  * composition is declarative data flow.
+  * compose: right-to-left
+  * pipe: left-to-right
+  * composition is associative
+
+```bash
+function minus2(x) { return x - 2; }
+function triple(x) { return x * 3 }
+function increment(x) { return x + 1; }
+
+// add shipping rate
+var tmp = increment(4);
+tmp = triple(tmp);
+totalCost = basePrice + minus2(tmp)
+```
+
+```bash
+totalCost = basePrice + minus2(triple(increment(4)));
+```
+
+```bash
+function shippingRate(x) {
+  return minus2(triple(increment(x)));
+}
+
+totalCost = basePrice + shippingRate(4)
+```
+
+```bash
+function composeThree(fn3, fn2, fn1) {
+  return function composed(v) {
+    return fn3(fn2(fn1(v)));
+  }
+}
+```
+
+```bash
+var shippingRate = composeThree(minus2, triple, increment);
+
+totalCost + basePrice + shippingRate(4);
+```
+
+```bash
+function minus2(x) { return x - 2; }
+function triple(x) { return x * 3 }
+function increment(x) { return x + 1; }
+
+var f = composeThree(minus2, triple, increment);
+var p = composeThree(increment, triple, minus2);
+
+f(4); // 13
+p(4); // 7
+
+var g = pipeThree(minus2, triple, increment);
+
+g(4); // 7
+```
+
+* Immutability
+  * the idea that something isn't going to change.
+  * things don't change unexpectedly.
+  * change that needs to occur needs to be intentional.
+  * how to control mutation. how to control change.
+  * Assignment Immutability
+  * Value Immutability
+  * Need a read only data structure (Object.freeze)
+  * <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze>
+  * Read-Only Data Structures: data structures that never need to be mutated.
+  * Always assume it's a read only data structure. Always assume you're not allowed to mutate it.
+  * Make a copy of the object (object spread);
+  * Immutable data structures.
+    * allows not no mutation, but structured mutation.
+  * Immutable.js
+    * library that allows you to manage immutable data structure.
+    * <https://immutable-js.com/>
+    * Data structures that need to be mutated.
+
+* Recursion
+  * As a programmer, your job is not to get the code to work. Your job is to first understand the problem.
+
+
