@@ -2,6 +2,8 @@
 
 * <https://frontendmasters.com/courses/functional-javascript-v3/>
 * Course slides: <http://static.frontendmasters.com/resources/2019-05-06-functional-light-v3/functional-light-v3.pdf>
+* Book: <https://github.com/getify/Functional-Light-JS>
+
 * Imperative vs Declarative
   * Imperative code means code that is focused primarily on how to do something.
   * Declarative code - the how is not the important part. The important part is the what/the outcome and even more important than that, the why.
@@ -156,5 +158,8 @@ g(4); // 7
 
 * Recursion
   * As a programmer, your job is not to get the code to work. Your job is to first understand the problem.
+
+* Transducing
+  * Composition of reducers
 
 
