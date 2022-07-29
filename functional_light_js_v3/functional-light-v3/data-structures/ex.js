@@ -1,5 +1,7 @@
 "use strict";
 
+var curry = fn => x => y => fn(x, y);
+
 // inception!
 curry = curry(2,curry);
 
@@ -9,17 +11,17 @@ var nums = {
 	third: [1,1,3,2]
 };
 
-var filteredNums = filterObj(function(list){
-	return isOdd(listSum(list));
-},nums);
+pipe(
+	curry(2)(filterObj(compose(isOdd, listSum))),
+	curry(2)(mapObj(listProduct)),
+	curry(2)(reduceObj(sum,0))
+)(nums);
 
-var filteredNumsProducts = mapObj(function(list){
-	return listProduct(list);
-},filteredNums);
-
-reduceObj(function(acc,v){
-	return acc + v;
-},0,filteredNumsProducts);
+[
+	curry(2)(filterObj(compose(isOdd, listSum))),
+	curry(2)(mapObj(listProduct)),
+	curry(2)(reduceObj(sum,0))
+].reduce(binary(pipe))(nums);
 // 38886
 
 
@@ -35,11 +37,21 @@ function mapObj(mapperFn,o) {
 }
 
 function filterObj(predicateFn,o) {
-	// TODO
+	var newObj = {};
+	var keys = Object.keys(o);
+	for (let key of keys) {
+		if (predicateFn(o[key])) newObj[key] = o[key];
+	}
+	return newObj;
 }
 
 function reduceObj(reducerFn,initialValue,o) {
-	// TODO
+	var result = initialValue;
+	var keys = Object.keys(o);
+	for (let key of keys) {
+		result = reducerFn(result, o[key])
+	}
+	return result;
 }
 
 
