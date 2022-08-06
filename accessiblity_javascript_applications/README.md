@@ -131,3 +131,4 @@ gatsby build && gatsby serve
   * <https://wave.webaim.org/api/>
   * <https://marcysutton.github.io/a11y-and-ci/#/>
   * <https://www.smashingmagazine.com/2018/09/importance-manual-accessibility-testing/>
+  * <https://inclusivedesign24.org/2019/>
