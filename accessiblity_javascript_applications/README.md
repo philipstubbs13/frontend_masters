@@ -120,3 +120,14 @@ gatsby build && gatsby serve
     * Provide accessible baseline markup.
     * Add ARIA with scripting.
     * Prioritize core user flows.
+
+* Testing
+  * <https://www.deque.com/blog/writing-automated-tests-accessibility/>
+  * <https://testing-library.com/docs/dom-testing-library/api-events/>
+  * <https://github.com/testing-library/jest-dom>
+  * <https://github.com/marcysutton/js-a11y-workshop/blob/master/examples/unit-testing/dropdown.test.js>
+  * <https://github.com/dequelabs/axe-core>
+  * <https://www.npmjs.com/package/cypress-axe>
+  * <https://wave.webaim.org/api/>
+  * <https://marcysutton.github.io/a11y-and-ci/#/>
+  * <https://www.smashingmagazine.com/2018/09/importance-manual-accessibility-testing/>
