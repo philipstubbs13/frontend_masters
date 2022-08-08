@@ -7,3 +7,6 @@
 * Screen readers
     * <https://chrome.google.com/webstore/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en>
     * <https://www.nvaccess.org/download/>
+* <https://github.com/jkup/shortcut>
+* <https://github.com/jkup/focusable>
+* <https://jonkuperman.com/>
