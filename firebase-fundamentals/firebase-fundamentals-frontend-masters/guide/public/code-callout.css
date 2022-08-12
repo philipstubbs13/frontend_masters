@@ -1,0 +1,19 @@
+ul.code-callout {
+  list-style: none !important;
+  margin-inline: 0;
+  margin-block: var(--space-lg);
+  padding: 0;
+  display: grid;
+  gap: var(--space-xs);
+  grid-column: content;
+  word-break: break-word;
+}
+
+ul.code-callout li {
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+}
+
+.content p + ul.code-callout {
+  margin-block-start: var(--space-xs) !important;
+}

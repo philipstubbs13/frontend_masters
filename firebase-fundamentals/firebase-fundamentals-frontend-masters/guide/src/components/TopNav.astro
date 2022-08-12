@@ -1,0 +1,42 @@
+<nav>
+  <ul>
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="/1-intro">Intro</a>
+    </li>
+    <li>
+      <a href="/2-setup">Setup</a>
+    </li>
+    <li>
+      <a href="/3-cloud-firestore">Firestore</a>
+    </li>
+    <li>
+      <a href="/4-firebase-authentication">Auth</a>
+    </li>
+    <li>
+      <a href="/5-security-rules">Security</a>
+    </li>
+    <li>
+      <a href="/6-cloud-functions">Functions</a>
+    </li>
+  </ul>
+</nav>
+
+<style>
+nav {
+  margin-block: var(--space-lg);
+  margin-inline: 16px;
+}
+nav ul {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: flex-end;
+}
+@media(max-width: 676px) {
+  nav {
+    display: none;
+  }
+}
+</style>

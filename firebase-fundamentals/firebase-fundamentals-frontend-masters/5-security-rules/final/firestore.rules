@@ -1,0 +1,70 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isUserOwned(uid) {
+      return uid == request.auth.uid;
+    }
+
+    function isValidEmail() {
+      return request.resource.data.email.matches('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,5}$');
+    }
+
+    function hasUserAllKeys() {
+      return request.resource.data.keys().hasAll([
+        'first',
+        'email',
+      ]);
+    }
+
+    function isUserObject() {
+      return hasUserAllKeys() && isValidEmail();
+    }
+
+    function costsMoreThanZero() {
+      let data = request.resource.data;
+      return data.cost is number && data.cost > 0;
+    }
+
+    function isExpenseObject() {
+      return request.resource.data.keys().hasAll([
+        'cost',
+        'date',
+      ]) && costsMoreThanZero();
+    }
+
+    function dateIsNotModified() {
+      let diff = request.resource.data.diff(resource.data);
+      return diff.unchangedKeys().hasOnly([ "date" ]);
+    }
+
+    function isBudgetCollaborator(requestUid, budgetId) {
+      let collaborator = get(/databases/$(database)/documents/budgets/$(budgetId)/collaborators/$(requestUid));
+      return collaborator.data.role in ['collaborator', 'admin'];
+    }
+
+    // requestUid - the request of the current authenticated user
+    // collectionUid - the owner of the expense's uid
+    function isUserOrCollaborator(requestUid, collectionUid, budgetId) {
+      return isBudgetCollaborator(requestUid, budgetId) || isUserOwned(collectionUid);
+    }
+
+    match /users/{uid} {
+      allow read: if isUserOwned(uid);
+      allow write: if isUserOwned(uid) && isUserObject();
+
+      match /expenses/{id} {
+        allow read: if isUserOrCollaborator(request.auth.uid, uid, resource.data.budgetId);
+        allow create: if isUserOrCollaborator(request.auth.uid, uid, resource.data.budgetId) && isExpenseObject();
+        allow update: if isUserOrCollaborator(request.auth.uid, uid, resource.data.budgetId) && isExpenseObject() && dateIsNotModified();
+      }
+    }
+    
+    match /budgets/{budgetId} {
+      allow read, write: if isBudgetCollaborator(request.auth.uid, budgetId);
+
+      match /collaborators/{uid} {
+        allow read, write: if isBudgetCollaborator(request.auth.uid, budgetId); 
+      }
+    }
+  }
+}

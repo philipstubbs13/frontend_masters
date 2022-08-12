@@ -1,0 +1,186 @@
+---
+import { Code } from 'astro/components';
+import Layout from '../layouts/Layout.astro';
+import DividerGrid from '../components/DividerGrid.astro';
+const guides = await Astro.glob('./*.md');
+---
+<Layout title="Firebase Fundamentals">
+	<main class="content-subgrid">
+		<div class="title-group">
+			<h2>Firebase <span class="highlight">Fundamentals</span></h2>
+
+			<div class="bio">
+
+				<div class="bio-image">
+					<img src="/de-profile.png" alt="David East" />
+				</div>
+
+				<div class="bio-details">
+					<div class="bio-details-name">David East</div>
+					<div class="bio-details-role">
+						Developer Relations Engineer, <span class="highlight">Firebase</span>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+		<div class="mission">
+			<div class="mission-label">Mission</div>
+			<h4 class="mission-statement">
+			Build 
+				<span class="highlight">realtime</span>, 
+				<span class="highlight">authenticated</span>, 
+				<span class="highlight">scalable</span>, and 
+				<span class="highlight">secure</span> 
+				websites on Firebase.
+			</h4>
+		</div>
+		<p class="pull-text subtitle">
+			A <span class="highlight">companion guide</span> to the Frontend Masters workshop.
+		</p>
+	</main>
+	<DividerGrid />
+
+	<div class="content-subgrid get-code">
+		<h3>Get the code</h3>
+		<div class="pre-reqs">
+			<ol>
+				<li><a href="https://www.oracle.com/java/technologies/downloads/#jdk18-mac">Install Java 18</a></li>
+				<li><a href="https://nodejs.org/">Install Node 16</a></li>
+			</ol>
+		</div>
+		<Code lang={"bash"} code={`git clone https://github.com/davideast/firebase-fundamentals-frontend-masters
+# Run this site
+cd guide && npm i && npm run dev`} />
+	</div>
+
+	<section class="list-grid">
+		<h3>Workshop Sections</h3>
+		<ol>
+			{guides.map(g => <li>
+					<a href={g.url}>{g.frontmatter.title}</a>
+					<div set:html={g.frontmatter.subtitle}></div>
+				</li>
+			)}
+		</ol>
+	</section>
+</Layout>
+
+<style>
+	.subtitle {
+		grid-column: full;
+		margin-block-start: var(--space-md);
+	}
+
+	.content-subgrid {
+		margin-block-start: var(--space-3xl);
+		gap: var(--space-xl);
+	}
+
+	.title-group {
+		display: grid;
+		gap: var(--space-xl);
+	}
+	
+	.mission {
+		grid-column: 1 / -1;
+		margin-top: var(--space-2xl);
+		display: grid;
+		gap: var(--space-sm);
+	}
+
+	.mission-statement {
+    font-size: 2.5rem;
+    font-weight: normal;
+	}
+
+	.mission-label {
+		font-size: .875rem;
+		font-weight: normal;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		font-family: var(--font-mono);
+	}
+
+	.bio {
+		display: flex;
+		align-items: center;
+		gap: var(--space-sm);
+	}
+
+	.bio-image img {
+		width: 88px;
+	}
+
+	.bio-details {
+		font-family: var(--font-mono);
+		display: grid;
+		gap: var(--space-xs);
+	}
+	.bio-details-name {
+		font-weight: bold;
+		font-size: var(--text-lg);
+	}
+
+	.list-grid {
+		display: grid;
+		grid-column: 1 / -1;
+		gap: var(--space-xl);
+		margin-block-end: var(--space-3xl);
+	}
+
+	.list-grid ol {
+		display: grid;
+		gap: var(--space-lg);
+		counter-reset: item;
+	}
+	.list-grid ol li:before {
+		content: counter(item) " |";
+  	counter-increment: item;
+		color: var(--orange-5);
+		padding-inline-end: var(--space-xxs);
+	}
+	.list-grid ol li a {
+		font-size: var(--text-sub);
+		color: var(--off-white);
+	}
+	.list-grid ol li a:hover {
+		color: var(--orange-5);
+	}
+	.list-grid ol li div {
+		color: var(--gray-5);
+		margin-block-start: var(--space-xxs);
+		padding-inline-start: 28px;
+		line-height: 1.25;
+	}
+
+	.get-code {
+		margin-block-end: var(--space-3xl);
+	}
+
+	.get-code pre.astro-code {
+		margin-block-start: 0;
+	}
+
+	.get-code .pre-reqs {
+		grid-row: 2;
+	}
+
+	.get-code .pre-reqs ol {
+		list-style-type: decimal;
+		padding-inline-start: var(--space-xl);
+		display: grid;
+		row-gap: var(--space-sm);
+		font-size: 1.5rem;
+	}
+
+	.get-code .pre-reqs ol li a {
+		text-decoration: underline;
+		color: var(--orange-5);
+	}
+
+	:global(.list-grid ol li div span.highlight) {
+		color: unset;
+	}
+</style>
