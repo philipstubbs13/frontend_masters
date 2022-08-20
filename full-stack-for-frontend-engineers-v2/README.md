@@ -18,3 +18,7 @@
 I VIM
     * Vi Improved
     * Cheat sheet: <https://linuxmoz.com/vi-commands-cheat-sheet/>
+* Security
+    * <https://www.maxmind.com/en/geoip-demo>
+* adding https to site
+    * <https://certbot.eff.org/>
