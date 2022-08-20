@@ -22,3 +22,4 @@ I VIM
     * <https://www.maxmind.com/en/geoip-demo>
 * adding https to site
     * <https://certbot.eff.org/>
+* http/2 demo: <https://http2.akamai.com/demo>
