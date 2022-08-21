@@ -23,3 +23,5 @@ I VIM
 * adding https to site
     * <https://certbot.eff.org/>
 * http/2 demo: <https://http2.akamai.com/demo>
+* <https://github.com/redis/node-redis>
+* <https://github.com/mysqljs/mysql>
