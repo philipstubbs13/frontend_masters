@@ -10,3 +10,4 @@
 * <https://codepen.io/jen4web/post/rwd20readinglist>
 * Types Resources
     * <https://type-scale.com/>
+* RWD 2.0 Reading List: <https://codepen.io/jen4web/post/rwd20readinglist>
