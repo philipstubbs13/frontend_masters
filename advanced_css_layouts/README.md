@@ -8,3 +8,5 @@
 * <https://jonsuh.com/hamburgers/>
 * <https://developer.chrome.com/blog/css-variables-why-should-you-care/>
 * <https://codepen.io/jen4web/post/rwd20readinglist>
+* Types Resources
+    * <https://type-scale.com/>
