@@ -3,3 +3,4 @@
 * <https://frontendmasters.com/courses/tour-js-patterns/>
 * course notes and code: <https://javascriptpatterns.vercel.app/patterns>
 * <https://usehooks.com/>
+* <https://github.com/researchgate/react-intersection-observer>
