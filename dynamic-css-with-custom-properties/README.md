@@ -5,3 +5,5 @@
 * <https://twitter.com/LeaVerou>
 * <https://shoelace.style/>
 * <https://lea.verou.me/2020/10/the-var-space-hack-to-toggle-multiple-values-with-one-custom-property/>
+* <https://css-tricks.com/exploring-property-and-its-animating-powers/>
+* <https://css-tricks.com/the-state-of-changing-gradients-with-css-transitions-and-animations/>
