@@ -7,3 +7,5 @@
     * <https://codepen.io/drboolean/pen/OJJOQMx?editors=0010>
 * compose exercises
     * <https://codepen.io/drboolean/pen/zYYPmZO>
+* functor exercises
+    * <https://codepen.io/drboolean/pen/poodxOm?editors=0010>

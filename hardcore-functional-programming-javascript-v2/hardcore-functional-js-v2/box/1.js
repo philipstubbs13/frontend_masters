@@ -1,3 +1,5 @@
+
+
 const nextCharForNumberString = str => {
   const trimmed = str.trim();
   const number = parseInt(trimmed);
