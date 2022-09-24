@@ -9,3 +9,5 @@
     * <https://codepen.io/drboolean/pen/zYYPmZO>
 * functor exercises
     * <https://codepen.io/drboolean/pen/poodxOm?editors=0010>
+* task exercises
+    * <https://codepen.io/drboolean/pen/Mparbp?editors=0010>
