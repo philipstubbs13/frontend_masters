@@ -1,0 +1,27 @@
+{
+  "name": "mastering-chrome-devtools",
+  "version": "1.0.0",
+  "description": "An example web site for Chrome DevTools workshops",
+  "main": "server/index.js",
+  "dependencies": {
+    "fastify": "^3.11.0",
+    "fastify-markdown": "^0.4.0",
+    "fastify-static": "^3.4.0",
+    "point-of-view": "^4.9.0",
+    "pug": "^3.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkup/mastering-chrome-devtools.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jkup/mastering-chrome-devtools/issues"
+  },
+  "homepage": "https://github.com/jkup/mastering-chrome-devtools#readme"
+}
