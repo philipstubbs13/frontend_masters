@@ -13,7 +13,7 @@ export default function Posts() {
   return (
     <main>
       <h1>Posts</h1>
-      {/* 🐨 Add a Link to "admin" here */}
+      <Link className="text-red-600 underline" to="admin">Admin</Link>
       <ul>
         {posts.map((post) => (
           <li key={post.slug}>
