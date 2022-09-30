@@ -8,3 +8,6 @@ export async function getPostListItems() {
 // that takes a slug and returns a post
 // 💰 use the prisma.post.findUnique function
 // with the "where" option set to { slug }
+export async function getPost(slug: string) {
+  return prisma.post.findUnique({ where: { slug }})
+}
