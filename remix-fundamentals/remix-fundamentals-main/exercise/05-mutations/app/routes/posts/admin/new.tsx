@@ -5,13 +5,39 @@
 // 4. call the createPost function from your post.model.ts
 // 5. redirect to "/posts/admin".
 
+import { Form, useActionData } from "@remix-run/react";
+import { ActionArgs, json, redirect } from "@remix-run/node";
+import { createPost } from "~/models/post.server";
+
+export async function action({ request }: ActionArgs) {
+  const formData = await request.formData()
+  const title = formData.get('title')
+  const slug = formData.get('slug')
+  const markdown = formData.get('markdown')
+
+  const errors = {
+    title: title ? null : "Title is required",
+    slug: slug ? null : "Slug is required",
+    markdown: markdown ? null : "Markdown is required"
+  }
+  const hasErrors = Object.values(errors).some(Boolean)
+  if (hasErrors) {
+    return json({ errors })
+  }
+
+  await createPost({ title, slug, markdown });
+  return redirect('/posts/admin')
+}
+
 const inputClassName = `w-full rounded border border-gray-500 px-2 py-1 text-lg`;
 
 export default function NewPost() {
+  const actionData = useActionData<typeof action>()
+  
   return (
     // 🐨 change this to a <Form /> component from @remix-run/react
     // 🐨 and add method="post" to the form.
-    <form>
+    <Form method="post">
       <p>
         <label>
           Post Title:{" "}
@@ -42,6 +68,6 @@ export default function NewPost() {
           Create Post
         </button>
       </p>
-    </form>
+    </Form>
   );
 }

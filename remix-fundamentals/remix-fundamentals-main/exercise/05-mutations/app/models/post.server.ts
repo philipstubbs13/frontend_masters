@@ -14,3 +14,6 @@ export async function getPost(slug: string) {
 // 💰 Here's an example of how you use prisma to create a new record:
 // prisma.dogo.create({ data: { name: "Good Dogo" } });
 // in our case, that'll be prisma.post.create
+export async function createPost({ title, slug, markdown }: any) {
+  return prisma.post.create({ data: { title, slug, markdown }})
+}
