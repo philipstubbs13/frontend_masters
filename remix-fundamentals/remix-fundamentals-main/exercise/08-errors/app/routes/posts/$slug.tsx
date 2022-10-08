@@ -5,6 +5,7 @@ import { useLoaderData } from "@remix-run/react";
 import invariant from "tiny-invariant";
 
 import { getPost } from "~/models/post.server";
+import { ErrorFallback } from "~/components";
 
 export async function loader({ params }: LoaderArgs) {
   invariant(params.slug, `params.slug is required`);
@@ -28,3 +29,8 @@ export default function PostSlug() {
 
 // 🐨 Add an ErrorBoundary component to this
 // 💰 You can use the ErrorFallback component from "~/components"
+export function ErrorBoundary({ error }: { error: Error }) {
+  console.error(error);
+
+  return <ErrorFallback>Something went wrong loading this post!</ErrorFallback>
+}

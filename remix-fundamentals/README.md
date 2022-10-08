@@ -5,6 +5,8 @@
 * <https://testingjavascript.com/>
 * <https://kentcdodds.com/>
 * <https://remix.run/blog/remix-vs-next>
+* <https://kentcdodds.com/blog/use-ternaries-rather-than-and-and-in-jsx>
+* <https://kentcdodds.com/blog/building-an-awesome-image-loading-experience>
 
 * indie stack setup:
 
