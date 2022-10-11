@@ -7,6 +7,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  ShouldReloadFunction,
   useLoaderData,
   useLocation,
   useSubmit,
@@ -35,6 +36,15 @@ export async function loader({ request }: LoaderArgs) {
   return json({
     user: await getUser(request),
   });
+}
+
+// 🐨 Add unstable_shouldReload here and only reload the data if the transition
+// has a submission where the action is "/login" or "/logout"
+export const unstable_shouldReload: ShouldReloadFunction = ({ submission }) => {
+  if (submission?.action === '/login') return true;
+  if (submission?.action === '/logout') return true;
+
+  return false;
 }
 
 export default function App() {
@@ -119,5 +129,3 @@ function LogoutTimer() {
   );
 }
 
-// 🐨 Add unstable_shouldReload here and only reload the data if the transition
-// has a submission where the action is "/login" or "/logout"

@@ -196,6 +196,14 @@ function Deposits() {
     if (newDepositFetcher.state !== "idle") return;
 
     // 🐨 If there's an error on the amount, focus the amount element
+    if (errors?.amount) {
+      formRef.current.elements.amount?.focus();
+    } else if (errors?.depositDate) {
+      formRef.current.elements.depositDate?.focus();
+    } else if (document.activeElement === formRef.current.elements.intent) {
+      formRef.current.elements.amount?.focus();
+      formRef.current.reset();
+    }
 
     // 🐨 If there's an error on the desposit date, focus the depositDate element
 
@@ -203,7 +211,7 @@ function Deposits() {
     // 💯 In what situation would we want to *not* change focus and *not* reset the form at this point?
 
     formRef.current.reset();
-  }, [newDepositFetcher.state]);
+  }, [newDepositFetcher.state, errors]);
 
   return (
     <div>

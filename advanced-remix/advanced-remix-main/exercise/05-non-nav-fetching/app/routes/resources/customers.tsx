@@ -1,9 +1,21 @@
+import { useFetcher } from "@remix-run/react";
+import { json, LoaderArgs } from "@remix-run/server-runtime";
 import clsx from "clsx";
 import { useCombobox } from "downshift";
 import { useId, useState } from "react";
+import invariant from "tiny-invariant";
 import { LabelText } from "~/components";
+import { searchCustomers } from "~/models/customer.server";
+import { requireUser } from "~/session.server";
 
-export async function loader() {
+export async function loader({request }: LoaderArgs) {
+  await requireUser(request);
+  const url = new URL(request.url)
+  const query = url.searchParams.get('query');
+  invariant(typeof query === 'string', "query must be provided");
+
+  const customers = await searchCustomers(query)
+  return json({ customers });
   // 🐨 verify the user is logged in with requireUser
 
   // 🐨 perform the customer search with searchCustomers and the query from the request
@@ -17,10 +29,11 @@ type Customer = { id: string; name: string; email: string };
 
 export function CustomerCombobox({ error }: { error?: string | null }) {
   // 🐨 use the useFetcher hook to fetch the customers
+  const fetcher = useFetcher();
   const id = useId();
 
   // 🐨 set this to the customer data you get from the fetcher (if it exists)
-  const customers: Array<Customer> = [];
+  const customers: Array<Customer> = fetcher.data?.customers ?? [];
   const [selectedCustomer, setSelectedCustomer] = useState<
     Customer | null | undefined
   >(null);
@@ -33,6 +46,11 @@ export function CustomerCombobox({ error }: { error?: string | null }) {
     items: customers,
     itemToString: (item) => (item ? item.name : ""),
     onInputValueChange: (changes) => {
+      if (!changes.inputValue) return;
+
+      fetcher.submit({
+        query: changes.inputValue
+      }, { method: 'get', action: "/resources/customers" })
       // 🐨 use your fetcher to submit the query and get back the customers
       // 💰 changes.inputValue is the query
       // 💰 what method do we need to set this to so it ends up in the loader?
