@@ -1,0 +1,12 @@
+{
+  "name": "start",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "test": "echo pffffft",
+    "start": "lite-server index.html"
+  },
+  "dependencies": {
+    "lite-server": "^2.5.3"
+  }
+}

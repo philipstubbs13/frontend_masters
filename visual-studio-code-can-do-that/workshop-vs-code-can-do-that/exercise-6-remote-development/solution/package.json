@@ -1,0 +1,13 @@
+{
+  "name": "start",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "lifx-http-api": "^1.0.3"
+  },
+  "devDependencies": {}
+}
