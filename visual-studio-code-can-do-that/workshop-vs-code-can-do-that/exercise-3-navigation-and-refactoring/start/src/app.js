@@ -28,6 +28,7 @@ class App {
     }
   }
 
+  //#region Class Methods
   async init() {
     // initialize signalR hub (websockets connection)
     let connection = new signalR.HubConnectionBuilder()
@@ -60,6 +61,7 @@ class App {
       currentColor.textContent = `#${hexNoHash}`;
     }
   }
+  //#endregion
 }
 
 let application = new App();

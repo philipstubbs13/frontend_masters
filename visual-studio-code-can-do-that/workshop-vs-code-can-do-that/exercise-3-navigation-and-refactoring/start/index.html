@@ -2,15 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=`, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="description" content="I ate a big red candle. I love lamp." />
     <link rel="stylesheet" href="bulma.css" />
     <title>I Love Lamp</title>
+    <meta name="viewport" content="width=`, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   </head>
   <style>
     html {
-      background-image: url(background.jpeg);
+      background-image: url(images/background.jpeg);
       background-repeat: no-repeat;
       background-size: cover;
       height: 100%;
@@ -34,7 +34,7 @@
   <body>
     <div id="app" class="container">
       <div class="has-text-centered">
-        <img src="logo.png" alt="" />
+        <img src="images/logo.png" alt="" />
       </div>
       <section class="section">
         <div class="columns is-vcentered">
@@ -55,6 +55,7 @@
       </section>
       <section class="section">
         <div id="lightBulb">
+          <!--#region verbose svg written by Burke-->
           <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -160,6 +161,7 @@
               />
             </g>
           </svg>
+          <!--#endregion-->
           <p class="is-size-1 has-text-centered" id="currentColor"></p>
         </div>
       </section>
