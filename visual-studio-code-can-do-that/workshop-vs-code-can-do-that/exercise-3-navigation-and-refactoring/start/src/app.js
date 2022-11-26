@@ -6,7 +6,7 @@ let goButton = document.getElementById("goButton");
 let colorInput = document.getElementById("colorInput");
 let currentColor = document.getElementById("currentColor");
 let bulb = document.getElementById("bulb");
-let online = window.navigator.onLine;
+let online = window.navigator.onLinel
 
 class App {
   /**
