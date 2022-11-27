@@ -1,3 +1,5 @@
+// // @ts-check
+
 const API_BASE = "https://lifx-lamp-api.azurewebsites.net/api";
 
 // define variables
