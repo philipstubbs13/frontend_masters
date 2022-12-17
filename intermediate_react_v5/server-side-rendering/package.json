@@ -9,7 +9,7 @@
     "build:client": "vite build --outDir ../dist/client",
     "build:server": "vite build --outDir ../dist/server --ssr ServerApp.jsx",
     "build": "npm run build:client && npm run build:server",
-    "start": "node server.js",
+    "start": "node --experimental-fetch server.js",
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet"

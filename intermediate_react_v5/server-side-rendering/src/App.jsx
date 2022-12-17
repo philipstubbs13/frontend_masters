@@ -10,6 +10,7 @@ const queryClient = new QueryClient({
     queries: {
       staleTime: Infinity,
       cacheTime: Infinity,
+      suspense: true
     },
   },
 });
