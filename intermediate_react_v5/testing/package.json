@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
-    "test": "vitest"
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest --coverage"
   },
   "keywords": [],
   "author": "Brian Holt",
@@ -17,6 +19,7 @@
   "devDependencies": {
     "@testing-library/react": "^13.4.0",
     "@vitejs/plugin-react": "2.1.0",
+    "@vitest/coverage-c8": "^0.26.0",
     "eslint": "8.24.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-import": "2.26.0",
