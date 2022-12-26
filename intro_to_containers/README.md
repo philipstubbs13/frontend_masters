@@ -20,3 +20,15 @@ docker kill $(docker ps -q)
 ```bash
 docker container prune
 ```
+
+```bash
+ docker build -t my-node-app .
+ ```
+
+ ```bash
+ docker run --init --rm --detach -P my-node-app
+ ```
+
+ ```bash
+ docker run --init --publish 3000:3000  my-node-app
+ ```
