@@ -32,3 +32,11 @@ docker container prune
  ```bash
  docker run --init --publish 3000:3000  my-node-app
  ```
+
+ ```bash
+  docker build -t my-node-app -f dev.Dockerfile 
+```
+
+```bash
+docker-compose up --build
+```
