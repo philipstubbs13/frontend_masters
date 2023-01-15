@@ -140,3 +140,33 @@ function Counter() {
 
 render(Counter, document.body);
 ```
+
+- Fine-Grained Reactivity
+
+```bash
+import { createSignal } from "solid-js";
+import { render } from "solid-js/web";
+
+function Counter(props) {
+  return (
+      <>
+        <h1>The count is {props.children}</h1>,
+        <button onClick={props.onClick}>Click Me</button>
+      </>
+    )
+}
+
+function App() {
+  const [count, setCount] = createSignal(0);
+  console.log("App");
+
+  return (
+    <>
+      <Counter onClick={() => setCount(() => count() + 1)}>{count()}</Counter>
+      <Counter onClick={() => setCount(() => count() + 2)}>{count() * 2}</Counter>
+    </>
+  )
+}
+
+render(App, document.body);
+```
