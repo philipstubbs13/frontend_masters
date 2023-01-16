@@ -16,6 +16,10 @@
   - <https://playground.solidjs.com/>
 * Solidjs Todos App
   - <https://stackblitz.com/edit/github-8r2jrr>
+* SolidStart hackernews example
+  - <https://stackblitz.com/edit/github-xeqzme?file=README.md>
+* SolidStart bare example
+  - <https://stackblitz.com/edit/github-qdlls4?file=README.md>
 
 ```bash
 // main.tsx
