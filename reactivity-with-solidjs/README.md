@@ -14,6 +14,8 @@
 
 * Creating a Signal from Scratch
   - <https://playground.solidjs.com/>
+* Solidjs Todos App
+  - <https://stackblitz.com/edit/github-8r2jrr>
 
 ```bash
 // main.tsx
