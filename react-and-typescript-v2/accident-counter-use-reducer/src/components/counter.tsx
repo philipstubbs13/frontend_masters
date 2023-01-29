@@ -1,4 +1,4 @@
-import { useState, useEffect, useReducer } from 'react';
+import { useReducer } from 'react';
 
 type InitialState = {
   count: number;
@@ -10,16 +10,8 @@ const initialState: InitialState = {
   draftCount: 0,
 };
 
-type Action = {
-  type: 'increment' | 'decrement' | 'reset' | 'update' | 'updateCountFromDraft';
-}
-
-type ActionWithPayload = {
-  type: 'updateDraftCount',
-  payload: number
-}
-
-const reducer = (state = initialState, action: Action | ActionWithPayload) => {
+const reducer = (state = initialState, action: any) => {
+  console.log({ action });
   const { count, draftCount } = state;
 
   if (action.type === 'increment') {
@@ -38,7 +30,6 @@ const reducer = (state = initialState, action: Action | ActionWithPayload) => {
 
   if (action.type === 'updateDraftCount') {
     console.log('updateDraftCount');
-
     return { count, draftCount: action.payload };
   }
 
@@ -50,27 +41,34 @@ const reducer = (state = initialState, action: Action | ActionWithPayload) => {
 };
 
 const Counter = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [{ count, draftCount }, dispatch] = useReducer(reducer, initialState);
 
   return (
     <section className="flex flex-col items-center w-2/3 gap-8 p-8 bg-white border-4 shadow-lg border-primary-500">
       <h1>Days Since the Last Accident</h1>
-      <p className="text-6xl">{state.count}</p>
+      <p className="text-6xl">{count}</p>
       <div className="flex gap-2">
-        <button onClick={() => dispatch({ type: 'decrement' })}>➖ Decrement</button>
+        <button onClick={() => dispatch({ type: 'decrement' })}>
+          ➖ Decrement
+        </button>
         <button onClick={() => dispatch({ type: 'reset' })}>🔁 Reset</button>
-        <button onClick={() => dispatch({ type: 'increment' })}>➕ Increment</button>
+        <button onClick={() => dispatch({ type: 'increment' })}>
+          ➕ Increment
+        </button>
       </div>
       <div>
         <form
           onSubmit={(e) => {
-            e.preventDefault()
+            e.preventDefault();
+            dispatch({ type: 'updateCountFromDraft' });
           }}
         >
           <input
             type="number"
-            value={state.draftCount}
-            onChange={}
+            value={draftCount}
+            onChange={(e) =>
+              dispatch({ action: 'updateDraftCount', payload: e.target.value })
+            }
           />
           <button type="submit">Update Counter</button>
         </form>
