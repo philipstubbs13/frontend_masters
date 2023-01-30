@@ -10,3 +10,4 @@
 * types vs interfaces: <https://fem-react-typescript.vercel.app/Types%20versus%20interfaces.md>
 * typing children
   - <https://codesandbox.io/s/typing-children-hkb89o>
+* <https://blog.isquaredsoftware.com/2021/01/context-redux-differences/>
