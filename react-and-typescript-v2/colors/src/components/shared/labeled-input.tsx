@@ -1,22 +1,14 @@
-import clsx from 'clsx';
-import { ChangeEventHandler, useId } from 'react';
+import { ComponentPropsWithoutRef, useId } from 'react';
 
-type LabeledInputProps = {
-  id?: string;
+type LabeledInputProps = ComponentPropsWithoutRef<'input'> & {
   label: string;
-  value: string | number;
-  type?: string;
-  className?: string;
-  onChange?: ChangeEventHandler<HTMLInputElement>;
 };
 
 const LabeledInput = ({
   label,
-  value,
   id,
-  className,
-  type = 'text',
   onChange,
+  ...props
 }: LabeledInputProps) => {
   id = useId() + id;
 
@@ -25,11 +17,8 @@ const LabeledInput = ({
       <label htmlFor={id}>{label}</label>
       <input
         id={id}
-        value={value}
-        onChange={onChange}
-        type={type}
-        className={clsx('w-full', className)}
         readOnly={!onChange}
+        {...props}
       />
     </div>
   );
