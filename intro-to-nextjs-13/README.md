@@ -5,3 +5,4 @@
 * <https://intro-nextjs-v2-instructions.vercel.app/>
 * <https://www.warp.dev/>
 * <https://marketplace.visualstudio.com/items?itemName=JoelCrosby.one-dark-darker>
+* <https://www.reddit.com/.json>

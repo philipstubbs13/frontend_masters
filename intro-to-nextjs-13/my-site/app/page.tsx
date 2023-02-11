@@ -1,13 +1,26 @@
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from './page.module.css'
+import Header from '../components/Header';
+
+const getData = async () => {
+  const data = await fetch('https://www.reddit.com/.json')
+
+  return data.json()
+}
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default async function Home() {
+  const data = await getData();
+  const post = data.data.children[0].data.title;
+
+
   return (
     <main className={styles.main}>
+      <Header />
       <div className={styles.description}>
+        <h1>{post}</h1>
         <p>
           Get started by editing&nbsp;
           <code className={styles.code}>app/page.tsx</code>
