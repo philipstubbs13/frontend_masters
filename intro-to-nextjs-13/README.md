@@ -6,3 +6,6 @@
 * <https://www.warp.dev/>
 * <https://marketplace.visualstudio.com/items?itemName=JoelCrosby.one-dark-darker>
 * <https://www.reddit.com/.json>
+* <https://fanout.io/>
+* <https://github.com/Hendrixer/intro-nextjs-app>
+* <https://beta.nextjs.org/docs>
