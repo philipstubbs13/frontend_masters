@@ -15,6 +15,8 @@ export default async function Home() {
   const data = await getData();
   const post = data.data.children[0].data.title;
 
+    // throw new Error('yikes')
+
 
   return (
     <main className={styles.main}>
