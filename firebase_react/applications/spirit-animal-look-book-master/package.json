@@ -10,7 +10,7 @@
     "react-file-input": "^0.2.5"
   },
   "devDependencies": {
-    "react-scripts": "0.9.3"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
