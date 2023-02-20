@@ -4,29 +4,31 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
+    "incremental": true,
     "esModuleInterop": true,
-    "module": "esnext",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true,
+    "baseUrl": ".",
     "plugins": [
       {
         "name": "next"
       }
     ],
-    "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"],
-      "@/lib": ["./lib/*"],
-      "@/components": ["./components/*"],
-      "@/assets": ["./assets/*"],
+      "@/components/*": ["./components/*"],
+      "@/hooks/*": ["./hooks/*"],
+      "@/lib/*": ["./lib/*"],
+      "@/styles/*": ["./styles/*"],
+      "@/prisma/*": ["./prisma/*"],
+      "@/assets/*": ["./assets/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
