@@ -20,3 +20,7 @@ npx prisma db seed
 ```bash
 npx prisma studio
 ```
+
+```bash
+npx prisma migrate deploy
+```
