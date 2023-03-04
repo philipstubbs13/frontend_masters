@@ -3,6 +3,11 @@
 - <https://frontendmasters.com/courses/fullstack-app-next-v2/>
 
 * <https://fullstack-v2-instructions.vercel.app/>
+* Authentication
+  - <https://clerk.dev/>
+  * <https://supertokens.com/>
+  * <https://next-auth.js.org/>
+  * <https://nextjs.org/docs/authentication>
 
 ```bash
 npx prisma migrate dev
