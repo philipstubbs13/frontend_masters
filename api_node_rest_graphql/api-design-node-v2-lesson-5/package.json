@@ -16,7 +16,7 @@
     "graphql-tools": "^2.4.0",
     "jsonwebtoken": "^8.1.0",
     "lodash.merge": "^4.6.0",
-    "mongoose": "^4.12.1"
+    "mongoose": "^5.7.5"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
