@@ -9,7 +9,7 @@
   "dependencies": {
     "bezier-easing": "^2.1.0",
     "canvas-sketch": "0.0.27",
-    "canvas-sketch-cli": "^1.1.7",
+    "canvas-sketch-cli": "^1.11.20",
     "canvas-sketch-util": "^1.4.2",
     "convex-hull": "^1.0.3",
     "eases": "^1.0.8",
