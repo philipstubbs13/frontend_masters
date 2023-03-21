@@ -1,7 +1,7 @@
 import { component$, Resource, useStylesScoped$ } from "@builder.io/qwik";
 import { RequestHandler, useEndpoint } from "@builder.io/qwik-city";
-import { Contact, CONTACTS } from "../fake-db";
-import CSS from './index.css?inline';
+import { Contact, CONTACTS } from "../../fake-db";
+import CSS from '../index.css?inline';
 
 export const onGet: RequestHandler<Contact> = async (ctx) => {
     return CONTACTS.filter((c) => c.id === ctx.params.contactId)[0];
@@ -17,7 +17,7 @@ export default component$(() => {
             onPending={() => <>loading...</>}
             onResolved={(c) => (
                 <div class="contact">
-                    <a href={`/contacts/${c.id}/edit`}>edit</a>
+                    <a href={`/contacts/${c.id}/`}>cancel</a>
                     <div class="row">
                         <img class="avatar" src={c.avatar} />
                         <span>{c.name}</span>
