@@ -7,6 +7,7 @@
 * <https://pagespeed.web.dev/>
 * <https://www.builder.io/c/performance-insights>
 * <https://mitosis.builder.io/?outputTab=G4VwpkA%3D>
+* <https://qwik.builder.io/>
 
 ```bash
 npm create qwik@latest
