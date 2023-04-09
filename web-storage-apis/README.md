@@ -6,3 +6,6 @@
 * <https://github.com/firtman/coffeemasters-pwa>
 * <https://storage-quota.glitch.me/>
 * <http://www.filldisk.com/>
+* <https://dexie.org/>
+* <https://developer.chrome.com/docs/workbox/>
+* <https://vscode.dev/>
