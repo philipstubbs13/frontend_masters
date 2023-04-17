@@ -18,6 +18,13 @@
 
     <script src="scripts/app.js" type="module"></script>
 
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script>
+    function loginFromGoogle(data) {
+        Auth.loginFromGoogle(data)
+    }
+    </script>
+
 </head>
 
 <body>
@@ -89,6 +96,24 @@
                     <a href="/register" class="navlink">Register a new account instead</a> 
                 </p>                   
                 
+                </fieldset>
+
+                <fieldset>
+                    <div id="g_id_onload"
+                        data-client_id="731126713556-il7nssn83uhemct9j8rt7fdmli3fru68.apps.googleusercontent.com"
+                        data-context="signin"
+                        data-ux_mode="popup"
+                        data-callback="loginFromGoogle"
+                        data-auto_prompt="false">
+                    </div>
+                    <div class="g_id_signin"
+                        data-type="standard"
+                        data-shape="rectangular"
+                        data-theme="filled_blue"
+                        data-text="signin_with"
+                        data-size="large"
+                        data-logo_alignment="left">
+                    </div>
                 </fieldset>
             </form>            
         </section>

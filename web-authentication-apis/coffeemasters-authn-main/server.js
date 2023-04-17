@@ -34,6 +34,32 @@ function findUser(email) {
   return results[0];
 }
 
+app.post("/auth/login-google", (req, res) => {
+  let jwt = jwtJsDecode.jwtDecode(req.body.credential.credential);
+  let user = {
+    email: jwt.payload.email,
+    name: jwt.payload.given_name + " " + jwt.payload.family_name,
+    password: false
+  }
+  const userFound = findUser(user.email);
+  if (userFound) {
+    user.federated = {
+      google: jwt.payload.aud
+    }
+    db.write();
+    res.send({ ok: true, name: user.name, email: user.email });
+  } else {
+    db.data.users.push({
+      ...user,
+      federated: {
+        google: jwt.payload.aud
+      }
+    });
+    db.write();
+    res.send({ ok: true, name: user.name, email: user.email });
+  }
+})
+
 // ADD HERE THE REST OF THE ENDPOINTS
 app.post("/auth/login", (req, res) => {
   const userFound = findUser(req.body.email);
