@@ -40,7 +40,7 @@ app.post("/auth/login", (req, res) => {
   if (userFound) {
     // User Found, Check password
     if (bcrypt.compareSync(req.body.password, userFound.password)) {
-      res.ok({ ok: true, name: userFound.name, email: userFound.email });
+      res.send({ ok: true, name: userFound.name, email: userFound.email });
     } else {
       res.send({ ok: false, message: "Credentials are wrong." })
     }
