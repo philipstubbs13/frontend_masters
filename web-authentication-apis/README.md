@@ -6,3 +6,5 @@
 * <https://haveibeenpwned.com/>
 * <https://webauthn.io/>
 * <https://simplewebauthn.dev/>
+* <https://www.passkeys.io/>
+* <https://android-developers.googleblog.com/2022/10/bringing-passkeys-to-android-and-chrome.html>
