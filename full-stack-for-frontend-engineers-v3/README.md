@@ -11,3 +11,64 @@
   * <https://frontendmasters.com/courses/vim-fundamentals/>
   * <https://frontendmasters.com/courses/bash-vim-regex/>
 * <https://ohmyz.sh/>
+
+Move into the ~/.ssh directory
+
+```bash
+cd ~/.ssh
+```
+
+Generate a key using ssh-keygen
+
+```bash
+ssh-keygen
+```
+
+copy the public key into digital ocean
+
+```bash
+ls | grep fsfe
+cat fsfe.pub
+```
+
+ssh into your server
+
+```bash
+ssh root@<your_IP>
+```
+
+ssh into your server your private key
+
+```bash
+ssh -i ~/.ssh/fsfe root@<your_IP>
+```
+
+exit your server
+
+```bash
+exit
+```
+
+Look at known hosts
+
+```bash
+~/.ssh/known_hosts
+```
+
+Check status of a network host
+
+```bash
+ping google.com
+```
+
+Follow the path of your request
+
+```bash
+traceroute google.com
+```
+
+Show network status
+
+```bash
+netstat -lt | less
+```
