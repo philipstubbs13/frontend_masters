@@ -11,6 +11,8 @@
   * <https://frontendmasters.com/courses/vim-fundamentals/>
   * <https://frontendmasters.com/courses/bash-vim-regex/>
 * <https://ohmyz.sh/>
+* <https://www.cloudflare.com/learning/>
+* <https://www.namecheap.com/>
 
 Move into the ~/.ssh directory
 
@@ -71,4 +73,23 @@ Show network status
 
 ```bash
 netstat -lt | less
+```
+
+Lookup the nameservers for a domain
+
+```bash
+nslookup frontendmasters.com
+```
+
+Lookup the DNS records for a domain
+
+```bash
+dig frontendmasters.com
+```
+
+View browser DNS cache
+
+```bash
+Chrome - chrome://net-internals/#dns
+Firefox - about:networking#dns
 ```
