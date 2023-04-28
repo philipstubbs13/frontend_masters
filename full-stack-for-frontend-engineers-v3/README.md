@@ -93,3 +93,15 @@ View browser DNS cache
 Chrome - chrome://net-internals/#dns
 Firefox - about:networking#dns
 ```
+
+Install nginx
+
+```bash
+sudo apt install nginx
+```
+
+Start nginx
+
+```bash
+sudo service nginx start
+```
