@@ -2,7 +2,8 @@
 
 - <https://frontendmasters.com/courses/fullstack-v3/>
 
-* course slides: <https://static.frontendmasters.com/assets/courses/2023-04-18-fullstack-v3/fullstack-v3-slides.pdf>
+* course slides part 1: <https://static.frontendmasters.com/assets/courses/2023-04-18-fullstack-v3/fullstack-v3-slides.pdf>
+* course slides part 2: <https://docs.google.com/presentation/d/1-b5wgSOCamSpiXE7aIW-Yhxl1hqeLz7s6AAPbdngc1E/edit#slide=id.g1f5f7224727_0_4>
 * front end happy hour podcast: <https://www.frontendhappyhour.com/>
 * vim
   - <https://vim.fandom.com/wiki/All_the_right_moves>
@@ -13,6 +14,11 @@
 * <https://ohmyz.sh/>
 * <https://www.cloudflare.com/learning/>
 * <https://www.namecheap.com/>
+* <https://www.cisco.com/c/en/us/products/security/firewalls/what-is-a-firewall.html>
+* <https://quickref.me/chmod>
+* <https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment>
+* <https://spinnaker.io/>
+* <https://crontab.guru/>
 
 Move into the ~/.ssh directory
 
