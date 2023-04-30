@@ -19,6 +19,10 @@
 * <https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment>
 * <https://spinnaker.io/>
 * <https://crontab.guru/>
+* websocket example: <https://github.com/young/fullstack-for-frontend3/blob/main/apps/database/index-ws.js>
+* <https://github.com/young/jemstack.lol/blob/main/index-ws.js>
+* <https://github.com/young/fullstack-for-frontend3/blob/main/apps/database/index.js>
+* <https://github.com/young/fullstack-for-frontend3/blob/main/apps/simpleServer/Dockerfile>
 
 Move into the ~/.ssh directory
 
