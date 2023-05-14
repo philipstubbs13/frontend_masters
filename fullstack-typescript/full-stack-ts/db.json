@@ -34,6 +34,27 @@
       "createdAt": "2022-03-23T03:55:59.614Z",
       "updatedAt": "2022-03-23T03:55:59.614Z",
       "id": "tweet-1220baa2-2092-4ed8-a72c-91757dc508f7"
+    },
+    {
+      "message": "hello this is a first tweet",
+      "userId": "user-15a37948-7712-4e0b-a554-2fef33f31697",
+      "createdAt": "2023-05-14T15:59:54.093Z",
+      "updatedAt": "2023-05-14T15:59:54.093Z",
+      "id": "tweet-62c75572-ed71-42c5-800f-61b2d3ea38cb"
+    },
+    {
+      "message": "hello this is my second tweet",
+      "userId": "user-15a37948-7712-4e0b-a554-2fef33f31697",
+      "createdAt": "2023-05-14T16:02:34.672Z",
+      "updatedAt": "2023-05-14T16:02:34.672Z",
+      "id": "tweet-ce65d6a1-be65-4f4c-81a1-0c5d4ff0a842"
+    },
+    {
+      "message": "no more refetching",
+      "userId": "user-15a37948-7712-4e0b-a554-2fef33f31697",
+      "createdAt": "2023-05-14T16:03:48.977Z",
+      "updatedAt": "2023-05-14T16:03:48.977Z",
+      "id": "tweet-83eb5198-79a6-4e34-84bb-4b2ae7750cb8"
     }
   ],
   "users": [
@@ -146,6 +167,27 @@
       "createdAt": "2022-03-23T03:55:59.617Z",
       "updatedAt": "2022-03-23T03:55:59.617Z",
       "id": "favorite-a4e781ad-1c7b-4e62-b9dd-66b4e36e390b"
+    },
+    {
+      "userId": "user-15a37948-7712-4e0b-a554-2fef33f31697",
+      "tweetId": "tweet-83eb5198-79a6-4e34-84bb-4b2ae7750cb8",
+      "createdAt": "2023-05-14T17:11:55.697Z",
+      "updatedAt": "2023-05-14T17:11:55.698Z",
+      "id": "favorite-cbb3e4d8-1287-4a5c-ba60-02af2311a3e7"
+    },
+    {
+      "userId": "user-15a37948-7712-4e0b-a554-2fef33f31697",
+      "tweetId": "tweet-ce65d6a1-be65-4f4c-81a1-0c5d4ff0a842",
+      "createdAt": "2023-05-14T17:11:58.516Z",
+      "updatedAt": "2023-05-14T17:11:58.516Z",
+      "id": "favorite-544d79be-d270-4ed6-a23d-d1d4db24e9ad"
+    },
+    {
+      "userId": "user-15a37948-7712-4e0b-a554-2fef33f31697",
+      "tweetId": "tweet-0db3e976-92cc-4846-9b96-e2a03da0b4e2",
+      "createdAt": "2023-05-14T17:12:10.747Z",
+      "updatedAt": "2023-05-14T17:12:10.747Z",
+      "id": "favorite-141f46a2-505b-4594-b179-bdae6d17d152"
     }
   ],
   "hashtagTrends": [

@@ -1,0 +1,72 @@
+    type Query {
+      currentUser: User!
+      suggestions: [Suggestion!]!
+      tweets: [Tweet!]!
+      trends: [Trend!]
+    }
+    type Mutation {
+      createTweet(userId: String!, body: String!): Tweet!
+      createFavorite(favorite: FavoriteInput!): Favorite!
+      deleteFavorite(favorite: FavoriteInput!): Favorite!
+    }
+    input FavoriteInput {
+      userId: String!
+      tweetId: String!
+    }
+    type User {
+      id: String!
+      name: String!
+      handle: String!
+      coverUrl: String!
+      avatarUrl: String!
+      createdAt: String!
+      updatedAt: String!
+      stats: UserStats
+      favorites: [Favorite!]
+    }
+    type Suggestion {
+      name: String!
+      handle: String!
+      avatarUrl: String!
+      reason: String!
+    }
+    type UserStats {
+      tweetCount: Int!
+      followingCount: Int!
+      followerCount: Int!
+    }
+    type Tweet {
+      id: String!
+      body: String!
+      createdAt: String!
+      updatedAt: String!
+      author: User
+      stats: TweetStats
+    }
+    type TweetStats {
+      favoriteCount: Int!
+      retweetCount: Int!
+      commentCount: Int!
+    }
+    type Favorite {
+      id: String!
+      tweet: Tweet!
+      user: User!
+      createdAt: String!
+      updatedAt: String!
+    }
+    type HashtagTrend {
+      hashtag: String!
+      tweetCount: Int!
+    }
+    type TopicTrendQuote {
+      title: String!
+      description: String!
+      imageUrl: String!
+    }
+    type TopicTrend {
+      topic: String!
+      tweetCount: Int!
+      quote: TopicTrendQuote
+    }
+    union Trend = TopicTrend | HashtagTrend
