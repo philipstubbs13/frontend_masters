@@ -1,0 +1,14 @@
+.DS_Store
+node_modules
+/build
+/.svelte-kit
+/package
+.env.*
+*.db
+*.db-journal
+/test-results/
+/playwright-report/
+/playwright/.cache/
+/test-results/
+/playwright-report/
+/playwright/.cache/
