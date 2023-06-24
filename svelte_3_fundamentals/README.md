@@ -5,3 +5,7 @@
 * course project: <https://github.com/Rich-Harris/ematchi>
 * svelte origins: <https://www.youtube.com/watch?v=kMlkCYL9qo0>
 * <https://github.com/joshnuss/svelte-local-storage-store>
+* <https://pictogrammers.com/library/mdi/>
+* <https://twemoji.twitter.com/>
+* <https://github.com/twitter/twemoji>
+* <https://github.com/Rich-Harris/ematchi>
