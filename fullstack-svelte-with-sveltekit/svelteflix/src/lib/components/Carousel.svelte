@@ -5,7 +5,7 @@
 
     export let movies: MovieListResult[];
     export let view: View;
-    export let href: string;
+    export let href: string | null;
 </script>
 
 <h2 class="column">
@@ -15,7 +15,7 @@
 
 <div class="carousel">
     {#each movies as movie}
-        <a href="/movie/{movie.id}">
+        <a href="/movies/{movie.id}">
             <img alt={movie.title} src={media(movie.poster_path, 500)} />
         </a>
     {/each}
