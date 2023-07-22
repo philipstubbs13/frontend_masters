@@ -6,3 +6,4 @@
 * course slides: <https://firtman.github.io/vanilla/slides.pdf>
 * <http://vanilla-js.com/>
 * <https://krausest.github.io/js-framework-benchmark/current.html>
+* <https://developer.mozilla.org/en-US/docs/Web/API>
