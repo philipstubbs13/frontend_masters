@@ -5,3 +5,4 @@
 * course code project: <https://github.com/firtman/coffeemasters-vanilla>
 * course slides: <https://firtman.github.io/vanilla/slides.pdf>
 * <http://vanilla-js.com/>
+* <https://krausest.github.io/js-framework-benchmark/current.html>
