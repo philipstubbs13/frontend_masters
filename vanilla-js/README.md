@@ -7,3 +7,4 @@
 * <http://vanilla-js.com/>
 * <https://krausest.github.io/js-framework-benchmark/current.html>
 * <https://developer.mozilla.org/en-US/docs/Web/API>
+* <https://developer.mozilla.org/en-US/docs/Web/API/DOMParser>
