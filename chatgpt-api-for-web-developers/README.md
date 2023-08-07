@@ -7,3 +7,5 @@
 * <https://openai.com/pricing>
 * <https://openai.com/gpt-4>
 * <https://platform.openai.com/docs/introduction>
+* <https://github.com/openai/whisper>
+* <https://platform.openai.com/>
