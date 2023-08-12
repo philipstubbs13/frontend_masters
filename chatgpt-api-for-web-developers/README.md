@@ -9,3 +9,6 @@
 * <https://platform.openai.com/docs/introduction>
 * <https://github.com/openai/whisper>
 * <https://platform.openai.com/>
+* <https://openai.com/blog/chatgpt-plugins>
+* <https://greshake.github.io/>
+* <https://platform.openai.com/docs/api-reference>
