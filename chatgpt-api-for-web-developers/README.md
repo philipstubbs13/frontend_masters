@@ -12,3 +12,5 @@
 * <https://openai.com/blog/chatgpt-plugins>
 * <https://greshake.github.io/>
 * <https://platform.openai.com/docs/api-reference>
+* <https://www.langchain.com/>
+* <https://js.langchain.com/>
