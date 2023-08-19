@@ -12,3 +12,4 @@
 * css tricks flexbox: <https://css-tricks.com/snippets/css/a-guide-to-flexbox/>
 * chapter 4a: <https://codepen.io/philipstubbs13/pen/GRPRzKZ?editors=1100>
 * chapter 4b: <https://codepen.io/philipstubbs13/pen/oNJNmwj?editors=1100>
+* chapter 4c: <https://codepen.io/philipstubbs13/pen/poqoGXB?editors=1100>
