@@ -13,3 +13,6 @@
 * chapter 4a: <https://codepen.io/philipstubbs13/pen/GRPRzKZ?editors=1100>
 * chapter 4b: <https://codepen.io/philipstubbs13/pen/oNJNmwj?editors=1100>
 * chapter 4c: <https://codepen.io/philipstubbs13/pen/poqoGXB?editors=1100>
+* <https://css-tricks.com/lets-create-a-custom-audio-player/>
+* Chapter 4d: <https://codepen.io/philipstubbs13/pen/jOXEOOd?editors=1100>
+* Chapter 4g: <https://codepen.io/philipstubbs13/pen/poqvbdz?editors=1100>
