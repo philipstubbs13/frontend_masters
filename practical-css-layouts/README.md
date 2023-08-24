@@ -17,3 +17,5 @@
 * Chapter 4d: <https://codepen.io/philipstubbs13/pen/jOXEOOd?editors=1100>
 * Chapter 4g: <https://codepen.io/philipstubbs13/pen/poqvbdz?editors=1100>
 * Chapter 5a: <https://codepen.io/philipstubbs13/pen/GRPJXXL?editors=1100>
+* Chapter 5c: <https://codepen.io/philipstubbs13/pen/YzdXJyb?editors=0100>
+* Chapter 5e: <https://codepen.io/philipstubbs13/pen/zYyGQzL>
