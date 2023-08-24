@@ -16,3 +16,4 @@
 * <https://css-tricks.com/lets-create-a-custom-audio-player/>
 * Chapter 4d: <https://codepen.io/philipstubbs13/pen/jOXEOOd?editors=1100>
 * Chapter 4g: <https://codepen.io/philipstubbs13/pen/poqvbdz?editors=1100>
+* Chapter 5a: <https://codepen.io/philipstubbs13/pen/GRPJXXL?editors=1100>
