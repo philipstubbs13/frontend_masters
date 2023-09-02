@@ -12,7 +12,7 @@ const Home = async() => {
 
   return (
     <div>
-      <NewTodoForm />
+      home
     </div>
   )
 }
