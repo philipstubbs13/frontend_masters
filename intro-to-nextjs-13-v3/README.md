@@ -6,6 +6,9 @@
 * <https://github.com/css-modules/css-modules>
 * <https://nextjs.org/docs/app/api-reference/functions/fetch>
 * <https://www.prisma.io/>
+* <https://sst.dev/>
+* <https://dribbble.com/>
+* <https://next-auth.js.org/>
 
 ```bash
 npx prisma init --datasource-provider sqlite
