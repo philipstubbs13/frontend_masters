@@ -1,3 +1,38 @@
 {
-  "notes": []
+  "notes": [
+    {
+      "tags": [
+        "work",
+        " serious"
+      ],
+      "id": 1693846548213,
+      "content": "clean my rooms"
+    },
+    {
+      "tags": [
+        "work",
+        " serious"
+      ],
+      "id": 1693846549461,
+      "content": "clean my rooms"
+    },
+    {
+      "tags": [
+        "work",
+        " serious"
+      ],
+      "id": 1693846551858,
+      "content": "clean my rooms"
+    },
+    {
+      "tags": [],
+      "id": 1693846562511,
+      "content": "walk my dog"
+    },
+    {
+      "tags": [],
+      "id": 1693846569113,
+      "content": "eat more food"
+    }
+  ]
 }
