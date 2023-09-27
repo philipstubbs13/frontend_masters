@@ -16,6 +16,8 @@
 * <https://js.langchain.com/docs/get_started/introduction>
 * <https://platform.openai.com/apps>
 * <https://openai.com/blog/introducing-text-and-code-embeddings>
+* <https://vercel.com/philipstubbs13/mood>
+* <https://mood-modt8pxr4-philipstubbs13.vercel.app/journal>
 
 ```bash
 npx create-next-app@13.4.5 mood
