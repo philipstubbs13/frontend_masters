@@ -15,6 +15,7 @@
 * <https://docs.astro.build/en/guides/upgrade-to/v3/#changed-multiple-jsx-framework-configuration>
 * <https://docs.astro.build/en/guides/content-collections/>
 * <https://docs.astro.build/en/guides/server-side-rendering/>
+* <https://docs.astro.build/en/guides/deploy/>
 
 * start astro project from scratch
 
