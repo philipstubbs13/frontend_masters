@@ -75,4 +75,4 @@ go install .
 Packaging
 * Go just produces a binary
 * It doesn't provide any packaging solution
-* If we want to embed assets for an app we need to use third-party or OSs tools
+* If we want to embed assets for an app we need to use third-party or OSs tools.
