@@ -46,3 +46,33 @@ go work init
 ```bash
 go mod init frontendmasters.com/go/calc
 ```
+
+Compiling the project
+
+```bash
+go build *
+```
+
+Compiling in one specific output folder
+
+```bash
+go build . -o build/
+```
+
+Compiling for other platforms and OSs
+
+```bash
+env GOOS=target-OS
+    GOARCH=target-architecture go build .
+```
+
+Compile and install
+
+```bash
+go install .
+```
+
+Packaging
+* Go just produces a binary
+* It doesn't provide any packaging solution
+* If we want to embed assets for an app we need to use third-party or OSs tools
