@@ -11,3 +11,4 @@
 * codepen collections: <https://codepen.io/collection/JGBxVy>
 * challenge 3a: <https://codepen.io/philipstubbs13/pen/qBgrvYJ?editors=1100>
 * challenge 3d wacky grid: <https://codepen.io/philipstubbs13/pen/JjxNPvW?editors=1100>
+* team challenge: <https://codepen.io/philipstubbs13/pen/ExrmYGZ?editors=1100>
