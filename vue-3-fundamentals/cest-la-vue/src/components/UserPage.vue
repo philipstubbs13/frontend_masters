@@ -1,36 +1,33 @@
-<script>
+<script setup>
 import UserCard from './UserCard.vue';
-import { reactive } from 'vue'
+import { defineProps, reactive } from 'vue'
 
-export default {
-    components: {
-        UserCard
-    },
-    async setup() {
-      const state = reactive({
-        userList: []
-      })
+defineProps({
+  title: {
+    type: String,
+    default: 'Users'
+  }
+})
 
-      async function fetchUsers() {
-          const response = await fetch("https://jsonplaceholder.typicode.com/users")
-            .then(response => response.json())
+defineEmits(['update-user-list']);
 
-          return response;
-      }
+const state = reactive({
+  userList: []
+})
 
-      state.userList = await fetchUsers()
+async function fetchUsers() {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users")
+      .then(response => response.json())
 
-      return {
-        state,
-        fetchUsers
-      }
-    },
+    return response;
 }
+
+state.userList = await fetchUsers()
 </script>
 
 <template>
   <main>
-    <h1>Users</h1>
+    <h1>{{ title }}</h1>
     <ul>
         <UserCard
             v-for="user in state.userList"

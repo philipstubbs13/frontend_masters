@@ -1,5 +1,11 @@
 <script>
+import { newCount } from "../composables/countStore"
 export default {
+    setup() {
+        return {
+            newCount,
+        }
+    },
     data: () => ({
         count: 10,
         counterTitle: 'Counter Standard',
@@ -20,6 +26,7 @@ export default {
     methods: {
         incrementCount() {
             this.count += this.optimizedIncrementAmount
+            this.newCount += 10;
         }
     },
 }
@@ -27,6 +34,7 @@ export default {
 
 <template>
     <h1>{{ displayTitle }}</h1>
+    <h2>{{  newCount }}</h2>
     <p>{{ count }}</p>
     <button v-on:click="incrementCount">Increment Count</button>
     <h1>{{ incrementAmount }}</h1>

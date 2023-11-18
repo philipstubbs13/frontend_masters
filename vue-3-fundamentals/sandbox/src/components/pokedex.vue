@@ -3,7 +3,7 @@
 import BaseButton from "./base-button.vue"
 import { computed, defineProps, defineEmits, ref, reactive } from 'vue'
 
-const emits = defineEmits('change-region')
+const emits = defineEmits(['change-region'])
 
 const props = defineProps({
   region: {
