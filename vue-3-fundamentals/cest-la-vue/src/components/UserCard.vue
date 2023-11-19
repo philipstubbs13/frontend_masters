@@ -11,7 +11,9 @@ export default {
 
 <template>
     <li :class="$style['user-card']">
-        {{ user.name }}: {{  user.website }}
+        <router-link :to="`/user/${user.name}`">
+            {{ user.name }}: {{  user.website }}
+        </router-link>
     </li>
 </template>
 
