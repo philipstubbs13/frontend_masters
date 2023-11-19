@@ -8,3 +8,4 @@
 * <https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=en>
 * <https://pokeapi.co/>
 * <https://vuejs.org/guide/essentials/lifecycle.html>
+* <https://router.vuejs.org/
