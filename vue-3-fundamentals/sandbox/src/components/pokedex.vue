@@ -1,7 +1,7 @@
 <script setup>
 // https://pokeapi.co/api/v2/pokemon?limit=151
 import BaseButton from "./base-button.vue"
-import { computed, defineProps, defineEmits, ref, reactive } from 'vue'
+import { computed, defineProps, defineEmits, ref, reactive, onBeforeUnmount } from 'vue'
 
 const emits = defineEmits(['change-region'])
 
@@ -28,6 +28,10 @@ const pokedex = await fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
 const changeRegionName = () => {
   regionName.value = 'Hoenn'
 }
+
+onBeforeUnmount(() => {
+  console.log('Do this thing!')
+})
 </script>
 
 <template>

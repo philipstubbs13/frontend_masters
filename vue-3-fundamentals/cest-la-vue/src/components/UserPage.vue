@@ -1,6 +1,7 @@
 <script setup>
 import UserCard from './UserCard.vue';
-import { defineProps, reactive } from 'vue'
+import { defineProps } from 'vue'
+import { userList } from '../composables/useUserStore';
 
 defineProps({
   title: {
@@ -11,10 +12,6 @@ defineProps({
 
 defineEmits(['update-user-list']);
 
-const state = reactive({
-  userList: []
-})
-
 async function fetchUsers() {
     const response = await fetch("https://jsonplaceholder.typicode.com/users")
       .then(response => response.json())
@@ -22,7 +19,7 @@ async function fetchUsers() {
     return response;
 }
 
-state.userList = await fetchUsers()
+userList.value = await fetchUsers()
 </script>
 
 <template>
@@ -30,7 +27,7 @@ state.userList = await fetchUsers()
     <h1>{{ title }}</h1>
     <ul>
         <UserCard
-            v-for="user in state.userList"
+            v-for="user in userList"
             :user="user"
             :key="`user-${user.id}`"
         />
@@ -39,33 +36,5 @@ state.userList = await fetchUsers()
 </template>
 
 <style>
-main {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  max-width: 320px;
-  margin: 0 auto;
-}
 
-main h1 {
-  margin-top: 10vh;
-  margin-bottom: 20px;
-}
-
-label {
-  margin-bottom: 5px;
-}
-
-input[type="email"] {
-  padding: 0.5rem;
-  margin-bottom: 30px;
-}
-
-button {
-  border: 1px solid green;
-  padding: 10px;
-  color: green;
-  background-color: rgb(213, 255, 213);
-  cursor: pointer;
-}
 </style>

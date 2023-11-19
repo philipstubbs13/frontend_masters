@@ -1,9 +1,11 @@
 <script>
-import { newCount } from "../composables/countStore"
+import { useCount } from "../composables/countStore"
 export default {
     setup() {
+        const countStore = useCount();
+
         return {
-            newCount,
+            countStore
         }
     },
     data: () => ({
@@ -26,7 +28,7 @@ export default {
     methods: {
         incrementCount() {
             this.count += this.optimizedIncrementAmount
-            this.newCount += 10;
+            // this.newCount += 10;
         }
     },
 }
@@ -34,9 +36,14 @@ export default {
 
 <template>
     <h1>{{ displayTitle }}</h1>
-    <h2>{{  newCount }}</h2>
+    <h2>New Counter</h2>
+    <p>Global Count: {{  countStore.globalCount }}</p>
+    <p>Local Count: {{  countStore.localCount  }}</p>
+    <button class="button" @click="countStore.incrementGlobalCount">Global</button>
+    <button class="button" @click="countStore.incrementLocalCount">Local</button>
+    <hr />
     <p>{{ count }}</p>
-    <button v-on:click="incrementCount">Increment Count</button>
+    <button class="button" v-on:click="incrementCount">Increment Count</button>
     <h1>{{ incrementAmount }}</h1>
     <p>{{ optimizedIncrementAmount }}</p>
     <div>

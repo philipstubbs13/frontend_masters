@@ -10,12 +10,12 @@ export default {
 </script>
 
 <template>
-    <li class="user-card">
+    <li :class="$style['user-card']">
         {{ user.name }}: {{  user.website }}
     </li>
 </template>
 
-<style>
+<style module>
 .user-card {
     border: 2px solid #222;
     padding: 10px;
