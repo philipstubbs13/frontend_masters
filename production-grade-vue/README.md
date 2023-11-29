@@ -12,3 +12,4 @@
 * image optimization (image-min)
     * <https://github.com/imagemin/imagemin>
     * <https://github.com/bencodezen/vue-enterprise-boilerplate>
+* VSCode code snippits
