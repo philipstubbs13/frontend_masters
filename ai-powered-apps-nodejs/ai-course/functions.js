@@ -3,6 +3,7 @@ import math from 'advanced-calculator'
 const QUESTION = process.argv[2] || 'hi'
 
 // node functions.js "what is 12 * 100 / 12 + 290 / 67 * 2"
+// node functions.js "Create me an image of a cat flying through space"
 const messages = [
     {
       role: 'user',
@@ -13,6 +14,11 @@ const messages = [
 const functions = {
     calculate: ({ expression }) => {
         return math.evaluate(expression)
+    },
+    async generateImage({ prompt }) {
+        const result = await openai.images.generate({ prompt })
+        console.log(result)
+        return result.data[0].url
     }
 }
 
@@ -34,6 +40,20 @@ const getCompletion = (message) => {
                         },
                     },
                     required: ['expression'],
+                }
+            },
+            {
+                name: 'generateImage',
+                deescription: 'Create or generate image based on a description',
+                parameters: {
+                    type: 'object',
+                    properties: {
+                        prompt: {
+                            type: 'string',
+                            description: 'The description of the image to generate'
+                        },
+                    },
+                    required: ['prompt'],
                 }
             }
         ],
