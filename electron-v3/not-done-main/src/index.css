@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply box-border;
+}
+
+*,
+*:before,
+*:after {
+  @apply box-border;
+}
+
+html,
+body {
+  @apply w-screen h-screen overflow-hidden;
+}
+
+body {
+  @apply m-0 p-0;
+}
+
+textarea,
+input,
+div,
+button {
+  @apply m-0 outline-none text-sm;
+}
+
+input {
+  @apply border-2 border-primary-700 bg-white p-2 placeholder-primary-400 accent-primary-600 shadow-sm transition-[colors,shadow] ease-in invalid:border-error-800 invalid:bg-error-200 out-of-range:border-error-800 out-of-range:bg-error-200 hover:bg-primary-50 hover:accent-primary-700 focus:bg-primary-50 focus:outline-none disabled:border-slate-500 disabled:bg-slate-100 disabled:placeholder-slate-400  disabled:text-slate-500 focus:placeholder:text-primary-300 focus:border-primary-600;
+}
+
+button,
+button[type='button'],
+button[type='reset'],
+button[type='submit'],
+input[type='button'],
+input[type='submit'],
+input[type='reset'] {
+  @apply inline-flex text-xs items-center justify-center rounded-lg px-4 py-2 transition-[colors,shadow] ease-in whitespace-nowrap bg-primary-500 hover:bg-primary-600 active:bg-primary-700  disabled:text-primary-700 shadow-sm hover:shadow-md disabled:hover:shadow-sm disabled:cursor-not-allowed disabled:bg-primary-200 disabled:hover:bg-primary-200;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  @apply hover:border-primary-500;
+}
+
+input[type='range'] {
+  @apply h-2 w-full cursor-pointer appearance-none rounded-lg bg-primary-100;
+}
+
+input[type='submit'],
+button[type='submit'] {
+  @apply bg-primary-500 font-semibold text-white hover:bg-primary-600 active:bg-primary-700;
+}
+
+input[type='color'] {
+  @apply h-12 p-1;
+}
+
+input[type='file']::-webkit-file-upload-button {
+  @apply placeholder-error-400 accent-error-800;
+}
+
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='week'],
+input[type='time'] {
+  @apply text-primary-900;
+}
+
+label {
+  @apply font-semibold;
+}
+
+select {
+  @apply block w-full rounded border-2 border-purple-700 px-4 py-2 pr-8 shadow hover:bg-primary-200 hover:accent-primary-700 focus:bg-primary-50 focus:outline-none disabled:border-slate-500 disabled:bg-slate-100 disabled:placeholder-slate-400;
+}
+
+.flex > input + button {
+  @apply whitespace-nowrap border-l-0;
+}
+
+.visually-hidden {
+  @apply sr-only;
+}
+
+.drag-over {
+  @apply border-2 border-dashed border-primary-500;
+}
+
+.drag-error {
+  @apply border-2 border-dashed border-error-500 bg-error-100;
+}
+
+#title-bar {
+  -webkit-app-region: drag;
+  user-select: none;
+}
+
+#application {
+  @apply max-w-md mx-auto p-4;
+}
+
+#new-task {
+  @apply flex gap-4 flex-col py-4 px-2 border-2 border-primary-600 rounded-lg bg-primary-100 shadow-sm;
+}
+
+#new-task-title {
+  @apply rounded-lg w-full;
+}
+
+#new-task button {
+  @apply block w-full;
+}
+
+.task {
+  @apply flex gap-4 w-full py-4 px-2 border-2 border-primary-600 rounded-lg bg-primary-100 shadow-sm items-center justify-between;
+}
+
+.task button {
+  @apply flex-shrink-0 bg-primary-50 hover:bg-primary-100 active:bg-primary-200 border-primary-500 border-2;
+}
+
+.task-title {
+  @apply flex gap-2;
+}
+
+#task-list {
+  @apply flex flex-col gap-4 py-8;
+}

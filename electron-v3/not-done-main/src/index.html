@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-eval'; img-src 'self' data:; style-src 'self' 'unsafe-inline';"
+    />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Not Done (Yet)</title>
+  </head>
+  <body>
+    <main id="application">
+      <form id="new-task">
+        <div class="w-full">
+          <label for="new-task-title">Add Task</label>
+          <input
+            type="text"
+            placeholder="New thing that I should totally do…"
+            id="new-task-title"
+            name="new-task-title"
+          />
+        </div>
+        <button type="submit" id="submit-new-task" disabled>➕ Add</button>
+      </form>
+      <section id="tasks">
+        <ul id="task-list"></ul>
+      </section>
+    </main>
+  </body>
+</html>
