@@ -1,84 +1,49 @@
-<script lang="ts">
+<script lang="ts" setup>
 import type { Restaurant } from '@/types'
-import { defineComponent } from 'vue'
+import { computed, defineComponent, onMounted, ref } from 'vue'
+import { useRoute } from 'vue-router'
 import NewRestaurantForm from '../components/NewRestaurantForm.vue'
 import RestaurantCard from '../components/RestaurantCard.vue'
 import SideMenu from '../components/SideMenu.vue'
+import { useRestaurantStore } from '@/stores/RestaurantStore'
 
-type DataShape = {
-  filterText: String
-  restaurantList: Restaurant[]
-  showNewForm: boolean
+const filterText = ref('')
+
+const restaurantStore = useRestaurantStore();
+
+const restaurantList = restaurantStore.list;
+
+const showNewForm = ref(false);
+
+const filteredRestaurantList = computed((): Restaurant[] => {
+  return restaurantList.filter((restaurant) => {
+    if (restaurant.name) {
+      return restaurant.name.toLowerCase().includes(filterText.value.toLowerCase())
+    } else {
+      return restaurantList
+    }
+  })
+})
+
+const addRestaurant = (payload: Restaurant) => {
+  restaurantStore.addRestaurant(payload);
+  hideForm()
 }
 
-export default defineComponent({
-  components: {
-    NewRestaurantForm,
-    RestaurantCard,
-    SideMenu,
-  },
-  data: (): DataShape => ({
-    filterText: '',
-    restaurantList: [
-      {
-        id: '9f995ce4-d2fc-4d00-af1d-6cb1647c6bd3',
-        name: 'Quiche From a Rose',
-        address: '283 Thisisnota St.',
-        website: 'www.quichefromarose.com',
-        status: 'Want to Try',
-      },
-      {
-        id: 'ae62a3da-791b-4f44-99a1-4be1b0ec30b8',
-        name: 'Tamago Never Dies',
-        address: '529 Letsgofora Dr.',
-        website: 'www.tamagoneverdies.com',
-        status: 'Recommended',
-      },
-      {
-        id: '9b361dae-2d44-4499-9940-97e188d41a32',
-        name: 'Penne For Your Thoughts',
-        address: '870 Thisisa St.',
-        website: 'www.penneforyourthoughts.com',
-        status: 'Do Not Recommend',
-      },
-    ],
-    showNewForm: false,
-  }),
-  computed: {
-    filteredRestaurantList(): Restaurant[] {
-      return this.restaurantList.filter((restaurant) => {
-        if (restaurant.name) {
-          return restaurant.name.toLowerCase().includes(this.filterText.toLowerCase())
-        } else {
-          return this.restaurantList
-        }
-      })
-    },
-    numberOfRestaurants(): number {
-      return this.filteredRestaurantList.length
-    },
-  },
-  methods: {
-    addRestaurant(payload: Restaurant) {
-      this.restaurantList.push(payload)
-      this.hideForm()
-    },
-    deleteRestaurant(payload: Restaurant) {
-      this.restaurantList = this.restaurantList.filter((restaurant) => {
-        return restaurant.id !== payload.id
-      })
-    },
-    hideForm() {
-      this.showNewForm = false
-    },
-  },
-  mounted() {
-    const route = this.$route
+const deleteRestaurant = (payload: Restaurant) => {
+  restaurantStore.deleteRestaurant(payload);
+}
 
-    if (this.$route.query.new) {
-      this.showNewForm = true
-    }
-  },
+const hideForm = () => {
+  showNewForm.value = false
+}
+
+onMounted(() => {
+  const route = useRoute()
+
+  if (route.query.new) {
+    showNewForm.value = true
+  }
 })
 </script>
 
@@ -97,7 +62,7 @@ export default defineComponent({
           <div class="level-left">
             <div class="level-item">
               <p class="subtitle is-5">
-                <strong>{{ numberOfRestaurants }}</strong> restaurants
+                <strong>{{ restaurantStore.numberOfRestaurants }}</strong> restaurants
               </p>
             </div>
 
@@ -119,7 +84,11 @@ export default defineComponent({
         </nav>
 
         <!-- New Restaurant Form -->
-        <NewRestaurantForm v-if="showNewForm" @add-new-restaurant="addRestaurant" @cancel-new-restaurant="hideForm" />
+        <NewRestaurantForm
+          v-if="showNewForm"
+          @add-new-restaurant="addRestaurant"
+          @cancel-new-restaurant="hideForm"
+        />
 
         <!-- Display Results -->
         <div v-else class="columns is-multiline">
