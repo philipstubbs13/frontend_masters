@@ -1,0 +1,1 @@
+/Users/philstubbs/frontend_masters/rust-for-typescript-developers/rust-typescript/target/debug/rust-typescript: /Users/philstubbs/frontend_masters/rust-for-typescript-developers/rust-typescript/src/main.rs
