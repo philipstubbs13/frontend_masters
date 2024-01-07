@@ -1,19 +1,16 @@
-struct Custom {
-    age: usize,
-    name: String
-}
+use crate::shapes::{rect::Rect, circle::Circle, area::Area};
 
-enum Item {
-    Number(usize),
-    String(String),
-    MyCustom(Custom)
-}
-
-fn append(items: &mut Vec<Item>) {
-    items.push(Item::String("hello, Fem".to_string()))
-}
+mod shapes;
 
 fn main() {
-    let mut items: Vec<Item> = vec![];
-    append(&mut items);
+    let rect = Rect::default();
+
+    let circ = Circle {
+        x: 0.0,
+        y: 0.0,
+        radius: 10.0
+    };
+
+    println!("{}", circ.area());
+    println!("{}", rect);
 }
