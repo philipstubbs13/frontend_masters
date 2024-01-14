@@ -1,0 +1,115 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  background-color: #3e3e3e;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+/* Default state */
+button {
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #00ceff;
+  border: none;
+  border-radius: 1rem;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.25s ease-in-out;
+}
+
+/* Hover state */
+button:hover {
+  background-color: #008fb3;
+}
+
+/* Active state */
+button:active {
+  background-color: #006580;
+}
+
+/* Focus state */
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 206, 255, 0.5);
+}
+
+/* Disabled state */
+button:disabled {
+  background-color: #b3b3b3;
+  cursor: not-allowed;
+}
+
+#root {
+  margin: 4rem auto;
+  max-width: 400px;
+}
+
+.application {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.count {
+  font-size: 2em;
+  font-weight: 700;
+  margin: 0.5em 0;
+  padding: 1rem 0;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #9e9e9e;
+  }
+  a:hover {
+    color: #747bff;
+  }
+}

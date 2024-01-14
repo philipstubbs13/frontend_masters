@@ -1,0 +1,24 @@
+name: 'Checkout, Install Node and Dependencies'
+description: 'Run npm install'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20
+        registry-url: 'https://registry.npmjs.org'
+        cache: 'npm'
+    - uses: actions/cache@v3
+      name: Setup npm cache
+      with:
+        path: ${{ steps.npm-cache.outputs.STORE_PATH }}
+        key: ${{ runner.os }}-npm-store-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-npm-store-
+    - name: Install dependencies
+      shell: bash
+      run: npm install
+      env:
+        HUSKY: '0'
