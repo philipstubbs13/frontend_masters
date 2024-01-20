@@ -2,6 +2,11 @@ import { test, expect } from 'vitest';
 
 import renderCharacter from './render-character';
 
-test('You should put your tests here', () => {
-  expect(true).toBe(true);
-});
+const characters = import.meta.glob('./*.json', { eager: true });
+
+for (const [path, character] of Object.entries(characters)) {
+  test(`renders ${path}`, () => {
+    const result = renderCharacter(character);
+    expect(result).toMatchSnapshot();
+  })
+}

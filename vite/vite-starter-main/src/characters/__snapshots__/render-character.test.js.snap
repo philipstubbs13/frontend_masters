@@ -1,0 +1,76 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders ./arthas.json 1`] = `
+"Name: Arthas
+Class: Paladin
+Strength: 18
+Dexterity: 12
+Wisdom: 15
+Intelligence: 10
+Constitution: 16
+Hit Points: 45
+Mana: 30
+Fun Fact: Never skips leg day.
+Items: Longsword, Shield, Potion of Healing
+"
+`;
+
+exports[`renders ./elira.json 1`] = `
+"Name: Elira
+Class: Rogue
+Strength: 14
+Dexterity: 18
+Wisdom: 12
+Intelligence: 16
+Constitution: 12
+Hit Points: 35
+Mana: 20
+Fun Fact: Can pickpocket someone while looking them in the eye.
+Items: Dagger, Lockpick Set, Smoke Bomb
+"
+`;
+
+exports[`renders ./gandorf.json 1`] = `
+"Name: Gandorf
+Class: Wizard
+Strength: 8
+Dexterity: 14
+Wisdom: 16
+Intelligence: 18
+Constitution: 10
+Hit Points: 25
+Mana: 40
+Fun Fact: Has a pet owl named Merlin.
+Items: Spellbook, Wand, Arcane Gem
+"
+`;
+
+exports[`renders ./kaela.json 1`] = `
+"Name: Kaela
+Class: Ranger
+Strength: 16
+Dexterity: 17
+Wisdom: 14
+Intelligence: 12
+Constitution: 13
+Hit Points: 37
+Mana: 25
+Fun Fact: Makes her own arrows from enchanted wood.
+Items: Longbow, Quiver, Camouflage Cloak
+"
+`;
+
+exports[`renders ./morduk.json 1`] = `
+"Name: Morduk
+Class: Barbarian
+Strength: 20
+Dexterity: 10
+Wisdom: 9
+Intelligence: 8
+Constitution: 18
+Hit Points: 50
+Mana: 10
+Fun Fact: Can arm-wrestle a troll and win.
+Items: Battle Axe, Bearskin Cloak, Rations
+"
+`;
