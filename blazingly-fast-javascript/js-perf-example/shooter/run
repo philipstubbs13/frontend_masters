@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 base/path/to/data_base_name"
+    exit 1
+fi
+
+
+rm -rf dist
+tsc
+
+for count in 500 1000 2000; do
+    echo "Running $count"
+    node dist/src/server.js --logPath $1_$count &
+    sleep 1
+    node_pid=$!
+    cargo run --release -- -q $count -g $(($count * 300)) -t 2 &
+    sleep 1
+    cargo_pid=$!
+    echo "testing for 30 seconds"
+    sleep 30
+    kill $node_pid
+    kill $cargo_pid
+    sleep 1
+done
