@@ -5,3 +5,5 @@
 * <https://theprimeagen.github.io/fem-jsperf/>
 * <https://v8.dev/blog/trash-talk>
 * <https://github.com/uNetworking/uWebSockets.js>
+* <https://twitch.tv/ThePrimeagen>
+* <https://www.twitch.tv/theprimeagen>
