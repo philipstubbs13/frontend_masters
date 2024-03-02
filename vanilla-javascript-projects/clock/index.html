@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://anjana.dev/vanilla-js-projects/clock/index.html -->
+<html data-theme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	
+	<meta name="viewport" content="width=device-width">
+	<link rel="icon" type="image/svg+xml" href="https://anjana.dev/vanilla-js-projects/favicon.svg">
+
+	<title>Random Clock | Vanilla JS Projects</title>
+	<style>
+		#clock {
+			width: 100%;
+			height: 50vh;
+			position: relative;
+		}
+
+		#clock p {
+			width: 200px;
+			position: relative;
+			font-size: xx-large;
+			color: rgb(100, 255, 100)
+		}
+	</style>
+
+  <link rel="stylesheet" crossorigin="" href="./Random Clock _ Vanilla JS Projects_files/pico.css">
+  <link rel="stylesheet" crossorigin="" href="./Random Clock _ Vanilla JS Projects_files/spacing.css">
+</head>
+
+<body class="container">
+	<header>
+		<h1>random clock</h1>
+	</header>
+
+	<main class="container">
+		<article>
+			<div id="clock">
+				<p id="time"></p>
+
+			</div>
+		</article>
+	</main>
+
+	<script id="clock.js">
+		const clock = document.getElementById('clock');
+		const text = document.getElementById('time');
+
+		const leftOffset = "50px"
+
+		const [s, l] = [ "75%", "75%"]
+
+		const updateTime = () => {
+			const topOffset = Math.random() * 100; 
+			const leftOffset = Math.random() * 100;
+			const h = Math.random() * 360;
+
+			const currentTime = new Date();
+			const timeString = currentTime.toLocaleTimeString();
+			text.textContent = timeString;
+			text.setAttribute("style", `color: hsl(${h}, ${s}, ${l}); top: ${topOffset}%; left: ${leftOffset}%`)
+		}
+
+		updateTime();
+		setInterval(updateTime, 3000);
+		
+	</script>
+
+
+
+</body></html>
