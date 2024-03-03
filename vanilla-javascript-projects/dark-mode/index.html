@@ -1,26 +1,36 @@
-<!DOCTYPE html>
-<!-- saved from url=(0062)https://anjana.dev/vanilla-js-projects/dark-mode/finished.html -->
-<html data-theme="dark"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!doctype html>
+<html data-theme="dark">
 
-	
+<head>
+
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<link rel="icon" type="image/svg+xml" href="https://anjana.dev/vanilla-js-projects/favicon.svg">
+	<link rel="icon" type="image/svg+xml" href="../favicon.svg" />
 
-	<title>Dark Mode | Vanilla JS Projects</title>
+	<title>Dark Modal | Vanilla JS Projects</title>
+	<style>
+		form {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			gap: 1em;
+		}
+	</style>
 
-  <link rel="stylesheet" crossorigin="" href="./Dark Mode _ Vanilla JS Projects_files/pico.css">
-  <link rel="stylesheet" crossorigin="" href="./Dark Mode _ Vanilla JS Projects_files/darklight.css">
+  <link rel="stylesheet" crossorigin href="./assets/pico.css">
+  <link rel="stylesheet" crossorigin href="./assets/darklight.css">
 </head>
 
 <body class="container grid">
 	<header>
-		<h1>dark mode</h1>
+		<h1>dark modal</h1>
 	</header>
-
 	<nav style="align-self:center;">
 
-		<label>
-			<input type="checkbox" id="toggle" name="toggle" role="switch" checked="">
+
+		<label id="dark-mode">
+			<input type="checkbox" id="toggle" name="toggle" role="switch" checked>
 			Use dark mode
 		</label>
 
@@ -36,8 +46,8 @@
 
 	<footer>
 
-
 	</footer>
+
 	<script id="theme.js">
 		const doc = document.documentElement;
 
@@ -47,9 +57,83 @@
 			doc.setAttribute('data-theme', newTheme);
 		}
 
-		document.getElementById('toggle').addEventListener("change", toggleDarkMode)
+		const toggle = document.getElementById('toggle');
+
+		toggle.addEventListener("change", toggleDarkMode);
 	</script>
 
 
+	<script id="modal.js">
 
-</body></html>
+		class Form {
+			element = document.createElement('form');
+			heading = document.createElement('h2');
+			closeButton = document.createElement('button');
+
+			constructor(type, title, content) {
+				this.content = content;
+				this.title = title;
+				this.element.appendChild(this.heading);
+				this.element.appendChild(content);
+				this.element.appendChild(this.closeButton);
+				this.element.setAttribute('type', type);
+				this.heading.textContent = title;
+				this.closeButton.setAttribute('type', 'submit');
+				this.closeButton.textContent = 'Close';
+			}
+
+		}
+
+		class Modal {
+			openButton = document.createElement('button');
+			dialog = document.createElement('dialog');
+
+			constructor(name, parentElement, contentElement) {
+				this.name = name;
+				this.openButton.setAttribute('id', name);
+				this.openButton.textContent = name;
+				this.parent = parentElement;
+				this.content = contentElement;
+				this.#setupForm();
+				this.#registerOpenListener();
+			}
+
+			#setupForm() {
+				const article = document.createElement('article');
+				const form = new Form('dialog', this.name, this.content);
+				article.appendChild(form.element);
+				this.dialog.appendChild(article);
+
+				const dialog = this.dialog;
+				form.element.addEventListener('submit', function (event){
+					event.preventDefault();
+					dialog.close();
+				})
+			}
+
+			#registerOpenListener() {
+				const dialog = this.dialog;
+				this.openButton.addEventListener("click", () => {
+					dialog.showModal();
+				})
+			}
+
+
+			render() {
+				this.parent.replaceChildren(this.openButton);
+				this.parent.appendChild(this.dialog);
+			}
+		}
+
+
+		const parent = document.querySelector('nav');
+		const content = document.getElementById('dark-mode');
+		const darkModal = new Modal('Settings', parent, content);
+		darkModal.render();
+
+
+	</script>
+
+</body>
+
+</html>
