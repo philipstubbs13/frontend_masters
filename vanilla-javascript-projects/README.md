@@ -4,6 +4,8 @@
 * course notes: <https://anjana.dev/vanilla-js-projects/>
 * <https://www.youtube.com/watch?v=8aGhZQkoFbQ>
 * deploying vite project as static site: <https://vitejs.dev/guide/static-deploy#github-pages>
+* <https://anjana.dev/meme-me/>
+* <https://github.com/vakila/meme-me>
 
 ```bash
 npm init @eslint/config
