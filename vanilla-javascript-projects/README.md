@@ -6,6 +6,7 @@
 * deploying vite project as static site: <https://vitejs.dev/guide/static-deploy#github-pages>
 * <https://anjana.dev/meme-me/>
 * <https://github.com/vakila/meme-me>
+* <https://jvns.ca/blog/good-questions/>
 
 ```bash
 npm init @eslint/config
