@@ -1,0 +1,1323 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "schematics": {
+    "@schematics/angular:component": {
+      "inlineTemplate": true,
+      "inlineStyle": true,
+      "skipTests": true
+    },
+    "@schematics/angular:class": {
+      "skipTests": true
+    },
+    "@schematics/angular:directive": {
+      "skipTests": true
+    },
+    "@schematics/angular:guard": {
+      "skipTests": true
+    },
+    "@schematics/angular:interceptor": {
+      "skipTests": true
+    },
+    "@schematics/angular:pipe": {
+      "skipTests": true
+    },
+    "@schematics/angular:resolver": {
+      "skipTests": true
+    },
+    "@schematics/angular:service": {
+      "skipTests": true
+    }
+  },
+  "projects": {
+    "01-hello-angular": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/01-hello-angular",
+      "sourceRoot": "projects/01-hello-angular/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/01-hello-angular",
+            "index": "projects/01-hello-angular/src/index.html",
+            "browser": "projects/01-hello-angular/src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "projects/01-hello-angular/tsconfig.app.json",
+            "assets": [
+              "projects/01-hello-angular/src/favicon.ico",
+              "projects/01-hello-angular/src/assets"
+            ],
+            "styles": ["projects/01-hello-angular/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "01-hello-angular:build:production"
+            },
+            "development": {
+              "buildTarget": "01-hello-angular:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "01-hello-angular:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": ["zone.js", "zone.js/testing"],
+            "tsConfig": "projects/01-hello-angular/tsconfig.spec.json",
+            "assets": [
+              "projects/01-hello-angular/src/favicon.ico",
+              "projects/01-hello-angular/src/assets"
+            ],
+            "styles": ["projects/01-hello-angular/src/styles.css"],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "00-basic-app": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/00-basic-app",
+      "sourceRoot": "projects/00-basic-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/00-basic-app",
+            "index": "projects/00-basic-app/src/index.html",
+            "browser": "projects/00-basic-app/src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "projects/00-basic-app/tsconfig.app.json",
+            "assets": [
+              "projects/00-basic-app/src/favicon.ico",
+              "projects/00-basic-app/src/assets"
+            ],
+            "styles": ["projects/00-basic-app/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "00-basic-app:build:production"
+            },
+            "development": {
+              "buildTarget": "00-basic-app:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "00-basic-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": ["zone.js", "zone.js/testing"],
+            "tsConfig": "projects/00-basic-app/tsconfig.spec.json",
+            "assets": [
+              "projects/00-basic-app/src/favicon.ico",
+              "projects/00-basic-app/src/assets"
+            ],
+            "styles": ["projects/00-basic-app/src/styles.css"],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "02-displaying-dynamic-data": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/02-displaying-dynamic-data",
+      "sourceRoot": "projects/02-displaying-dynamic-data/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/02-displaying-dynamic-data",
+            "index": "projects/02-displaying-dynamic-data/src/index.html",
+            "browser": "projects/02-displaying-dynamic-data/src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "projects/02-displaying-dynamic-data/tsconfig.app.json",
+            "assets": [
+              "projects/02-displaying-dynamic-data/src/favicon.ico",
+              "projects/02-displaying-dynamic-data/src/assets"
+            ],
+            "styles": ["projects/02-displaying-dynamic-data/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "02-displaying-dynamic-data:build:production"
+            },
+            "development": {
+              "buildTarget": "02-displaying-dynamic-data:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "02-displaying-dynamic-data:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": ["zone.js", "zone.js/testing"],
+            "tsConfig": "projects/02-displaying-dynamic-data/tsconfig.spec.json",
+            "assets": [
+              "projects/02-displaying-dynamic-data/src/favicon.ico",
+              "projects/02-displaying-dynamic-data/src/assets"
+            ],
+            "styles": ["projects/02-displaying-dynamic-data/src/styles.css"],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "03-component-composition": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/03-component-composition",
+      "sourceRoot": "projects/03-component-composition/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/03-component-composition",
+            "index": "projects/03-component-composition/src/index.html",
+            "browser": "projects/03-component-composition/src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "projects/03-component-composition/tsconfig.app.json",
+            "assets": [
+              "projects/03-component-composition/src/favicon.ico",
+              "projects/03-component-composition/src/assets"
+            ],
+            "styles": ["projects/03-component-composition/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "03-component-composition:build:production"
+            },
+            "development": {
+              "buildTarget": "03-component-composition:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "03-component-composition:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": ["zone.js", "zone.js/testing"],
+            "tsConfig": "projects/03-component-composition/tsconfig.spec.json",
+            "assets": [
+              "projects/03-component-composition/src/favicon.ico",
+              "projects/03-component-composition/src/assets"
+            ],
+            "styles": ["projects/03-component-composition/src/styles.css"],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "04-control-flow-if": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/04-control-flow-if",
+      "sourceRoot": "projects/04-control-flow-if/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/04-control-flow-if",
+            "index": "projects/04-control-flow-if/src/index.html",
+            "browser": "projects/04-control-flow-if/src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "projects/04-control-flow-if/tsconfig.app.json",
+            "assets": [
+              "projects/04-control-flow-if/src/favicon.ico",
+              "projects/04-control-flow-if/src/assets"
+            ],
+            "styles": ["projects/04-control-flow-if/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "04-control-flow-if:build:production"
+            },
+            "development": {
+              "buildTarget": "04-control-flow-if:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "04-control-flow-if:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": ["zone.js", "zone.js/testing"],
+            "tsConfig": "projects/04-control-flow-if/tsconfig.spec.json",
+            "assets": [
+              "projects/04-control-flow-if/src/favicon.ico",
+              "projects/04-control-flow-if/src/assets"
+            ],
+            "styles": ["projects/04-control-flow-if/src/styles.css"],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "05-control-flow-for": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/05-control-flow-for",
+      "sourceRoot": "projects/05-control-flow-for/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/05-control-flow-for",
+            "index": "projects/05-control-flow-for/src/index.html",
+            "browser": "projects/05-control-flow-for/src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "projects/05-control-flow-for/tsconfig.app.json",
+            "assets": [
+              "projects/05-control-flow-for/src/favicon.ico",
+              "projects/05-control-flow-for/src/assets"
+            ],
+            "styles": ["projects/05-control-flow-for/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "05-control-flow-for:build:production"
+            },
+            "development": {
+              "buildTarget": "05-control-flow-for:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "05-control-flow-for:build"
+          }
+        }
+      }
+    },
+    "06-input-output": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/06-input-output",
+      "sourceRoot": "projects/06-input-output/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/06-input-output",
+            "index": "projects/06-input-output/src/index.html",
+            "browser": "projects/06-input-output/src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "projects/06-input-output/tsconfig.app.json",
+            "assets": [
+              "projects/06-input-output/src/favicon.ico",
+              "projects/06-input-output/src/assets"
+            ],
+            "styles": ["projects/06-input-output/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "06-input-output:build:production"
+            },
+            "development": {
+              "buildTarget": "06-input-output:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "06-input-output:build"
+          }
+        }
+      }
+    },
+    "07-routing-basics": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/07-routing-basics",
+      "sourceRoot": "projects/07-routing-basics/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/07-routing-basics",
+            "index": "projects/07-routing-basics/src/index.html",
+            "browser": "projects/07-routing-basics/src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "projects/07-routing-basics/tsconfig.app.json",
+            "assets": [
+              "projects/07-routing-basics/src/favicon.ico",
+              "projects/07-routing-basics/src/assets"
+            ],
+            "styles": ["projects/07-routing-basics/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "07-routing-basics:build:production"
+            },
+            "development": {
+              "buildTarget": "07-routing-basics:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "07-routing-basics:build"
+          }
+        }
+      }
+    },
+    "08-routing-recap": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/08-routing-recap",
+      "sourceRoot": "projects/08-routing-recap/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/08-routing-recap",
+            "index": "projects/08-routing-recap/src/index.html",
+            "browser": "projects/08-routing-recap/src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "projects/08-routing-recap/tsconfig.app.json",
+            "assets": [
+              "projects/08-routing-recap/src/favicon.ico",
+              "projects/08-routing-recap/src/assets"
+            ],
+            "styles": ["projects/08-routing-recap/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "08-routing-recap:build:production"
+            },
+            "development": {
+              "buildTarget": "08-routing-recap:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "08-routing-recap:build"
+          }
+        }
+      }
+    },
+    "09-template-driven-forms": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/09-template-driven-forms",
+      "sourceRoot": "projects/09-template-driven-forms/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/09-template-driven-forms",
+            "index": "projects/09-template-driven-forms/src/index.html",
+            "browser": "projects/09-template-driven-forms/src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "projects/09-template-driven-forms/tsconfig.app.json",
+            "assets": [
+              "projects/09-template-driven-forms/src/favicon.ico",
+              "projects/09-template-driven-forms/src/assets"
+            ],
+            "styles": ["projects/09-template-driven-forms/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "09-template-driven-forms:build:production"
+            },
+            "development": {
+              "buildTarget": "09-template-driven-forms:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "09-template-driven-forms:build"
+          }
+        }
+      }
+    },
+    "10-reactive-forms": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/10-reactive-forms",
+      "sourceRoot": "projects/10-reactive-forms/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/10-reactive-forms",
+            "index": "projects/10-reactive-forms/src/index.html",
+            "browser": "projects/10-reactive-forms/src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "projects/10-reactive-forms/tsconfig.app.json",
+            "assets": [
+              "projects/10-reactive-forms/src/favicon.ico",
+              "projects/10-reactive-forms/src/assets"
+            ],
+            "styles": ["projects/10-reactive-forms/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "10-reactive-forms:build:production"
+            },
+            "development": {
+              "buildTarget": "10-reactive-forms:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "10-reactive-forms:build"
+          }
+        }
+      }
+    },
+    "11-dependency-injection": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/11-dependency-injection",
+      "sourceRoot": "projects/11-dependency-injection/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/11-dependency-injection",
+            "index": "projects/11-dependency-injection/src/index.html",
+            "browser": "projects/11-dependency-injection/src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "projects/11-dependency-injection/tsconfig.app.json",
+            "assets": [
+              "projects/11-dependency-injection/src/favicon.ico",
+              "projects/11-dependency-injection/src/assets"
+            ],
+            "styles": ["projects/11-dependency-injection/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "11-dependency-injection:build:production"
+            },
+            "development": {
+              "buildTarget": "11-dependency-injection:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "11-dependency-injection:build"
+          }
+        }
+      }
+    },
+    "12-angular-signals": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/12-angular-signals",
+      "sourceRoot": "projects/12-angular-signals/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/12-angular-signals",
+            "index": "projects/12-angular-signals/src/index.html",
+            "browser": "projects/12-angular-signals/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/12-angular-signals/tsconfig.app.json",
+            "assets": [
+              "projects/12-angular-signals/src/favicon.ico",
+              "projects/12-angular-signals/src/assets"
+            ],
+            "styles": [
+              "projects/12-angular-signals/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "12-angular-signals:build:production"
+            },
+            "development": {
+              "buildTarget": "12-angular-signals:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "12-angular-signals:build"
+          }
+        }
+      }
+    },
+    "13-deferrable-views": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/13-deferrable-views",
+      "sourceRoot": "projects/13-deferrable-views/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/13-deferrable-views",
+            "index": "projects/13-deferrable-views/src/index.html",
+            "browser": "projects/13-deferrable-views/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/13-deferrable-views/tsconfig.app.json",
+            "assets": [
+              "projects/13-deferrable-views/src/favicon.ico",
+              "projects/13-deferrable-views/src/assets"
+            ],
+            "styles": [
+              "projects/13-deferrable-views/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "13-deferrable-views:build:production"
+            },
+            "development": {
+              "buildTarget": "13-deferrable-views:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "13-deferrable-views:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/13-deferrable-views/tsconfig.spec.json",
+            "assets": [
+              "projects/13-deferrable-views/src/favicon.ico",
+              "projects/13-deferrable-views/src/assets"
+            ],
+            "styles": [
+              "projects/13-deferrable-views/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "40db7d87-da3e-4b99-9043-ab24d9b389fa"
+  }
+}
