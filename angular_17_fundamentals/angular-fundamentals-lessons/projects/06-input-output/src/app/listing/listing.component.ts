@@ -32,7 +32,7 @@ import { Car } from '../car';
         </p>
       </section>
     </article>  
-    <button (click)="handleCarSaved(car)">Save Car</button>
+    <button (click)="handleCarSaved()">Save Car</button>
   `,
   styles: ``,
 })
