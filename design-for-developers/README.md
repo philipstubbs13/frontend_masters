@@ -6,3 +6,5 @@
     * <https://www.health.harvard.edu/blog/right-brainleft-brain-right-2017082512222>
     * <https://www.britannica.com/story/are-there-really-right-brained-and-left-brained-people>
     * <https://www.oecd.org/education/ceri/neuromyth6.htm>
+* <https://dribbble.com/Orizon>
+* <https://www.amazon.com/Making-Breaking-Second-Updated-Expanded/dp/163159284X>
