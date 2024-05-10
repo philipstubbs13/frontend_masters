@@ -20,3 +20,13 @@
 * <https://24ways.org/2016/css-writing-modes/>
 * <https://colorable.jxnblk.com/>
 * <https://color.adobe.com/>
+* <https://www.smashingmagazine.com/2010/02/color-theory-for-designer-part-3-creating-your-own-color-palettes/>
+* <https://www.smashingmagazine.com/2012/10/the-code-side-of-color/>
+* <https://coolors.co/>
+* <https://paletton.com/#uid=1000u0kllllaFw0g0qFqFg0w0aF>
+* <https://color.adobe.com/>
+* <https://www.adobe.com/products/capture.html>
+* <https://www.colorzilla.com/gradient-editor/>
+* <https://uigradients.com/#EasyMed>
+* <https://codepen.io/sdras/pen/aZrWPR>
+* <https://ich.unesco.org/dive/biome/?language=en>
