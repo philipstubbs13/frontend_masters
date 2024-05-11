@@ -53,3 +53,12 @@
 * <https://css-tricks.com/masking-vs-clipping-use/>
 * <https://codepen.io/yoksel/pen/GRodvp>
 * <https://css-tricks.com/perfect-full-page-background-image/>
+* <https://css-tricks.com/writing-feature-requirements/>
+* <https://medium.com/design-story/story-map-3cc64033128e>
+* <https://codepen.io/sdras/pen/JbaGwg>
+* <https://codepen.io/sdras/pen/XRXEjR/594d891abedf804e87bffe48ee30aace>
+* <https://codepen.io/sdras/pen/qmxRwr/2ae1eadb3a80e26daf3aae54cd148c61>
+* <https://pagetransitions.netlify.app/>
+* <https://tympanus.net/codrops/>
+* <https://tympanus.net/Development/PageFlipLayout/>
+* <https://github.com/davidkpiano/flipping>
