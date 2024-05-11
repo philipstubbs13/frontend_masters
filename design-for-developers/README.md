@@ -46,3 +46,10 @@
 * <https://www.istockphoto.com/>
 * <https://codepen.io/topics/ui-pattern>
 * <https://thenounproject.com/>
+* <https://thenounproject.com/>
+* <https://jakearchibald.github.io/svgomg/>
+* <https://css-tricks.com/high-performance-svgs/>
+* <https://codepen.io/shshaw/full/LVKEdv>
+* <https://css-tricks.com/masking-vs-clipping-use/>
+* <https://codepen.io/yoksel/pen/GRodvp>
+* <https://css-tricks.com/perfect-full-page-background-image/>
