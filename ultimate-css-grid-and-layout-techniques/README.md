@@ -9,3 +9,7 @@
 * <https://cssgridgarden.com/>
 * Chapter 2 Basic Grid: <https://codepen.io/philipstubbs13/pen/jOoMKZw>
 * Chapter 3: <https://codepen.io/jen4web/pen/YzMqXqd?editors=1100>
+* Chapter 7: <https://codepen.io/philipstubbs13/pen/ZENpRgM>
+* Chapter 8a Overlapping Grid Cells: <https://codepen.io/philipstubbs13/pen/mdYrQgp?editors=1100>
+* Chapter 8b Overlapping Grid Cells Art: <https://codepen.io/philipstubbs13/pen/XWwjyvm?editors=1100>
+* Chapter 8c animation grid: <https://codepen.io/philipstubbs13/pen/jOoMXNR?editors=1100>
