@@ -13,3 +13,5 @@
 * Chapter 8a Overlapping Grid Cells: <https://codepen.io/philipstubbs13/pen/mdYrQgp?editors=1100>
 * Chapter 8b Overlapping Grid Cells Art: <https://codepen.io/philipstubbs13/pen/XWwjyvm?editors=1100>
 * Chapter 8c animation grid: <https://codepen.io/philipstubbs13/pen/jOoMXNR?editors=1100>
+* Chapter 9b Subgrid in action; <https://codepen.io/philipstubbs13/pen/QWRKoyQ?editors=1100>
+* Chapter 10 Moons of Saturn: <https://codepen.io/philipstubbs13/pen/LYoRaBZ?editors=1100>
