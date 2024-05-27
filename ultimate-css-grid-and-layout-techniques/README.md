@@ -21,3 +21,6 @@
 <https://codepen.io/philipstubbs13/pen/XWwjvMK?editors=1100>
 * Chapter 11c Navbar: <https://codepen.io/philipstubbs13/pen/XWwjvMK?editors=1100>
 * Chapteer 11d Flexbox Layouts: <https://codepen.io/philipstubbs13/pen/dyEObog>
+* <https://responsivebreakpoints.com/>
+* chapter 13a container size queries: <https://codepen.io/philipstubbs13/pen/VwOmjBm>
+* chapter 14 changing themes with style queries: <https://codepen.io/philipstubbs13/pen/bGyBwoZ>
