@@ -15,3 +15,9 @@
 * Chapter 8c animation grid: <https://codepen.io/philipstubbs13/pen/jOoMXNR?editors=1100>
 * Chapter 9b Subgrid in action; <https://codepen.io/philipstubbs13/pen/QWRKoyQ?editors=1100>
 * Chapter 10 Moons of Saturn: <https://codepen.io/philipstubbs13/pen/LYoRaBZ?editors=1100>
+* <https://flexboxfroggy.com/>
+* <http://www.flexboxdefense.com/>
+* <https://codingfantasy.com/games/flexboxadventure>
+<https://codepen.io/philipstubbs13/pen/XWwjvMK?editors=1100>
+* Chapter 11c Navbar: <https://codepen.io/philipstubbs13/pen/XWwjvMK?editors=1100>
+* Chapteer 11d Flexbox Layouts: <https://codepen.io/philipstubbs13/pen/dyEObog>
