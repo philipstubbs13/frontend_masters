@@ -24,7 +24,7 @@
     "solid-start-mdx": "0.2.3",
     "solid-start-netlify": "0.2.3",
     "rollup": "^3.2.5",
-    "undici": "^5.11.0"
+    "undici": "^5.19.1"
   },
   "engines": {
     "node": ">=16"
