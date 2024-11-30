@@ -7,7 +7,7 @@
     "serve": "vite preview"
   },
   "devDependencies": {
-    "vite": "^2.6.4"
+    "vite": "^2.9.13"
   },
   "dependencies": {
     "@xstate/inspect": "^0.5.0",
