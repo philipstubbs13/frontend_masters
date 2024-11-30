@@ -7,6 +7,6 @@
     "start": "lite-server index.html"
   },
   "dependencies": {
-    "lite-server": "^2.5.3"
+    "lite-server": "^2.6.1"
   }
 }
